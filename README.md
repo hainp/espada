@@ -1,5 +1,7 @@
 # Espada Text Editor
 
+Espada the hackable text editor.
+
 ## License
 
 Copyright (C) 2013 by Nguyễn Hà Dương <cmpitgATgmaildotcom>
