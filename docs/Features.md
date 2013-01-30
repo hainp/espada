@@ -3,6 +3,10 @@
 * `ESPADA_TMP_DIR` points to Espada's temporary directory:
   - Default to: `$HOME/.config/espada/tmp/`
 
+* `ESPADA_EXTENSIONS_DIR` points to Espada's extensions directory:
+  - Default to: `$HOME/.config/espada/extensions/`
+  - The extension would automatically be disabled if the extension dir has the file named `disabled`
+
 * `startup_buffers` determines which buffers are automatically opened when Espada starts up:
   - `:last_time` (default)
   - `[file_path1, file_path2, ...]`
@@ -66,10 +70,19 @@ If the file is opened in a buffer, switch to that buffer, if it's not, open the 
   - Copy file path, copy directory path, open directory
   - Evaluate/execute, evaluate/execute on selection
 
+* Ctrl + right click default: search for the current word or selected text.
+
 * Left click default:
   - Single click: Jump
   - Double click: Word selection
   - Triple click: Line selection
+
+* Ctrl + left click default: visually change value of the current word or selection text:
+  - Number
+  - Color
+  - Otherwise: no effect
+
+* Alt + left click default: documentation lookup.
 
 * Left click -> right click (hold left button, then press right button): paste.
 
