@@ -21,7 +21,7 @@
 
 require './espada_gui'
 
-Settings = {
+EspadaSettings = {
   :normal_text_font => Font.new("Droid Sans", 12, Font::Normal),
 
   :size => {

@@ -79,4 +79,4 @@ class SettingsSingleton
   end
 end
 
-ESettings = SettingsSingleton.instance
+Settings = SettingsSingleton.instance

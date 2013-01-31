@@ -32,17 +32,13 @@ espada = {}
 app = Application.new ARGV
 espada[:app] = app
 
-###### Tag: Getting runtime settings
-
-###### Tag: double click timeout
-
-Settings[:double_click_timeout] =
-  Settings[:double_click_timeout] || Qt::Application::doubleClickInterval
-
-ESettings.update_settings Settings
-ESettings.print_settings
-
 ###### Tag: Initialize
+
+EspadaSettings[:double_click_timeout] =
+  EspadaSettings[:double_click_timeout] || Qt::Application::doubleClickInterval
+
+Settings.update_settings EspadaSettings
+Settings.print_settings
 
 ###### Tag: main_layout_container
 
@@ -55,17 +51,17 @@ espada[:main_container] = main_container
 
 win = MainWindow.new
 win.set_window_title "Espada Text Playground"
-win.set_font Settings[:normal_text_font]
-win.resize Settings[:size][:width], Settings[:size][:height]
-win.move Settings[:position][:x], Settings[:position][:y]
+win.set_font Settings.normal_text_font
+win.resize Settings.size[:width], Settings.size[:height]
+win.move Settings.position[:x], Settings.position[:y]
 espada[:win] = win
 
 ###### Tag: main_text_buffer
 
 text_edit = TextEdit.new
-text_edit.set_plain_text read_file(Settings[:default_contents_path])
-text_edit.set_line_wrap_column_or_width Settings[:wrap_column]
-text_edit.set_line_wrap_mode Settings[:wrap_mode]
+text_edit.set_plain_text read_file(Settings.default_contents_path)
+text_edit.set_line_wrap_column_or_width Settings.wrap_column
+text_edit.set_line_wrap_mode Settings.wrap_mode
 main_container.add text_edit
 espada[:text_edit] = text_edit
 
