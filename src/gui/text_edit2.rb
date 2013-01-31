@@ -20,30 +20,18 @@
 #
 
 class TextEdit < Qt::TextEdit
-  attr_accessor :middle_button_action,
-                :right_button_action,
-                :left_button_action,
-                :triple_button_action,
-                :in_double_click,
-                :in_triple_click,
-                :double_click_moment,
-                :double_click_interval,
+  attr_accessor :double_click_interval,
                 :output
 
   signals :triple_clicked
 
   def initialize
     super
-    @left_button_action    = nil
-    @middle_button_action  = lambda { default_middle_button_action }
-    @right_button_action   = lambda { default_right_button_action }
-    @triple_button_action  = lambda { default_triple_button_action }
     @double_click_interval = $qApp.double_click_interval
-    @in_double_click       = false
-    @double_click_moment   = Time.now
     @output = nil
 
     connect(SIGNAL :triple_clicked) { @triple_button_action.call }
+    puts "Hello World"
   end
 
   ###### Helpers
@@ -83,31 +71,21 @@ class TextEdit < Qt::TextEdit
     set_text_cursor cursor
   end
 
+  def event_button_to_sym(event)
+    case event.button
+    when Mouse[:LeftButton]
+      :LeftButton
+    when Mouse[:RightButton]
+      :RightButton
+    when Mouse[:MiddleButton]
+      :MiddleButton
+    end
+  end
+
   ###### Events
 
-  def default_middle_button_action
-    eval_text selected_text
-  end
-
-  def default_right_button_action
-    puts ">> Right button"
-  end
-
   def mouseReleaseEvent(event)
-    @left_button_action.call if @left_button_action \
-                                 && event.button == Mouse[:LeftButton]
-
-    @middle_button_action.call if @middle_button_action \
-                                  && event.button == Mouse[:MiddleButton]
-
-    @right_button_action.call if @right_button_action \
-                                 && event.button == Mouse[:RightButton]
-
-    super event unless (@left_button_action \
-                        && event.button == Mouse[:LeftButton]) \
-                       || (@middle_button_action \
-                           && event.button == Mouse[:MiddleButton]) \
-                       || (@right_button_action \
-                           && event.button == Mouse[:RightButton])
+    puts event_button_to_sym event
+    super event
   end
 end

@@ -24,6 +24,7 @@ require 'singleton'
 require './espada_settings'
 require './default_settings'
 require './espada_utils'
+require './gui/text_edit2'
 
 espada = {}
 
