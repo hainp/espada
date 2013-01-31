@@ -35,10 +35,11 @@ espada[:app] = app
 ###### Tag: Initialize
 
 EspadaSettings[:double_click_timeout] =
-  EspadaSettings[:double_click_timeout] || Qt::Application::doubleClickInterval
+  EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
 
 Settings.update EspadaSettings
 Settings.print
+puts $qApp.doubleClickInterval
 
 ###### Tag: main_layout_container
 

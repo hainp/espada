@@ -45,6 +45,10 @@ class SettingsSingleton
 
   def update(ahash)
     add_properties_from_hash ahash
+
+    # Update global settings if necessary
+    $qApp.setDoubleClickInterval(double_click_timeout) if
+      respond_to?(:double_click_timeout) && $qApp
   end
 
   def add_properties_from_hash(ahash)
