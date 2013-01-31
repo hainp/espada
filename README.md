@@ -2,6 +2,11 @@
 
 Espada the hackable text editor.
 
+## Requirement
+
+* Ruby 1.8 (1.9 is not supported yet)
+* awesome_print
+
 ## License
 
 Copyright (C) 2013 by Nguyễn Hà Dương <cmpitgATgmaildotcom>

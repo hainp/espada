@@ -36,7 +36,11 @@ espada[:app] = app
 
 ###### Tag: double click timeout
 
-Settings[:double_click_timeout] = Settings[:double_click_timeout] || Qt::Application::doubleClickInterval
+Settings[:double_click_timeout] =
+  Settings[:double_click_timeout] || Qt::Application::doubleClickInterval
+
+ESettings.update_settings Settings
+ESettings.print_settings
 
 ###### Tag: Initialize
 

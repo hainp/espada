@@ -32,6 +32,10 @@ class String
     self[1..self.length - 1]
   end
 
+  def rest
+    but_first_char
+  end
+
   def but_last_char
     self[0..self.length - 2]
   end

@@ -19,8 +19,6 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'singleton'
-
 #
 # * All Espada settings are organized into a singleton named Settings.
 #
@@ -34,6 +32,10 @@ require 'singleton'
 # * `Settings.update_settings` is called once when Espada starts
 #
 
+require 'singleton'
+require 'awesome_print'
+require './espada_utils'
+
 class SettingsSingleton
   include Singleton
 
@@ -46,7 +48,7 @@ class SettingsSingleton
   end
 
   def add_properties_from_hash(ahash)
-    a_hash.each { |key, val|
+    ahash.each { |key, val|
       # Add getter
       @self.send(:define_method, key) { 
         @self.instance_variable_get("@#{key}")
@@ -61,6 +63,20 @@ class SettingsSingleton
       @self.instance_variable_set("@#{key}", val)
     }
   end
+
+  def print_settings
+    settings_hash = {}
+
+    # Get all the instance variables of the settings singleton
+    @self.instance_variables.each { |var|
+      if var != "@__instance__"
+        settings_hash[var.but_first_char.to_sym] =
+          @self.instance_variable_get(var)
+      end
+    }
+
+    ap settings_hash
+  end
 end
 
-Settings = SettingsSingleton.instance
+ESettings = SettingsSingleton.instance
