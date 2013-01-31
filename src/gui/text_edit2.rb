@@ -85,7 +85,17 @@ class TextEdit < Qt::TextEdit
   ###### Events
 
   def mouseReleaseEvent(event)
-    puts event_button_to_sym event
+    # puts event_button_to_sym event
+
+    click_moment = Time.now
+
+    # Single click
+    if click_moment - @last_click_moment > @double_click_interval
+      puts ">> Single click"
+    end
+
+    @last_click_moment = click_moment
+
     super event
   end
 end
