@@ -28,13 +28,27 @@ espada = {}
 
 class EApplication
   attr_accessor :app
+                :settings
 
   def initialize
     @app = Qt::Application.new ARGV
+    update_settings
   end
 
   def exec
     @app.exec
+  end
+
+  def update_settings
+    # Get runtime settings
+    EspadaSettings[:double_click_timeout] =
+      EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
+
+    Settings.update EspadaSettings
+    @settings = Settings
+
+    ap "=> Settings: "
+    Settings.print
   end
 end
 
@@ -42,15 +56,6 @@ end
 
 app = EApplication.new
 espada[:app] = app
-
-###### Tag: Initialize
-
-EspadaSettings[:double_click_timeout] =
-  EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
-
-Settings.update EspadaSettings
-Settings.print
-puts $qApp.doubleClickInterval
 
 ###### Tag: main_layout_container
 
