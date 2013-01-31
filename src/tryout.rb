@@ -20,6 +20,7 @@
 #
 
 require 'rubygems'
+require 'singleton'
 require './espada_settings'
 require './default_settings'
 require './espada_utils'
@@ -27,6 +28,8 @@ require './espada_utils'
 espada = {}
 
 class EApplication
+  include Singleton
+
   attr_accessor :app
                 :settings
 
@@ -54,7 +57,7 @@ end
 
 ###### Tag: main_application
 
-app = EApplication.new
+app = EApplication.instance
 espada[:app] = app
 
 ###### Tag: main_layout_container
