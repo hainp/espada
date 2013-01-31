@@ -23,7 +23,6 @@ require 'rubygems'
 require './espada_settings'
 require './default_settings'
 require './espada_utils'
-require 'pp'
 
 espada = {}
 
@@ -69,11 +68,14 @@ espada[:text_edit] = text_edit
 ###### Tag: main_output_buffer
 
 output_buffer = TextEdit.new
+
 main_container.add output_buffer
+
 text_edit.middle_button_action = Proc.new do
   res = eval_text text_edit.selected_text
   output_buffer.append res if res && res != ""
 end
+
 output_buffer.middle_button_action = Proc.new do
   res = eval_text output_buffer.selected_text
   output_buffer.append res if res && res != ""
@@ -88,6 +90,6 @@ win.set_central_widget main_container
 
 puts "\n>>>> Espada Text"
 # PP.pp espada
-puts espada
+ap espada
 win.show
 app.exec
