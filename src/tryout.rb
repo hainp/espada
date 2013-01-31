@@ -32,10 +32,48 @@ class EApplication
 
   attr_accessor :app
                 :settings
+                :container
+                :main_win
+                :text_buffers
 
   def initialize
     @app = Qt::Application.new ARGV
+    @text_buffers = []
     update_settings
+    create_container
+    create_main_window
+    create_main_text_buffer
+    set_layout
+  end
+
+  def set_layout
+    @main_win.set_central_widget @container
+  end
+
+  def create_main_text_buffer
+    text_edit = TextEdit.new
+    text_edit.set_plain_text read_file(Settings.default_contents_path)
+    text_edit.set_line_wrap_column_or_width Settings.wrap_column
+    text_edit.set_line_wrap_mode Settings.wrap_mode
+
+    @container.add text_edit
+    @text_buffers << text_edit
+  end
+
+  def create_main_window
+    win = MainWindow.new
+    win.set_window_title "Espada Text Playground"
+    win.set_font Settings.normal_text_font
+    win.resize Settings.size[:width], Settings.size[:height]
+    win.move Settings.position[:x], Settings.position[:y]
+    win.show
+
+    @main_win = win
+  end
+
+  def create_container
+    # The container carries a layout of the main window
+    @container = MainContainer.new
   end
 
   def exec
@@ -50,49 +88,11 @@ class EApplication
     Settings.update EspadaSettings
     @settings = Settings
 
-    ap "=> Settings: "
+    puts "=> Settings: "
     Settings.print
   end
 end
 
-###### Tag: main_application
 
 app = EApplication.instance
-espada[:app] = app
-
-###### Tag: main_layout_container
-
-# The container carrying a layout of the main window
-
-main_container = MainContainer.new
-espada[:main_container] = main_container
-
-###### Tag: main_window
-
-win = MainWindow.new
-win.set_window_title "Espada Text Playground"
-win.set_font Settings.normal_text_font
-win.resize Settings.size[:width], Settings.size[:height]
-win.move Settings.position[:x], Settings.position[:y]
-espada[:win] = win
-
-###### Tag: main_text_buffer
-
-text_edit = TextEdit.new
-text_edit.set_plain_text read_file(Settings.default_contents_path)
-text_edit.set_line_wrap_column_or_width Settings.wrap_column
-text_edit.set_line_wrap_mode Settings.wrap_mode
-main_container.add text_edit
-espada[:text_edit] = text_edit
-
-###### Tag: main_window_layout
-
-win.set_central_widget main_container
-
-###### Tag: main_program
-
-puts "\n>>>> Espada Text"
-# PP.pp espada
-ap espada
-win.show
 app.exec
