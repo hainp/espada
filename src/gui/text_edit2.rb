@@ -19,6 +19,8 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require './espada_utils'
+
 class TextEdit < Qt::TextEdit
   attr_accessor :double_click_interval,
                 :last_click_moment
@@ -28,7 +30,7 @@ class TextEdit < Qt::TextEdit
   def initialize
     super
     @double_click_interval = $qApp.double_click_interval
-    @last_click_moment = Time.now
+    @last_click_moment = Time.now.to_ms
 
     connect(SIGNAL :triple_clicked) { @triple_button_action.call }
     puts "Hello World"
@@ -85,9 +87,9 @@ class TextEdit < Qt::TextEdit
   ###### Events
 
   def mouseReleaseEvent(event)
-    # puts event_button_to_sym event
+    puts event_button_to_sym event
 
-    click_moment = Time.now
+    click_moment = Time.now.to_ms
 
     # Single click
     if click_moment - @last_click_moment > @double_click_interval

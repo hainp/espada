@@ -19,6 +19,12 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+class Time
+  def to_ms
+    (self.to_f * 1000.0).to_i
+  end
+end
+
 class String
   def last_char
     self[self.length - 1]
