@@ -108,18 +108,18 @@ Switch view
 
 ###### Implementing triple click
 
-* Get double click interval: Qt::Application::doubleClickInterval
+* Get double click interval: `Qt::Application::doubleClickInterval`
 * When catching the third click, see if the interval is not greater than the double click one and emit the triple click event if necessary
 
-Single click:
+* Single click:
 Click
 
-Double click:
+* Double click:
 Click
 Double
 Click
 
-Triple click:
+* Triple click:
 Click
 Double
 Click

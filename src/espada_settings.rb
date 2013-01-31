@@ -19,23 +19,48 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require './espada_gui'
+require 'singleton'
 
-Settings = {
-  :normal_text_font => Font.new("Droid Sans", 12, Font::Normal),
+#
+# * All Espada settings are organized into a singleton named Settings.
+#
+# * A setting is changed via a hashtable with as the following example:
+#
+#     Settings.update_settings({
+#       :wrap_mode => TextEdit::WidgetWidth,
+#       :wrap_column => 78
+#     })
+#
+# * `Settings.update_settings` is called once when Espada starts
+#
 
-  :size => {
-    :width => 800,
-    :height => 600
-  },
+class SettingsSingleton
+  include Singleton
 
-  :position => {
-    :x => 130,
-    :y => 70
-  },
+  def initialize
+    @self = SettingsSingleton
+  end
 
-  :default_contents_path => "../tests/Default_Contents.txt",
+  def update_settings(ahash)
+    add_properties_from_hash ahash
+  end
 
-  :wrap_mode => TextEdit::WidgetWidth,
-  :wrap_column => 78,
-}
+  def add_properties_from_hash(ahash)
+    a_hash.each { |key, val|
+      # Add getter
+      @self.send(:define_method, key) { 
+        @self.instance_variable_get("@#{key}")
+      }
+
+      # Add setter
+      @self.send(:define_method, "#{key}=") { |val|
+        @self.instance_variable_set("@#{key}", val)
+      }
+
+      # Set default value
+      @self.instance_variable_set("@#{key}", val)
+    }
+  end
+end
+
+Settings = SettingsSingleton.instance

@@ -21,15 +21,24 @@
 
 require 'rubygems'
 require './espada_settings'
+require './default_settings'
 require './espada_utils'
 require 'pp'
 
 espada = {}
 
-## Tag: main_application
+###### Tag: main_application
 
 app = Application.new ARGV
 espada[:app] = app
+
+###### Tag: Getting runtime settings
+
+###### Tag: double click timeout
+
+Settings[:double_click_timeout] = Settings[:double_click_timeout] || Qt::Application::doubleClickInterval
+
+###### Tag: Initialize
 
 ###### Tag: main_layout_container
 
