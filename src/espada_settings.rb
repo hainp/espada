@@ -24,7 +24,7 @@
 #
 # * A setting is changed via a hashtable with as the following example:
 #
-#     Settings.update_settings({
+#     Settings.update({
 #       :wrap_mode => TextEdit::WidgetWidth,
 #       :wrap_column => 78
 #     })
@@ -43,7 +43,7 @@ class SettingsSingleton
     @self = SettingsSingleton
   end
 
-  def update_settings(ahash)
+  def update(ahash)
     add_properties_from_hash ahash
   end
 
@@ -64,7 +64,7 @@ class SettingsSingleton
     }
   end
 
-  def print_settings
+  def print
     settings_hash = {}
 
     # Get all the instance variables of the settings singleton

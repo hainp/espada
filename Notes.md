@@ -21,6 +21,14 @@ Tasks
 
 ######
 
+Settings are handled by the `Settings` singleton.  To update settings, use:
+
+    Settings.update(ahashtable)
+
+See `./src/default_settings.rb` for more details.
+
+######
+
 * Each buffer has a path associated with it
   - If the buffer represents normal or directory, the path is the file/directory
   - If the buffer represents an error, the path is `null`.

@@ -37,8 +37,8 @@ espada[:app] = app
 EspadaSettings[:double_click_timeout] =
   EspadaSettings[:double_click_timeout] || Qt::Application::doubleClickInterval
 
-Settings.update_settings EspadaSettings
-Settings.print_settings
+Settings.update EspadaSettings
+Settings.print
 
 ###### Tag: main_layout_container
 
