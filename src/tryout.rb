@@ -31,10 +31,10 @@ espada = {}
 class EApplication
   include Singleton
 
-  attr_accessor :app
-                :settings
-                :container
-                :main_win
+  attr_accessor :app,
+                :settings,
+                :container,
+                :main_win,
                 :text_buffers
 
   def initialize

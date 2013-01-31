@@ -21,14 +21,14 @@
 
 class TextEdit < Qt::TextEdit
   attr_accessor :double_click_interval,
-                :output
+                :last_click_moment
 
   signals :triple_clicked
 
   def initialize
     super
     @double_click_interval = $qApp.double_click_interval
-    @output = nil
+    @last_click_moment = Time.now
 
     connect(SIGNAL :triple_clicked) { @triple_button_action.call }
     puts "Hello World"
