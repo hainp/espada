@@ -28,7 +28,7 @@ require './gui/text_edit2'
 
 espada = {}
 
-class EApplication
+class MainApplication
   include Singleton
 
   attr_accessor :app,
@@ -95,5 +95,5 @@ class EApplication
 end
 
 
-app = EApplication.instance
-app.exec
+App = MainApplication.instance
+App.exec
