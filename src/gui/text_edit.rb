@@ -19,31 +19,27 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require './espada_utils'
+require 'awesome_print'
+
 class TextEdit < Qt::TextEdit
-  attr_accessor :middle_button_action,
-                :right_button_action,
-                :left_button_action,
-                :triple_button_action,
-                :in_double_click,
-                :in_triple_click,
-                :double_click_moment,
-                :double_click_interval,
-                :output
+  attr_accessor :pressed_mouse_button
 
   signals :triple_clicked
 
   def initialize
     super
-    @left_button_action    = nil
-    @middle_button_action  = lambda { default_middle_button_action }
-    @right_button_action   = lambda { default_right_button_action }
-    @triple_button_action  = lambda { default_triple_button_action }
-    @double_click_interval = $qApp.double_click_interval
-    @in_double_click       = false
-    @double_click_moment   = Time.now
-    @output = nil
+    reset_mouse
+    @allow_double_middle_click = false
+    setContextMenuPolicy Qt::NoContextMenu
+  end
 
-    connect(SIGNAL :triple_clicked) { @triple_button_action.call }
+  def reset_mouse
+    @pressed_mouse_button = {
+      :LeftButton   => false,
+      :RightButton  => false,
+      :MiddleButton => false,
+    }
   end
 
   ###### Helpers
@@ -67,7 +63,7 @@ class TextEdit < Qt::TextEdit
   end
 
   def selected_text
-    text_cursor.selected_text
+    text_cursor.selected_text || ""
   end
 
   def select_word_under_cursor(pos)
@@ -83,31 +79,79 @@ class TextEdit < Qt::TextEdit
     set_text_cursor cursor
   end
 
+  ###### Internal Helper
+
+  def n_pressed_mouse_buttons
+    res = 0
+    @pressed_mouse_button.each { |key, val| res += val ? 1 : 0 }
+    res
+  end
+
+  def only_middle_button_clicked?
+    n_pressed_mouse_buttons == 1 && @pressed_mouse_button[:MiddleButton]
+  end
+
   ###### Events
 
-  def default_middle_button_action
-    eval_text selected_text
+  def handle_double_button(event)
+    mouse_button = mouse_button_to_sym event
+    puts "[double-button] #{mouse_button}"
+    ap @pressed_mouse_button
+
+    cut if @pressed_mouse_button[:LeftButton] \
+           && @pressed_mouse_button[:MiddleButton]
+    paste if @pressed_mouse_button[:LeftButton] \
+             && @pressed_mouse_button[:RightButton]
+
+    # Don't let default X's middle-click behaviour interferes
+    return false if mouse_button == :MiddleButton
+    true
   end
 
-  def default_right_button_action
-    puts ">> Right button"
+  def mouseDoubleClickEvent(event)
+    @pressed_mouse_button[mouse_button_to_sym event] = true
+    process_next = true
+    process_next = handle_double_button(event)
+    # puts "[double-click] process_next? #{process_next}"
+    # ap @pressed_mouse_button
+
+    # Special case: double middle-click only
+    if mouse_button_to_sym(event) == :MiddleButton \
+       && n_pressed_mouse_buttons == 1
+      @allow_double_middle_click = true
+    end
+
+    super event if process_next
   end
 
+  # This is where all default handlers are activated
   def mouseReleaseEvent(event)
-    @left_button_action.call if @left_button_action \
-                                 && event.button == Mouse[:LeftButton]
+    @pressed_mouse_button[mouse_button_to_sym event] = false
 
-    @middle_button_action.call if @middle_button_action \
-                                  && event.button == Mouse[:MiddleButton]
+    return if mouse_button_to_sym(event) == :MiddleButton \
+              && (not @allow_double_middle_click)
 
-    @right_button_action.call if @right_button_action \
-                                 && event.button == Mouse[:RightButton]
+    @allow_double_middle_click = false
+    super event
+  end
 
-    super event unless (@left_button_action \
-                        && event.button == Mouse[:LeftButton]) \
-                       || (@middle_button_action \
-                           && event.button == Mouse[:MiddleButton]) \
-                       || (@right_button_action \
-                           && event.button == Mouse[:RightButton])
+  def mousePressEvent(event)
+    @pressed_mouse_button[mouse_button_to_sym event] = true
+    # puts "\n>> [event] mouse_press"
+    # ap @pressed_mouse_button
+
+    process_next = true
+
+    if n_pressed_mouse_buttons == 1
+      # Eval text with middle button is clicked
+      if @pressed_mouse_button[:MiddleButton]
+        append(eval_text selected_text)
+        return
+      end
+    else
+      process_next = handle_double_button(event)
+    end
+
+    super event if process_next
   end
 end

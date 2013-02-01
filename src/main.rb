@@ -20,76 +20,79 @@
 #
 
 require 'rubygems'
+require 'singleton'
 require './espada_settings'
 require './default_settings'
 require './espada_utils'
 
 espada = {}
 
-###### Tag: main_application
+class MainApplication
+  include Singleton
 
-app = Application.new ARGV
-espada[:app] = app
+  attr_accessor :app,
+                :settings,
+                :container,
+                :main_win,
+                :text_buffers
 
-###### Tag: Initialize
+  def initialize
+    @app = Qt::Application.new ARGV
+    @text_buffers = []
+    update_settings
+    create_container
+    create_main_window
+    create_main_text_buffer
+    set_layout
+  end
 
-EspadaSettings[:double_click_timeout] =
-  EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
+  def set_layout
+    @main_win.set_central_widget @container
+  end
 
-Settings.update EspadaSettings
-Settings.print
-puts $qApp.doubleClickInterval
+  def create_main_text_buffer
+    text_edit = TextEdit.new
+    text_edit.set_plain_text read_file(Settings.default_contents_path)
+    text_edit.set_line_wrap_column_or_width Settings.wrap_column
+    text_edit.set_line_wrap_mode Settings.wrap_mode
 
-###### Tag: main_layout_container
+    @container.add text_edit
+    @text_buffers << text_edit
+  end
 
-# The container carrying a layout of the main window
+  def create_main_window
+    win = MainWindow.new
+    win.set_window_title "Espada Text Playground"
+    win.set_font Settings.normal_text_font
+    win.resize Settings.size[:width], Settings.size[:height]
+    win.move Settings.position[:x], Settings.position[:y]
+    win.show
 
-main_container = MainContainer.new
-espada[:main_container] = main_container
+    @main_win = win
+  end
 
-###### Tag: main_window
+  def create_container
+    # The container carries a layout of the main window
+    @container = MainContainer.new
+  end
 
-win = MainWindow.new
-win.set_window_title "Espada Text Playground"
-win.set_font Settings.normal_text_font
-win.resize Settings.size[:width], Settings.size[:height]
-win.move Settings.position[:x], Settings.position[:y]
-espada[:win] = win
+  def exec
+    @app.exec
+  end
 
-###### Tag: main_text_buffer
+  def update_settings
+    # Get runtime settings
+    EspadaSettings[:double_click_timeout] =
+      EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
 
-text_edit = TextEdit.new
-text_edit.set_plain_text read_file(Settings.default_contents_path)
-text_edit.set_line_wrap_column_or_width Settings.wrap_column
-text_edit.set_line_wrap_mode Settings.wrap_mode
-main_container.add text_edit
-espada[:text_edit] = text_edit
+    Settings.update EspadaSettings
+    @settings = Settings
 
-###### Tag: main_output_buffer
-
-output_buffer = TextEdit.new
-
-main_container.add output_buffer
-
-text_edit.middle_button_action = Proc.new do
-  res = eval_text text_edit.selected_text
-  output_buffer.append res if res && res != ""
+    puts "=> Settings: "
+    Settings.print
+  end
 end
 
-output_buffer.middle_button_action = Proc.new do
-  res = eval_text output_buffer.selected_text
-  output_buffer.append res if res && res != ""
-end
-espada[:output_buffer] = output_buffer
 
-###### Tag: main_window_layout
-
-win.set_central_widget main_container
-
-###### Tag: main_program
-
-puts "\n>>>> Espada Text"
-# PP.pp espada
-ap espada
-win.show
-app.exec
+App = MainApplication.instance
+App.exec
