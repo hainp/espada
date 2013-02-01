@@ -97,6 +97,11 @@ class TextEdit < Qt::TextEdit
     puts "[double-button] #{mouse_button}"
     ap @pressed_mouse_button
 
+    cut if @pressed_mouse_button[:LeftButton] &&
+           @pressed_mouse_button[:MiddleButton]
+    paste if @pressed_mouse_button[:LeftButton] &&
+             @pressed_mouse_button[:RightButton]
+
     return false if mouse_button == :MiddleButton
     true
   end
@@ -105,7 +110,7 @@ class TextEdit < Qt::TextEdit
     @pressed_mouse_button[mouse_button_to_sym event] = true
     process_next = true
     process_next = handle_double_button(event) if selected_text != ""
-    puts "[double-click] process_next? #{process_next}"
+    # puts "[double-click] process_next? #{process_next}"
     super event if process_next
   end
 
@@ -116,7 +121,7 @@ class TextEdit < Qt::TextEdit
 
   def mousePressEvent(event)
     @pressed_mouse_button[mouse_button_to_sym event] = true
-    # puts ">> [event] mouse_press"
+    # puts "\n>> [event] mouse_press"
     # ap @pressed_mouse_button
 
     process_next = true
@@ -124,12 +129,11 @@ class TextEdit < Qt::TextEdit
     if n_pressed_mouse_buttons == 1
       # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
-        puts selected_text
         append(eval_text selected_text)
         return
       end
     else
-      process_next = handle_double_button(event) if selected_text != ""
+      process_next = handle_double_button(event)
     end
 
     super event if process_next
