@@ -102,6 +102,7 @@ class TextEdit < Qt::TextEdit
     paste if @pressed_mouse_button[:LeftButton] &&
              @pressed_mouse_button[:RightButton]
 
+    # Don't let default X's middle-click behaviour interferes
     return false if mouse_button == :MiddleButton
     true
   end
@@ -111,6 +112,7 @@ class TextEdit < Qt::TextEdit
     process_next = true
     process_next = handle_double_button(event)
     # puts "[double-click] process_next? #{process_next}"
+    # ap @pressed_mouse_button
     super event if process_next
   end
 
