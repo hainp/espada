@@ -22,7 +22,7 @@
 require './espada_gui'
 
 EspadaSettings = {
-  :normal_text_font => Font.new("Droid Sans", 12, Font::Normal),
+  :normal_text_font => Font.new("Monaco", 10, Font::Normal),
 
   :size => {
     :width => 800,

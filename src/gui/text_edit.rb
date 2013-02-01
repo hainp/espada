@@ -95,8 +95,8 @@ class TextEdit < Qt::TextEdit
 
   def handle_double_button(event)
     mouse_button = mouse_button_to_sym event
-    puts "[double-button] #{mouse_button}"
-    ap @pressed_mouse_button
+    # puts "[double-button] #{mouse_button}"
+    # ap @pressed_mouse_button
 
     cut if @pressed_mouse_button[:LeftButton] \
            && @pressed_mouse_button[:MiddleButton]
