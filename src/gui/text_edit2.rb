@@ -92,33 +92,46 @@ class TextEdit < Qt::TextEdit
 
   ###### Events
 
+  def handle_double_button(event)
+    mouse_button = mouse_button_to_sym event
+    puts "[double-button] #{mouse_button}"
+    ap @pressed_mouse_button
+
+    return false if mouse_button == :MiddleButton
+    true
+  end
+
   def mouseDoubleClickEvent(event)
-    super event
+    @pressed_mouse_button[mouse_button_to_sym event] = true
+    process_next = true
+    process_next = handle_double_button(event) if selected_text != ""
+    puts "[double-click] process_next? #{process_next}"
+    super event if process_next
   end
 
   def mouseReleaseEvent(event)
-    only_middle = only_middle_button_clicked?
     @pressed_mouse_button[mouse_button_to_sym event] = false
-    super event if not only_middle
+    super event if mouse_button_to_sym(event) != :MiddleButton
   end
 
   def mousePressEvent(event)
-    puts ">> [event] mouse_press"
     @pressed_mouse_button[mouse_button_to_sym event] = true
-    ap @pressed_mouse_button
+    # puts ">> [event] mouse_press"
+    # ap @pressed_mouse_button
 
-    puts ">> Number of pressed buttons: #{n_pressed_mouse_buttons}"
+    process_next = true
 
-    case n_pressed_mouse_buttons
-    when 1
+    if n_pressed_mouse_buttons == 1
       # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
         puts selected_text
         append(eval_text selected_text)
         return
       end
+    else
+      process_next = handle_double_button(event) if selected_text != ""
     end
 
-    super event
+    super event if process_next
   end
 end
