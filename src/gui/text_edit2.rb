@@ -30,6 +30,7 @@ class TextEdit < Qt::TextEdit
   def initialize
     super
     reset_mouse
+    @allow_double_middle_click = false
     setContextMenuPolicy Qt::NoContextMenu
   end
 
@@ -113,12 +114,25 @@ class TextEdit < Qt::TextEdit
     process_next = handle_double_button(event)
     # puts "[double-click] process_next? #{process_next}"
     # ap @pressed_mouse_button
+
+    # Special case: double middle-click only
+    if mouse_button_to_sym(event) == :MiddleButton \
+       && n_pressed_mouse_buttons == 1
+      @allow_double_middle_click = true
+    end
+
     super event if process_next
   end
 
+  # This is where all default handlers are activated
   def mouseReleaseEvent(event)
     @pressed_mouse_button[mouse_button_to_sym event] = false
-    super event if mouse_button_to_sym(event) != :MiddleButton
+
+    return if mouse_button_to_sym(event) == :MiddleButton \
+              && (not @allow_double_middle_click)
+
+    @allow_double_middle_click = false
+    super event
   end
 
   def mousePressEvent(event)
