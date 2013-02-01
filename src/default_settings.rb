@@ -38,6 +38,4 @@ EspadaSettings = {
 
   :wrap_mode => TextEdit::WidgetWidth,
   :wrap_column => 78,
-
-  :double_click_timeout => 500,
 }
