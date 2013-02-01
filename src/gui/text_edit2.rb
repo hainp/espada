@@ -20,6 +20,7 @@
 #
 
 require './espada_utils'
+require 'awesome_print'
 
 class TextEdit < Qt::TextEdit
   attr_accessor :pressed_mouse_button
@@ -28,6 +29,16 @@ class TextEdit < Qt::TextEdit
 
   def initialize
     super
+    reset_mouse
+    setContextMenuPolicy Qt::NoContextMenu
+  end
+
+  def reset_mouse
+    @pressed_mouse_button = {
+      :LeftButton   => false,
+      :RightButton  => false,
+      :MiddleButton => false,
+    }
   end
 
   ###### Helpers
@@ -51,7 +62,7 @@ class TextEdit < Qt::TextEdit
   end
 
   def selected_text
-    text_cursor.selected_text
+    text_cursor.selected_text || ""
   end
 
   def select_word_under_cursor(pos)
@@ -67,6 +78,18 @@ class TextEdit < Qt::TextEdit
     set_text_cursor cursor
   end
 
+  ###### Internal Helper
+
+  def n_pressed_mouse_buttons
+    res = 0
+    @pressed_mouse_button.each { |key, val| res += val ? 1 : 0 }
+    res
+  end
+
+  def only_middle_button_clicked?
+    n_pressed_mouse_buttons == 1 && @pressed_mouse_button[:MiddleButton]
+  end
+
   ###### Events
 
   def mouseDoubleClickEvent(event)
@@ -74,7 +97,28 @@ class TextEdit < Qt::TextEdit
   end
 
   def mouseReleaseEvent(event)
-    puts event_button_to_sym event
+    only_middle = only_middle_button_clicked?
+    @pressed_mouse_button[mouse_button_to_sym event] = false
+    super event if not only_middle
+  end
+
+  def mousePressEvent(event)
+    puts ">> [event] mouse_press"
+    @pressed_mouse_button[mouse_button_to_sym event] = true
+    ap @pressed_mouse_button
+
+    puts ">> Number of pressed buttons: #{n_pressed_mouse_buttons}"
+
+    case n_pressed_mouse_buttons
+    when 1
+      # Eval text with middle button is clicked
+      if @pressed_mouse_button[:MiddleButton]
+        puts selected_text
+        append(eval_text selected_text)
+        return
+      end
+    end
+
     super event
   end
 end

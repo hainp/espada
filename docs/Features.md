@@ -64,6 +64,8 @@ If the file is opened in a buffer, switch to that buffer, if it's not, open the 
     ls ~                          # ls $HOME and display the output
     ```
 
+* Double middle click: like middle click in normal X environment: pasting selected text
+
 * Right click context menu default:
   - Cut, copy, paste
   - Jump to file (in selection)

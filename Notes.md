@@ -132,3 +132,7 @@ Click
 Double
 Click
 Click
+
+##### Mouse note
+
+Event should be handled in with `press`, not `release`.
