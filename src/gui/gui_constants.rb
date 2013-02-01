@@ -19,8 +19,10 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require 'Qt4'
+
 Mouse = {
   :LeftButton    => Qt::LeftButton,
   :MiddleButton  => Qt::MiddleButton,
-  :RightButton   => Qt::RightButton
+  :RightButton   => Qt::RightButton,
 }

@@ -88,6 +88,8 @@ If the file is opened in a buffer, switch to that buffer, if it's not, open the 
 
 * Left click -> middle click (hold left button, then press middle button): cut.
 
+* Re-mapping click events is not possible with configuration.  You need to modify Espada source code in order to do that.
+
 ## Literate Progamming Mode
 
 TODO: Explain

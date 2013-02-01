@@ -22,18 +22,12 @@
 require './espada_utils'
 
 class TextEdit < Qt::TextEdit
-  attr_accessor :double_click_interval,
-                :last_click_moment
+  attr_accessor :pressed_mouse_button
 
   signals :triple_clicked
 
   def initialize
     super
-    @double_click_interval = $qApp.double_click_interval
-    @last_click_moment = Time.now.to_ms
-
-    connect(SIGNAL :triple_clicked) { @triple_button_action.call }
-    puts "Hello World"
   end
 
   ###### Helpers
@@ -73,31 +67,14 @@ class TextEdit < Qt::TextEdit
     set_text_cursor cursor
   end
 
-  def event_button_to_sym(event)
-    case event.button
-    when Mouse[:LeftButton]
-      :LeftButton
-    when Mouse[:RightButton]
-      :RightButton
-    when Mouse[:MiddleButton]
-      :MiddleButton
-    end
-  end
-
   ###### Events
+
+  def mouseDoubleClickEvent(event)
+    super event
+  end
 
   def mouseReleaseEvent(event)
     puts event_button_to_sym event
-
-    click_moment = Time.now.to_ms
-
-    # Single click
-    if click_moment - @last_click_moment > @double_click_interval
-      puts ">> Single click"
-    end
-
-    @last_click_moment = click_moment
-
     super event
   end
 end

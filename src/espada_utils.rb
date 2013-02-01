@@ -19,6 +19,8 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require './gui/gui_constants'
+
 class Time
   def to_ms
     (self.to_f * 1000.0).to_i
@@ -79,4 +81,15 @@ end
 
 def time_diff(start, finish)
   (finish - start) * 1000
+end
+
+def event_button_to_sym(event)
+  case event.button
+  when Mouse[:LeftButton]
+    :LeftButton
+  when Mouse[:RightButton]
+    :RightButton
+  when Mouse[:MiddleButton]
+    :MiddleButton
+  end
 end
