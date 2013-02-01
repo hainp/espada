@@ -109,7 +109,7 @@ class TextEdit < Qt::TextEdit
   def mouseDoubleClickEvent(event)
     @pressed_mouse_button[mouse_button_to_sym event] = true
     process_next = true
-    process_next = handle_double_button(event) if selected_text != ""
+    process_next = handle_double_button(event)
     # puts "[double-click] process_next? #{process_next}"
     super event if process_next
   end
