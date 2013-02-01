@@ -98,10 +98,10 @@ class TextEdit < Qt::TextEdit
     puts "[double-button] #{mouse_button}"
     ap @pressed_mouse_button
 
-    cut if @pressed_mouse_button[:LeftButton] &&
-           @pressed_mouse_button[:MiddleButton]
-    paste if @pressed_mouse_button[:LeftButton] &&
-             @pressed_mouse_button[:RightButton]
+    cut if @pressed_mouse_button[:LeftButton] \
+           && @pressed_mouse_button[:MiddleButton]
+    paste if @pressed_mouse_button[:LeftButton] \
+             && @pressed_mouse_button[:RightButton]
 
     # Don't let default X's middle-click behaviour interferes
     return false if mouse_button == :MiddleButton
