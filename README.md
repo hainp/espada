@@ -5,6 +5,7 @@ Espada the hackable text editor.
 ## Requirement
 
 * Ruby 1.8 (1.9 is not supported yet)
+* QtRuby
 * awesome_print
 
 ## License
