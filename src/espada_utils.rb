@@ -93,3 +93,8 @@ def mouse_event_to_sym(event)
     :MiddleButton
   end
 end
+
+def current_buffer
+  App.current_buffer if App && App.current_buffer
+  nil
+end
