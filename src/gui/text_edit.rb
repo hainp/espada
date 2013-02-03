@@ -23,13 +23,15 @@ require './espada_utils'
 require 'awesome_print'
 
 class TextEdit < Qt::TextEdit
-  attr_accessor :pressed_mouse_button
+  attr_accessor :pressed_mouse_button,
+                :path
 
   signals :triple_clicked
 
   def initialize
     super
     reset_mouse
+    path = "/dev/null"
 
     @allow_double_middle_click = false
     setContextMenuPolicy Qt::NoContextMenu
@@ -44,7 +46,11 @@ class TextEdit < Qt::TextEdit
   end
 
   def app
-    App || $qApp || nil
+    App || nil
+  end
+
+  def set_path(path)
+    @path = path || "/dev/null"
   end
 
   ###### Helpers
@@ -100,7 +106,7 @@ class TextEdit < Qt::TextEdit
 
   def focusInEvent(event)
     app.current_buffer_hash = hash
-    puts ">> Current buffer: #{hash}"
+    puts ">> Current buffer: #{app.current_buffer}"
   end
 
   def handle_double_button(event)
@@ -153,11 +159,14 @@ class TextEdit < Qt::TextEdit
     process_next = true
 
     if n_pressed_mouse_buttons == 1
+
       # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
-        append(eval_text selected_text)
+        res = eval_text(selected_text) || ""
+        append res.to_s if res != ""
         return
       end
+      
     else
       process_next = handle_double_button(event)
     end

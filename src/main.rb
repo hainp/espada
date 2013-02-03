@@ -47,6 +47,14 @@ class MainApplication
     set_layout
   end
 
+  def to_s
+    "<MainApplication #{hash}>"
+  end
+
+  def self.to_s
+    self.instance.to_s
+  end
+
   def set_layout
     @main_win.set_central_widget @container
   end
@@ -56,6 +64,7 @@ class MainApplication
     text_edit.set_plain_text read_file(Settings.default_contents_path)
     text_edit.set_line_wrap_column_or_width Settings.wrap_column
     text_edit.set_line_wrap_mode Settings.wrap_mode
+    text_edit.set_path Settings.default_contents_path
 
     @container.add text_edit
     @current_buffer_hash = text_edit.hash
