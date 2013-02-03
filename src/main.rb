@@ -34,12 +34,12 @@ class MainApplication
                 :settings,
                 :container,
                 :main_win,
-                :text_buffers,
+                :buffers,
                 :current_buffer_hash
 
   def initialize
     @app = Qt::Application.new ARGV
-    @text_buffers = {}
+    @buffers = {}
     update_settings
     create_container
     create_main_window
@@ -59,7 +59,7 @@ class MainApplication
 
     @container.add text_edit
     @current_buffer_hash = text_edit.hash
-    @text_buffers[@current_buffer_hash] = text_edit
+    @buffers[@current_buffer_hash] = text_edit
   end
 
   def create_main_window
@@ -95,7 +95,7 @@ class MainApplication
   end
 
   def current_buffer
-    text_buffers[@current_buffer_hash]
+    buffers[@current_buffer_hash]
   end
 end
 
