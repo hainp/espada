@@ -35,10 +35,11 @@ class MainApplication
                 :container,
                 :main_win,
                 :text_buffers
+                :current_buffer_hash
 
   def initialize
     @app = Qt::Application.new ARGV
-    @text_buffers = []
+    @text_buffers = {}
     update_settings
     create_container
     create_main_window
@@ -57,7 +58,8 @@ class MainApplication
     text_edit.set_line_wrap_mode Settings.wrap_mode
 
     @container.add text_edit
-    @text_buffers << text_edit
+    @current_buffer_hash = text_edit.hash
+    @text_buffers[@current_buffer_hash] = text_edit
   end
 
   def create_main_window
@@ -91,8 +93,13 @@ class MainApplication
     puts "=> Settings: "
     Settings.print
   end
+
+  def current_buffer
+    text_buffers[@current_buffer_hash]
+  end
 end
 
 
 App = MainApplication.instance
+puts ">> Global App: #{App.current_buffer}"
 App.exec

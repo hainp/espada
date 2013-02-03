@@ -30,6 +30,7 @@ class TextEdit < Qt::TextEdit
   def initialize
     super
     reset_mouse
+
     @allow_double_middle_click = false
     setContextMenuPolicy Qt::NoContextMenu
   end
@@ -40,6 +41,10 @@ class TextEdit < Qt::TextEdit
       :RightButton  => false,
       :MiddleButton => false,
     }
+  end
+
+  def app
+    App || $qApp || nil
   end
 
   ###### Helpers
