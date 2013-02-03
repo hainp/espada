@@ -83,7 +83,7 @@ def time_diff(start, finish)
   (finish - start) * 1000
 end
 
-def mouse_button_to_sym(event)
+def mouse_event_to_sym(event)
   case event.button
   when Mouse[:LeftButton]
     :LeftButton

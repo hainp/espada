@@ -94,7 +94,7 @@ class TextEdit < Qt::TextEdit
   ###### Events
 
   def handle_double_button(event)
-    mouse_button = mouse_button_to_sym event
+    mouse_button = mouse_event_to_sym event
     # puts "[double-button] #{mouse_button}"
     # ap @pressed_mouse_button
 
@@ -109,14 +109,14 @@ class TextEdit < Qt::TextEdit
   end
 
   def mouseDoubleClickEvent(event)
-    @pressed_mouse_button[mouse_button_to_sym event] = true
+    @pressed_mouse_button[mouse_event_to_sym event] = true
     process_next = true
     process_next = handle_double_button(event)
     # puts "[double-click] process_next? #{process_next}"
     # ap @pressed_mouse_button
 
     # Special case: double middle-click only
-    if mouse_button_to_sym(event) == :MiddleButton \
+    if mouse_event_to_sym(event) == :MiddleButton \
        && n_pressed_mouse_buttons == 1
       @allow_double_middle_click = true
     end
@@ -126,9 +126,9 @@ class TextEdit < Qt::TextEdit
 
   # This is where all default handlers are activated
   def mouseReleaseEvent(event)
-    @pressed_mouse_button[mouse_button_to_sym event] = false
+    @pressed_mouse_button[mouse_event_to_sym event] = false
 
-    return if mouse_button_to_sym(event) == :MiddleButton \
+    return if mouse_event_to_sym(event) == :MiddleButton \
               && (not @allow_double_middle_click)
 
     @allow_double_middle_click = false
@@ -136,7 +136,7 @@ class TextEdit < Qt::TextEdit
   end
 
   def mousePressEvent(event)
-    @pressed_mouse_button[mouse_button_to_sym event] = true
+    @pressed_mouse_button[mouse_event_to_sym event] = true
     # puts "\n>> [event] mouse_press"
     # ap @pressed_mouse_button
 
