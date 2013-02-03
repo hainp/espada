@@ -34,7 +34,7 @@ class MainApplication
                 :settings,
                 :container,
                 :main_win,
-                :text_buffers
+                :text_buffers,
                 :current_buffer_hash
 
   def initialize
