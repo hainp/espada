@@ -110,4 +110,6 @@ end
 
 
 App = MainApplication.instance
+puts current_buffer
+puts current_buffer.path
 App.exec

@@ -50,7 +50,7 @@ class TextEdit < Qt::TextEdit
   end
 
   def set_path(path)
-    @path = path || "/dev/null"
+    @path = path
   end
 
   ###### Helpers
@@ -166,7 +166,7 @@ class TextEdit < Qt::TextEdit
         append res.to_s if res != ""
         return
       end
-      
+
     else
       process_next = handle_double_button(event)
     end

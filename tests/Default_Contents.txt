@@ -5,8 +5,10 @@ puts App.current_buffer
 puts App
 App.current_buffer.path
 
-save Default_Contents_2.txt
+save_as "Default_Contents_2.txt"
 save
+
+Hello World
 
 The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.
 
@@ -14,3 +16,6 @@ echo ../tests/Default_Contents.txt
 pwd
 
 /home/cmpitg/Desktop/Experiment/Espada/src/../tests/Default_Contents.txt
+
+1164
+1169

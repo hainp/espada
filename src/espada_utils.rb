@@ -64,10 +64,11 @@ end
 def eval_text(text)
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
   text.strip!
-  puts "|#{text}| #{text.last_char}"
+  # puts "|#{text}| #{text.last_char}"
 
+  # Exec if the first character is `!`
   return `#{text.but_first_char}` if text.first_char == "!"[0]
-  # Eval, if fails => execute external command
+
   begin
     eval text
   rescue Exception => e
@@ -76,7 +77,18 @@ def eval_text(text)
 end
 
 def save_file_with_text(path, text)
-  File.open(yourfile, 'w') { |file| file.write("your text") }
+  File.open(path, 'w') { |file| file.write text }
+end
+
+def save_as(path)
+  buffer = current_buffer
+  return nil if not buffer
+  path = path || current_buffer.path
+  save_file_with_text path, buffer.to_plain_text
+end
+
+def save
+  save_file_with_text current_buffer.path, current_buffer.to_plain_text
 end
 
 def time_diff(start, finish)
@@ -95,6 +107,5 @@ def mouse_event_to_sym(event)
 end
 
 def current_buffer
-  App.current_buffer if App && App.current_buffer
-  nil
+  if App && App.current_buffer then App.current_buffer else nil end
 end
