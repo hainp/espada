@@ -98,6 +98,11 @@ class TextEdit < Qt::TextEdit
 
   ###### Events
 
+  def focusInEvent(event)
+    app.current_buffer_hash = hash
+    puts ">> Current buffer: #{hash}"
+  end
+
   def handle_double_button(event)
     mouse_button = mouse_event_to_sym event
     # puts "[double-button] #{mouse_button}"

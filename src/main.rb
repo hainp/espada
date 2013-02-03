@@ -101,5 +101,4 @@ end
 
 
 App = MainApplication.instance
-puts ">> Global App: #{App.current_buffer}"
 App.exec
