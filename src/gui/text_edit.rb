@@ -74,8 +74,13 @@ class TextEdit < Qt::TextEdit
   end
 
   def selected_text
-    text_cursor.selected_text || ""
+    text_cursor.selection.toPlainText || ""
   end
+
+  # def selected_text_with_format
+  #   puts text_cursor.selection.toPlainText
+  #   text_cursor.selection.toPlainText || ""
+  # end
 
   def select_word_under_cursor(pos)
     cursor = cursor_for_position pos
@@ -162,8 +167,8 @@ class TextEdit < Qt::TextEdit
 
       # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
-        res = eval_text(selected_text) || ""
-        append res.to_s if res != ""
+        res = eval_text(selected_text)
+        # append res.to_s if res.strip != ""
         return
       end
 

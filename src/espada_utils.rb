@@ -64,14 +64,15 @@ end
 def eval_text(text)
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
   text.strip!
-  # puts "|#{text}| #{text.last_char}"
 
   # Exec if the first character is `!`
   return `#{text.but_first_char}` if text.first_char == "!"[0]
 
   begin
-    # The scope of `eval` is always global
-    eval text, TOPLEVEL_BINDING
+    text.split("\u07ed").each do |line|
+      # The scope of `eval` is always global
+      eval(line.chomp, TOPLEVEL_BINDING) if line
+    end
   rescue Exception => e
     `#{text}`
   end

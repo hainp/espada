@@ -8,6 +8,13 @@ App.current_buffer.path
 save_as "Default_Contents_2.txt"
 save
 
+a = 10
+puts a
+b = "Hello World"
+puts b
+
+Hello World
+
 Hello World
 
 The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.
@@ -16,6 +23,3 @@ echo ../tests/Default_Contents.txt
 pwd
 
 /home/cmpitg/Desktop/Experiment/Espada/src/../tests/Default_Contents.txt
-
-1164
-1169
