@@ -70,7 +70,8 @@ def eval_text(text)
   return `#{text.but_first_char}` if text.first_char == "!"[0]
 
   begin
-    eval text
+    # The scope of `eval` is always global
+    eval text, TOPLEVEL_BINDING
   rescue Exception => e
     `#{text}`
   end
