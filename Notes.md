@@ -136,3 +136,9 @@ Click
 ##### Mouse note
 
 Event should be handled in with `press`, not `release`.
+
+##### Resize widget in a box
+
+http://stackoverflow.com/questions/11000083/cant-resize-widgets-in-qvboxlayout
+
+`layout->setStretch(index, stretch)`
