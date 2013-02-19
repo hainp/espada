@@ -112,6 +112,7 @@ class TextEdit < Qt::TextEdit
   def focusInEvent(event)
     app.current_buffer_hash = hash
     puts ">> Current buffer: #{app.current_buffer}"
+    super
   end
 
   def handle_double_button(event)
