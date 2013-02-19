@@ -24,7 +24,8 @@ require 'awesome_print'
 
 class TextEdit < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
-                :path
+                :path,
+                :saved
 
   signals :triple_clicked
 
@@ -34,7 +35,14 @@ class TextEdit < Qt::TextEdit
     path = "/dev/null"
 
     @allow_double_middle_click = false
+    @saved = false
     setContextMenuPolicy Qt::NoContextMenu
+
+    # Detect changes
+    connect(SIGNAL :textChanged) {
+      @saved = false
+      puts ">> Text Changed!"
+    }
   end
 
   def reset_mouse
@@ -51,6 +59,15 @@ class TextEdit < Qt::TextEdit
 
   def set_path(path)
     @path = path
+  end
+
+  def save(*args)
+    save(*args)
+  end
+
+  def load(path)
+    set_plain_text read_file(path)
+    @saved = true
   end
 
   ###### Helpers
@@ -111,7 +128,6 @@ class TextEdit < Qt::TextEdit
 
   def focusInEvent(event)
     app.current_buffer_hash = hash
-    puts ">> Current buffer: #{app.current_buffer}"
     super
   end
 

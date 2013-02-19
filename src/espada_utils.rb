@@ -78,8 +78,13 @@ def eval_text(text)
   end
 end
 
+def message(text)
+  puts ">> #{text}"
+end
+
 def save_file_with_text(path, text)
   File.open(path, 'w') { |file| file.write text }
+  message "Saved to #{path}"
 end
 
 def save_as(path)
@@ -87,10 +92,17 @@ def save_as(path)
   return nil if not buffer
   path = path || current_buffer.path
   save_file_with_text path, buffer.to_plain_text
+  current_buffer.path = path
+  current_buffer.saved = true
 end
 
-def save
-  save_file_with_text current_buffer.path, current_buffer.to_plain_text
+def save(*args)
+  if args.length == 0
+    save_file_with_text current_buffer.path, current_buffer.to_plain_text
+  else
+    save_file_with_text args[0], current_buffer.to_plain_text
+  end
+  current_buffer.saved = true
 end
 
 def time_diff(start, finish)

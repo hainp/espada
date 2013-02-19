@@ -61,9 +61,9 @@ class MainApplication
 
   def create_main_text_buffer
     text_edit = TextEdit.new
-    text_edit.set_plain_text read_file(Settings.default_contents_path)
     text_edit.set_line_wrap_column_or_width Settings.wrap_column
     text_edit.set_line_wrap_mode Settings.wrap_mode
+    text_edit.load Settings.default_contents_path
     text_edit.set_path Settings.default_contents_path
 
     @container.add text_edit

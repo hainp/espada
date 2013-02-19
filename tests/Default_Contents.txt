@@ -1,9 +1,9 @@
 current_path
 
 puts 'hello world!'
-puts App.current_buffer
+puts App.current_buffer.saved
 puts App
-App.current_buffer.path
+puts App.current_buffer.path
 
 save_as "Default_Contents_2.txt"
 save
