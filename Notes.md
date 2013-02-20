@@ -1,9 +1,7 @@
 ######
 Tasks
 
-* Add file path to each buffer
-
-* Save file
+* Use JSON for settings
 
 * File jumping with forms:
 
