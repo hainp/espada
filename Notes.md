@@ -1,8 +1,6 @@
 ######
 Tasks
 
-* Use JSON for settings
-
 * File jumping with forms:
 
     /home/cmpitg/tmp/hello.c
