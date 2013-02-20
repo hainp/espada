@@ -25,7 +25,6 @@ require './espada_settings'
 require './default_settings'
 require './espada_utils'
 
-espada = {}
 
 class MainApplication
   include Singleton
