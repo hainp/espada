@@ -25,7 +25,8 @@ require 'awesome_print'
 class TextEdit < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
                 :path,
-                :saved
+                :saved,
+                :layout
 
   signals :triple_clicked
 
@@ -43,6 +44,8 @@ class TextEdit < Qt::TextEdit
       @saved = false
       puts ">> Text Changed!"
     }
+    
+    # Other components
   end
 
   def reset_mouse

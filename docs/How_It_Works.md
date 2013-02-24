@@ -10,3 +10,24 @@
     <img src="../concepts/text_buffer.png" /><br />
     Text Buffer mockup
 </div>
+
+
+    # TextEdit
+
+    VBoxLayout
+    |
+    |--HBoxLayout
+    |  |
+    |  |--Label->Entry [Path]
+    |  |
+    |  `--Label->Entry [Temporary Command]
+    |
+    |--HBoxLayout
+    |  |
+    |  |--(?) [Line Number]
+    |  |
+    |  `--TextBuffer [Main Content]
+    |  
+    |--TextBuffer [Directory Buffer]
+    |
+    `--StatusBar
