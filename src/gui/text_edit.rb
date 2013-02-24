@@ -230,6 +230,8 @@ class TextEdit < Widget
     @path_entry = EntryLabel.new
     @cmd_entry = EntryLabel.new
 
+    @cmd_entry.set_text "Inline commands..."
+
     @path_bar.add_widget @path_entry
     @path_bar.add_widget @cmd_entry
   end
@@ -263,6 +265,7 @@ class TextEdit < Widget
 
   def set_path(path)
     @main_buffer.set_path path
+    @path_entry.set_text path
   end
 
   def path
