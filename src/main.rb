@@ -102,7 +102,7 @@ class MainApplication
   end
 
   def current_buffer
-    buffers[@current_buffer_hash]
+    @buffers[@current_buffer_hash]
   end
 end
 
