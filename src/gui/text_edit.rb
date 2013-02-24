@@ -211,7 +211,7 @@ class TextEdit < Widget
     @path_bar = HBoxLayout.new
     @text_buffer_bar = HBoxLayout.new
     @main_buffer = TextBufferWidget.new
-    @directory_buffer = TextBuffer.new
+    @directory_buffer = TextBufferWidget.new
     @status_bar = StatusBar.new
 
     self.set_layout @layout
@@ -233,5 +233,5 @@ class TextEdit < Widget
   ## Events forward to TextBufferWidget
   ##
 
-  
+
 end
