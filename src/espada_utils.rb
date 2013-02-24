@@ -49,7 +49,6 @@ class String
   end
 end
 
-
 def expand_path(path)
   File.expand_path path
 end

@@ -56,6 +56,7 @@ class TextBufferWidget < Qt::TextEdit
   end
 
   def set_path(path)
+    puts path
     @path = path
   end
 
@@ -264,6 +265,7 @@ class TextEdit < Widget
   end
 
   def set_path(path)
+    path = expand_path path
     @main_buffer.set_path path
     @path_entry.set_text path
   end
