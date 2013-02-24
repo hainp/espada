@@ -4,7 +4,10 @@
 
 * Current buffer is determined by `App.current_buffer`, which in turns, depending on `App.current_buffer_hash`.  Whenever a text buffer receives focus, `App.current_buffer_hash` changes appropriately.
 
-* Working directory must always be `./src/`.  **Subject to change.**
+* Running/testing notes:
+
+  - Working directory must always be `./src/`.  **Subject to change.**
+  - The unique`Qt::Application` instance must be named `App`.
 
 * Each text buffer contains server parts:
 
