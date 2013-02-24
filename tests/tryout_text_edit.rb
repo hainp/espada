@@ -26,12 +26,9 @@ App = Qt::Application.new ARGV
 main_window = MainWindow.new
 main_window.resize 800, 600
 
-central_widget = Widget.new
+text_edit = TextBufferWidget.new
 
-text_edit = TextEdit.new
-central_widget.set_layout text_edit.layout
-
-main_window.set_central_widget central_widget
+main_window.set_central_widget text_edit
 
 main_window.show
 App.exec
