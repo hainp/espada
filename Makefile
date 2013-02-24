@@ -1,3 +1,8 @@
+.PHONY: run tryout tryout_text_edit
+
+run:
+	./espada.sh
+
 tryout:
 	cd src/
 	ruby ../tests/tryout.rb
