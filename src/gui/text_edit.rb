@@ -20,13 +20,18 @@
 #
 
 require './espada_utils'
+require './gui/status_bar'
 require 'awesome_print'
 
 class TextEdit < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
                 :path,
                 :saved,
-                :layout
+                :layout,
+                :path_bar,
+                :text_buffer_bar,
+                :directory_buffer,
+                :status_bar
 
   signals :triple_clicked
 
@@ -46,6 +51,10 @@ class TextEdit < Qt::TextEdit
     }
     
     # Other components
+    @layout = VBoxLayout.new
+    @path_bar = HBoxLayout.new
+    @text_buffer_bar = HBoxLayout.new
+    @status_bar = StatusBar.new
   end
 
   def reset_mouse
