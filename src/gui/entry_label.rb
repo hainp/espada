@@ -22,5 +22,5 @@
 # EntryLabel is a label which could transform to a one-line-edit and
 # vice versa
 
-class Entry < Label
+class EntryLabel < Label
 end
