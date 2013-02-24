@@ -1,6 +1,8 @@
 ######
 Tasks
 
+* Expand `TextEdit`'s path to full path
+
 * Readjust fonts for `path_entry` & `cmd_entry`
 
 * `method_missing` for `TextEdit` -> pass to its `@main_buffer`
