@@ -21,7 +21,7 @@
 
 require '../src/espada_gui'
 
-app = Qt::Application.new ARGV
+App = Qt::Application.new ARGV
 
 main_window = MainWindow.new
 main_window.resize 800, 600
@@ -34,4 +34,4 @@ central_widget.set_layout text_edit.layout
 main_window.set_central_widget central_widget
 
 main_window.show
-app.exec
+App.exec

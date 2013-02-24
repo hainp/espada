@@ -23,6 +23,9 @@ require './espada_utils'
 require './gui/status_bar'
 require 'awesome_print'
 
+class TextBuffer < Qt::TextEdit
+end
+
 class TextEdit < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
                 :path,
@@ -54,7 +57,19 @@ class TextEdit < Qt::TextEdit
     @layout = VBoxLayout.new
     @path_bar = HBoxLayout.new
     @text_buffer_bar = HBoxLayout.new
+    @directory_buffer = TextBuffer.new
     @status_bar = StatusBar.new
+    
+    @layout.add_layout @path_bar
+    @layout.add_layout @text_buffer_bar
+    @layout.add_widget @directory_buffer
+    @layout.add_widget @status_bar
+    
+    @text_buffer_bar.add_widget self
+    @directory_buffer.hide
+
+    @status_bar.show
+    @status_bar.show_message "Ready", 2000
   end
 
   def reset_mouse
@@ -139,7 +154,7 @@ class TextEdit < Qt::TextEdit
   ###### Events
 
   def focusInEvent(event)
-    app.current_buffer_hash = hash
+    app.current_buffer_hash = hash if app.respond_to?(:current_buffer_hash)
     super
   end
 
