@@ -36,6 +36,6 @@ EspadaSettings = {
 
   :default_contents_path => "../tests/Default_Contents.txt",
 
-  :wrap_mode => TextEdit::WidgetWidth,
+  :wrap_mode => WrapMode[:WidgetWidth],
   :wrap_column => 78,
 }
