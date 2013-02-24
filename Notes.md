@@ -1,6 +1,8 @@
 ######
 Tasks
 
+* `method_missing` for `TextEdit` -> pass to its `@main_buffer`.
+
 * File jumping with forms:
 
     /home/cmpitg/tmp/hello.c

@@ -65,6 +65,7 @@ class TextBufferWidget < Qt::TextEdit
 
   def load(path)
     set_plain_text read_file(path)
+    set_path path
     @saved = true
   end
 
@@ -233,5 +234,23 @@ class TextEdit < Widget
   ## Events forward to TextBufferWidget
   ##
 
+  def set_line_wrap_column_or_width(wrap_mode)
+    @main_buffer.set_line_wrap_column_or_width wrap_mode
+  end
 
+  def set_line_wrap_mode(wrap_mode)
+    @main_buffer.set_line_wrap_mode wrap_mode
+  end
+
+  def load(path)
+    @main_buffer.load path
+  end
+
+  def set_path(path)
+    @main_buffer.set_path path
+  end
+
+  def path
+    @main_buffer.path
+  end
 end
