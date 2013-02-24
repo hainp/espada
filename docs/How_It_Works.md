@@ -4,6 +4,8 @@
 
 * Current buffer is determined by `App.current_buffer`, which in turns, depending on `App.current_buffer_hash`.  Whenever a text buffer receives focus, `App.current_buffer_hash` changes appropriately.
 
+* Working directory must always be `./src/`.  **Subject to change.**
+
 * Each text buffer contains server parts:
 
 <div style="align: center; text-align: center">
