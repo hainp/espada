@@ -1,7 +1,9 @@
 ######
 Tasks
 
-* `method_missing` for `TextEdit` -> pass to its `@main_buffer`.
+* Readjust fonts for `path_entry` & `cmd_entry`
+
+* `method_missing` for `TextEdit` -> pass to its `@main_buffer`
 
 * File jumping with forms:
 
