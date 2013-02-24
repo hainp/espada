@@ -44,3 +44,7 @@ Each `TextEdit` widget contains:
     `--StatusBar @status_bar
 
 The `TextEdit` widget is aware of the global app instance via its property `app`.
+
+## `EntryLabel` widget
+
+`EntryLabel` widget is a `Label` which could be transformed into an `Entry`.
