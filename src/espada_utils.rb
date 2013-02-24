@@ -50,6 +50,10 @@ class String
 end
 
 
+def expand_path(path)
+  File.expand_path path
+end
+
 # Read file without failing, no exception is thrown
 
 def read_file(path)
