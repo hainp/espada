@@ -199,7 +199,7 @@ end
 class TextEdit < Widget
   attr_accessor \
     :layout,
-    :path_bar,
+    :path_bar, :path_entry, :cmd_entry,
     :text_buffer_bar, :main_buffer,
     :directory_buffer,
     :status_bar
