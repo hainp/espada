@@ -222,6 +222,8 @@ class TextEdit < Widget
 
     arrange_layout
 
+    set_font Settings.normal_text_font if defined? Settings
+
     @status_bar.show
     @status_bar.show_message "Ready", 2000
   end
@@ -272,5 +274,9 @@ class TextEdit < Widget
 
   def path
     @main_buffer.path
+  end
+
+  def set_font(font)
+    @main_buffer.set_font font
   end
 end

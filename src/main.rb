@@ -72,7 +72,6 @@ class MainApplication
   def create_main_window
     win = MainWindow.new
     win.set_window_title "Espada Text Playground"
-    win.set_font Settings.normal_text_font
     win.resize Settings.size[:width], Settings.size[:height]
     win.move Settings.position[:x], Settings.position[:y]
     win.show
