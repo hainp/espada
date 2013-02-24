@@ -23,9 +23,6 @@ require './espada_utils'
 require './gui/status_bar'
 require 'awesome_print'
 
-class TextBuffer < Qt::TextEdit
-end
-
 class TextBufferWidget < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
                 :path,
@@ -231,4 +228,10 @@ class TextEdit < Widget
     @status_bar.show
     @status_bar.show_message "Ready", 2000
   end
+
+  ##
+  ## Events forward to TextBufferWidget
+  ##
+
+  
 end
