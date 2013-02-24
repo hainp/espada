@@ -9,13 +9,15 @@ Tasks
     /home/cmpitg/tmp/hello.c:30
     /home/cmpitg/tmp/hello.c:/void helloWorld(/
 
-* Add buffer handler
+* Add buffer handler icon
 
 * Easy way to add more menu
 
+* Add menu
+
 * Re-implement context menu of right click event
 
-* Implement drag and drop for buffer handler
+* Implement drag and drop for buffer handler icon
 
 ######
 
