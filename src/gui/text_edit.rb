@@ -217,6 +217,13 @@ class TextEdit < Widget
 
     self.set_layout @layout
 
+    arrange_layout
+
+    @status_bar.show
+    @status_bar.show_message "Ready", 2000
+  end
+
+  def arrange_layout
     @layout.add_layout @path_bar
     @layout.add_layout @text_buffer_bar
     @layout.add_widget @directory_buffer
@@ -225,9 +232,6 @@ class TextEdit < Widget
     @text_buffer_bar.add_widget @main_buffer
 
     @directory_buffer.hide
-
-    @status_bar.show
-    @status_bar.show_message "Ready", 2000
   end
 
   ##
