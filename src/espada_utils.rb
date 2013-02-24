@@ -77,6 +77,7 @@ def eval_text(text)
       eval(line.chomp, TOPLEVEL_BINDING) if line
     end
   rescue Exception => e
+    puts e
     `#{text}`
   end
 end

@@ -272,11 +272,32 @@ class TextEdit < Widget
     @path_entry.set_text path
   end
 
+  # def method_missing(method, *args)
+  #   @main_buffer.send(method.to_s, args)
+  # end
+
   def path
     @main_buffer.path
   end
 
+  def path=(value)
+    value = expand_path value
+    @main_buffer.path= value
+  end
+
   def set_font(font)
     @main_buffer.set_font font
+  end
+
+  def to_plain_text
+    @main_buffer.to_plain_text
+  end
+
+  def saved
+    @main_buffer.saved
+  end
+
+  def saved=(value)
+    @main_buffer.saved= value
   end
 end
