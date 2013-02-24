@@ -227,6 +227,11 @@ class TextEdit < Widget
 
   def create_path_bar
     @path_bar = HBoxLayout.new
+    @path_entry = EntryLabel.new
+    @cmd_entry = EntryLabel.new
+
+    @path_bar.add_widget @path_entry
+    @path_bar.add_widget @cmd_entry
   end
 
   def arrange_layout
