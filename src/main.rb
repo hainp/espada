@@ -33,7 +33,7 @@ class MainApplication
                 :container,
                 :main_win,
                 :buffers,
-                :current_buffer_hash
+                :current_buffer_id
 
   def initialize
     @app = Qt::Application.new ARGV
@@ -65,8 +65,8 @@ class MainApplication
     text_edit.set_path Settings.default_contents_path
 
     @container.add text_edit
-    @current_buffer_hash = text_edit.hash
-    @buffers[@current_buffer_hash] = text_edit
+    @current_buffer_id = text_edit.object_id
+    @buffers[@current_buffer_id] = text_edit
   end
 
   def create_main_window
@@ -102,7 +102,7 @@ class MainApplication
   end
 
   def current_buffer
-    @buffers[@current_buffer_hash]
+    @buffers[@current_buffer_id]
   end
 end
 
