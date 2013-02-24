@@ -16,7 +16,7 @@
 
 ## `TextEdit` widget
 
-A `TextEdit` is also known as a *text buffer* or simply *buffer*.
+A `TextEdit` is also known as a *text buffer* or simply *buffer*.  When a buffer is destroyed, the garbage collection in trigger to save memory.
 
 Each `TextEdit` widget contains:
 
