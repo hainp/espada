@@ -9,13 +9,12 @@
   - Working directory must always be `./src/`.  **Subject to change.**
   - The unique`Qt::Application` instance must be named `App`.
 
-* Each text buffer contains server parts:
+* Each `TextEdit` widget contains:
 
 <div style="align: center; text-align: center">
     <img src="../concepts/text_buffer.png" /><br />
     Text Buffer mockup
 </div>
-
 
     # TextEdit
 
@@ -31,8 +30,8 @@
     |  |
     |  |--(?) (Line Number)
     |  |
-    |  `--TextBuffer [self]
+    |  `--TextBufferWidget [self]
     |  
-    |--TextBuffer @directory_buffer
+    |--TextBufferWidget @directory_buffer
     |
     `--StatusBar @status_bar
