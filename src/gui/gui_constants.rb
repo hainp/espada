@@ -26,3 +26,10 @@ Mouse = {
   :MiddleButton  => Qt::MiddleButton,
   :RightButton   => Qt::RightButton,
 }
+
+WrapMode = {
+  :NoWrap            => Qt::TextEdit::NoWrap,
+  :WidgetWidth       => Qt::TextEdit::WidgetWidth,
+  :FixedPixelWidth   => Qt::TextEdit::FixedPixelWidth,
+  :FixedColumnWidth  => Qt::TextEdit::FixedColumnWidth,
+}
