@@ -16,20 +16,20 @@
 
     # TextEdit
 
-    VBoxLayout
+    VBoxLayout @layout
     |
-    |--HBoxLayout
+    |--HBoxLayout @path_bar
     |  |
-    |  |--Label->Entry [Path]
+    |  |--Label->Entry @path_entry
     |  |
-    |  `--Label->Entry [Temporary Command]
+    |  `--Label->Entry @cmd_entry
     |
-    |--HBoxLayout
+    |--HBoxLayout @text_buffer_bar
     |  |
-    |  |--(?) [Line Number]
+    |  |--(?) (Line Number)
     |  |
-    |  `--TextBuffer [Main Content]
+    |  `--TextBuffer [self]
     |  
-    |--TextBuffer [Directory Buffer]
+    |--TextBuffer @directory_buffer
     |
-    `--StatusBar
+    `--StatusBar @status_bar
