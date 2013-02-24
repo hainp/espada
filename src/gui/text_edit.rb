@@ -209,7 +209,9 @@ class TextEdit < Widget
   def initialize
     super
     @layout = VBoxLayout.new
-    @path_bar = HBoxLayout.new
+
+    create_path_bar
+
     @text_buffer_bar = HBoxLayout.new
     @main_buffer = TextBufferWidget.new
     @directory_buffer = TextBufferWidget.new
@@ -221,6 +223,10 @@ class TextEdit < Widget
 
     @status_bar.show
     @status_bar.show_message "Ready", 2000
+  end
+
+  def create_path_bar
+    @path_bar = HBoxLayout.new
   end
 
   def arrange_layout
