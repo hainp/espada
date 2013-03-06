@@ -20,4 +20,13 @@
 #
 
 class Widget < Qt::Widget
+  def forbid_resize(orientation)
+    if orientation == :vertical
+      set_size_policy Qt::SizePolicy.new(Qt::SizePolicy::Preferred,
+                                         Qt::SizePolicy::Fixed)
+    else
+      set_size_policy Qt::SizePolicy.new(Qt::SizePolicy::Fixed,
+                                         Qt::SizePolicy::Preferred)
+    end
+  end
 end
