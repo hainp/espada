@@ -212,7 +212,7 @@ class TextEdit < Widget
     @layout = VBoxLayout.new
 
     create_path_bar
-    @text_buffer_bar = Qt::Splitter.new
+    @text_buffer_bar = Splitter.new
     @main_buffer = TextBufferWidget.new
     @directory_buffer = TextBufferWidget.new
     create_status_bar
@@ -229,12 +229,11 @@ class TextEdit < Widget
 
   def create_status_bar
     @status_bar = StatusBar.new
-    # Not allowed to resize vertically
-    @status_bar.set_size_policy Qt::SizePolicy.new(Qt::SizePolicy::Preferred, Qt::SizePolicy::Fixed)
+    @status_bar.forbid_resize :vertical
   end
 
   def create_path_bar
-    @path_bar = Qt::Splitter.new
+    @path_bar = Splitter.new
     @path_entry = EntryLabel.new
     @cmd_entry = EntryLabel.new
 
@@ -243,8 +242,7 @@ class TextEdit < Widget
     @path_bar.add_widget @path_entry
     @path_bar.add_widget @cmd_entry
 
-    # Not allowed to resize vertically
-    @path_bar.set_size_policy Qt::SizePolicy.new(Qt::SizePolicy::Preferred, Qt::SizePolicy::Fixed)
+    @path_bar.forbid_resize :vertical
   end
 
   def arrange_layout
