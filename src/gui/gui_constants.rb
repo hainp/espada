@@ -33,3 +33,8 @@ WrapMode = {
   :FixedPixelWidth   => Qt::TextEdit::FixedPixelWidth,
   :FixedColumnWidth  => Qt::TextEdit::FixedColumnWidth,
 }
+
+Orientation = {
+  :Vertical       => Qt::Vertical,
+  :Horizontal     => Qt::Horizontal,
+}
