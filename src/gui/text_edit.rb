@@ -237,6 +237,9 @@ class TextEdit < Widget
     @path_entry = EntryLabel.new
     @cmd_entry = EntryLabel.new
 
+    @path_entry.textInteractionFlags = \
+      Qt::TextSelectableByKeyboard | Qt::TextSelectableByMouse
+
     @cmd_entry.set_text "Inline commands..."
 
     @path_bar.add_widget @path_entry
