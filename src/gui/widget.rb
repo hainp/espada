@@ -29,4 +29,8 @@ class Widget < Qt::Widget
                                          Qt::SizePolicy::Preferred)
     end
   end
+
+  def set_no_margin
+    layout.set_contents_margins 0, 0, 0, 0
+  end
 end
