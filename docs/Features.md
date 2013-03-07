@@ -30,6 +30,8 @@
   + Right-click: maximize buffer vertically, hiding all other buffers in the same column.
   + Middle-click: tile/untile buffer.
 
+* Whenever a buffer is load or its size is changed via its handler icon, the mouse is automatically placed at the center of that buffer's handler icon.
+
 ## Interacting
 
 ### Command Execution
