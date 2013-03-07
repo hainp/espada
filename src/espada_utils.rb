@@ -78,7 +78,7 @@ def eval_text(text)
   text.strip!
 
   # Exec if the first character is `!`
-  return `#{text.but_first_char}` if text.first_char == "!"[0]
+  return [`#{text.but_first_char}`, :shell] if text.first_char == "!"[0]
 
   command_type = :ruby
   result = begin
