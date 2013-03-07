@@ -306,4 +306,8 @@ class TextEdit < Widget
   def saved=(value)
     @buffer.saved= value
   end
+
+  def zoom(value)
+    @buffer.zoom_in value
+  end
 end

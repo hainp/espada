@@ -5,6 +5,11 @@ puts App.current_buffer.saved
 puts App
 puts App.current_buffer.path
 
+p current_buffer
+current_buffer.zoom 1
+current_buffer.zoom -1
+current_buffer.buffer.zoom_out -1
+
 save_as "Default_Contents_2.txt"
 save
 
