@@ -8,7 +8,7 @@
 
 ### Purposes & design philisophy
 
-* *Espada* itself is a full-feature Ruby environment, designed specifically for *text processing* and *shell interacting*, so **[DISCUSS]** all convenient functions (`create_dir`, `save`, ...) are in global model (`Kernel`).
+* *Espada* itself is a full-feature Ruby environment, designed specifically for *text processing* and *shell interacting*, so **\[DISCUSS\]** all convenient functions (`create_dir`, `save`, ...) are in global model (`Kernel`).
 
 * "When in doubt, leave it out!"
 
@@ -35,7 +35,7 @@ A `TextEdit` is also known as a *text buffer* or simply *buffer*.  When a buffer
 Each `TextEdit` widget contains:
 
 <div style="align: center; text-align: center">
-    <img src="../concepts/text_buffer.png" /><br />
+    <img src="../concepts/text_buffer.png" width="430px" /><br />
     Text Buffer mockup
 </div>
 

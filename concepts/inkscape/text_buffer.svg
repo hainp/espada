@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="text_buffer.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="378.72129"
+     inkscape:cy="600.03212"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="675"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="42.300138,914.06179"
+       id="guide4034" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="82.327433,897.01546"
+       id="guide4036" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="692.96465,769.73624"
+       id="guide4038" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="512.14734,919.23882"
+       id="guide4040" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="505.83389,881.3581"
+       id="guide4042" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="434.36559,225.26402"
+       id="guide4044" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="456.25,185.89286"
+       id="guide4046" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="365.67522,962.67538"
+       id="guide4086" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="324.82143,931.25"
+       id="guide4088" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="317.14286,437.14286"
+       id="guide4092" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="232.84016,854.71532"
+       id="guide4166" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.3904388;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2985"
+       width="650.61731"
+       height="733.53998"
+       x="42.468559"
+       y="132.73366"
+       rx="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3782"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3784"><rect
+           id="rect3786"
+           width="454.28571"
+           height="84.285713"
+           x="61.42857"
+           y="768.07648" /></flowRegion><flowPara
+         id="flowPara3788"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       x="213.64441"
+       y="909.505"
+       id="text3790"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3792"
+         x="213.64441"
+         y="909.505"
+         style="font-size:32px"><tspan
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:Monaco;-inkscape-font-specification:Monaco"
+           id="tspan3816">VBoxLayout</tspan><tspan
+           style="font-style:italic;-inkscape-font-specification:Droid Sans Italic"
+           id="tspan3836"> outside</tspan></tspan></text>
+    <g
+       id="g3986">
+      <rect
+         y="828.13318"
+         x="42.56739"
+         height="38.302994"
+         width="650.1134"
+         id="rect3838"
+         style="fill:#c8c8c8;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:1.17121935;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3840"
+         y="852.56787"
+         x="54.36039"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px"
+           y="852.56787"
+           x="54.36039"
+           id="tspan3842"
+           sodipodi:role="line">Line | Col | Space/Tab | Mode</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3844"
+         y="858.28461"
+         x="461.69897"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           y="858.28461"
+           x="461.69897"
+           id="tspan3846"
+           sodipodi:role="line">StatusBar @status_bar</tspan></text>
+    </g>
+    <g
+       id="g4000">
+      <rect
+         y="132.53784"
+         x="374.55707"
+         height="38.302994"
+         width="318.59201"
+         id="rect3838-0-5"
+         style="fill:#c8c8c8;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:0.81990039;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3840-9-0"
+         y="159.1454"
+         x="379.06345"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3936"
+           style="font-size:20px"
+           y="159.1454"
+           x="379.06345"
+           sodipodi:role="line">Commands</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3844-4"
+         y="162.21317"
+         x="514.70581"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           y="162.21317"
+           x="514.70581"
+           id="tspan3846-5"
+           sodipodi:role="line">Entry @cmd_entry</tspan></text>
+    </g>
+    <g
+       id="g3993">
+      <rect
+         y="132.66414"
+         x="82.538147"
+         height="38.302994"
+         width="292.13971"
+         id="rect3838-0"
+         style="fill:#c8c8c8;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:0.78512526;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3840-9"
+         y="159.14542"
+         x="85.701675"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px"
+           y="159.14542"
+           x="85.701675"
+           id="tspan3842-3"
+           sodipodi:role="line">Path</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3844-4-7"
+         y="162.35379"
+         x="188.71918"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3970"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           y="162.35379"
+           x="188.71918"
+           sodipodi:role="line">Label @path_label</tspan></text>
+    </g>
+    <rect
+       style="fill:#333333;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4007"
+       width="40.279831"
+       height="38.259529"
+       x="42.17387"
+       y="132.61829" />
+    <g
+       id="g4081">
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="91.000679"
+         y="112.04749"
+         id="text3844-4-7-0"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="91.000679"
+           y="112.04749"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           id="tspan3970-6">Icon @handler_icon</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4054"
+         d="m 62.857143,133.12336 c 19.47029,-19.47029 19.47029,-19.42189 19.47029,-19.42189 l 0,-23.660718 211.601137,0 0,30.892858 -203.92857,0 z"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <rect
+       style="fill:#666666;fill-opacity:0.78431373000000004;fill-rule:evenodd;stroke:#000000;stroke-width:2.5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4056"
+       width="650.66449"
+       height="656.09406"
+       x="42.300137"
+       y="171.00409" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2"
+       y="110.65672"
+       x="436.76749"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3970-6-0"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="110.65672"
+         x="436.76749"
+         sodipodi:role="line">Splitter @buffer_region</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 493.20698,121.11218 6.56599,49.8919 0,0 9.34391,-49.8919 183.84777,0 0,-31.425377 -266.17894,0 0,31.425377 z"
+       id="path4090"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#f0f0f0;fill-opacity:0.9653179;fill-rule:evenodd;stroke:#000000;stroke-width:0.50000000000000000;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4094"
+       width="40.027294"
+       height="444.21524"
+       x="42.300137"
+       y="171.00409" />
+    <rect
+       style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4096"
+       width="610.63721"
+       height="444.21524"
+       x="82.327431"
+       y="171.00409" />
+    <rect
+       style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4098"
+       width="650.66449"
+       height="211.87885"
+       x="42.300137"
+       y="615.2193" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2-0"
+       y="816.11914"
+       x="364.56226"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3970-6-0-6"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="816.11914"
+         x="364.56226"
+         sodipodi:role="line">TextBufferWidget @shell_buffer</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2-0-3"
+       y="603.2193"
+       x="429.32007"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3970-6-0-6-9"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="603.2193"
+         x="429.32007"
+         sodipodi:role="line">TextBufferWidget @buffer</tspan></text>
+    <g
+       id="g4172"
+       transform="matrix(1,0,0,2.9864219,0,-339.68626)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4146"
+         d="m 225.72147,186.66145 7.16632,-15.65737 0,0 7.16631,15.65737 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.53775656px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4146-5"
+         d="m 240.0541,304.09168 -7.16632,15.65737 0,0 -7.16631,-15.65737 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.53775656px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4170"
+         d="m 232.84016,186.66145 c 0,117.17769 0,117.17769 0,117.17769"
+         style="fill:none;stroke:#000000;stroke-width:3.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2-0-3-1"
+       y="397.92014"
+       x="248.60297"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3970-6-0-6-9-1"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="397.92014"
+         x="248.60297"
+         sodipodi:role="line">HBoxLayout @text_buffer_bar</tspan></text>
+  </g>
+</svg>
