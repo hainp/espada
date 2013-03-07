@@ -184,7 +184,7 @@ class TextBufferWidget < Qt::TextEdit
 
       # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
-        res = eval_text(selected_text)
+        result, command_type = eval_text(selected_text)
         # append res.to_s if res.strip != ""
         return
       end
@@ -234,7 +234,7 @@ class TextEdit < Widget
 
   def create_path_bar
     @path_bar = Splitter.new
-    @path_entry = EntryLabel.new
+    @path_entry = Label.new
     @cmd_entry = EntryLabel.new
 
     @path_entry.textInteractionFlags = \
