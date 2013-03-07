@@ -201,7 +201,7 @@ class TextEdit < Widget
   attr_accessor \
     :layout,
     :path_bar, :path_entry, :cmd_entry,
-    :text_buffer_bar, :main_buffer,
+    :text_buffer_bar, :buffer,
     :directory_buffer,
     :status_bar
 
@@ -213,7 +213,7 @@ class TextEdit < Widget
 
     create_path_bar
     @text_buffer_bar = Splitter.new
-    @main_buffer = TextBufferWidget.new
+    @buffer = TextBufferWidget.new
     @directory_buffer = TextBufferWidget.new
     create_status_bar
 
@@ -251,7 +251,7 @@ class TextEdit < Widget
     @layout.add_widget @directory_buffer
     @layout.add_widget @status_bar
 
-    @text_buffer_bar.add_widget @main_buffer
+    @text_buffer_bar.add_widget @buffer
 
     @directory_buffer.hide
   end
@@ -261,49 +261,49 @@ class TextEdit < Widget
   ##
 
   def set_line_wrap_column_or_width(wrap_mode)
-    @main_buffer.set_line_wrap_column_or_width wrap_mode
+    @buffer.set_line_wrap_column_or_width wrap_mode
   end
 
   def set_line_wrap_mode(wrap_mode)
-    @main_buffer.set_line_wrap_mode wrap_mode
+    @buffer.set_line_wrap_mode wrap_mode
   end
 
   def load(path)
-    @main_buffer.load path
+    @buffer.load path
   end
 
   def set_path(path)
     path = expand_path path
-    @main_buffer.set_path path
+    @buffer.set_path path
     @path_entry.set_text path
   end
 
   # def method_missing(method, *args)
-  #   @main_buffer.send(method.to_s, args)
+  #   @buffer.send(method.to_s, args)
   # end
 
   def path
-    @main_buffer.path
+    @buffer.path
   end
 
   def path=(value)
     value = expand_path value
-    @main_buffer.path= value
+    @buffer.path= value
   end
 
   def set_font(font)
-    @main_buffer.set_font font
+    @buffer.set_font font
   end
 
   def to_plain_text
-    @main_buffer.to_plain_text
+    @buffer.to_plain_text
   end
 
   def saved
-    @main_buffer.saved
+    @buffer.saved
   end
 
   def saved=(value)
-    @main_buffer.saved= value
+    @buffer.saved= value
   end
 end
