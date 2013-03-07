@@ -148,3 +148,10 @@ http://stackoverflow.com/questions/11000083/cant-resize-widgets-in-qvboxlayout
 ##### Ctrl + Wheel for zooming
 
 http://stackoverflow.com/questions/7987881/how-to-scale-zoom-a-qtextedit-area-from-a-toolbar-button-click-and-or-ctrl-mou
+
+##### Widget margins and paddings
+
+    QLayout::setContentsMargins() (since Qt 4.3)
+    QLayout::setMargin()
+    QLayout::setSpacing()
+
