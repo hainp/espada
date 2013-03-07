@@ -185,6 +185,12 @@ class TextBufferWidget < Qt::TextEdit
       # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
         result, command_type = eval_text(selected_text)
+
+        if command_type == :shell && result.strip! != ""
+          shell_buffer.append result
+          shell_buffer.show
+        end
+
         # append res.to_s if res.strip != ""
         return
       end
@@ -202,7 +208,7 @@ class TextEdit < Widget
     :layout,
     :path_bar, :path_entry, :cmd_entry,
     :buffer_region, :text_buffer_bar, :buffer,
-    :directory_buffer,
+    :shell_buffer,
     :status_bar
 
   signals :triple_clicked
@@ -229,7 +235,7 @@ class TextEdit < Widget
     @buffer_region = Splitter.new
     @text_buffer_bar = VBoxLayout.new
     @buffer = TextBufferWidget.new
-    @directory_buffer = TextBufferWidget.new
+    @shell_buffer = TextBufferWidget.new
     main_buffer_widget = Widget.new
 
     @buffer_region.set_orientation Orientation[:Vertical]
@@ -240,7 +246,7 @@ class TextEdit < Widget
     main_buffer_widget.set_no_margins
 
     @buffer_region.add_widget main_buffer_widget
-    @buffer_region.add_widget @directory_buffer
+    @buffer_region.add_widget @shell_buffer
   end
 
   def create_status_bar
@@ -271,7 +277,7 @@ class TextEdit < Widget
 
     @text_buffer_bar.add_widget @buffer
 
-    @directory_buffer.hide
+    @shell_buffer.hide
   end
 
   ##

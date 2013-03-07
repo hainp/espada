@@ -6,7 +6,7 @@ puts App
 puts App.current_buffer.path
 
 create_dir "/tmp/hello_world/hehe"
-!ls "/tmp/hello_world/hehe"
+!ls "/home/cmpitg/Desktop/"
 
 p shell_buffer.show
 p shell_buffer.hide
