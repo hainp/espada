@@ -25,6 +25,11 @@
 
 * By default, brackets (`([{`) are automatically paired.  This feature could be turned off by: `remove_feature(:autopair)` or `remove_feature(:autopair, :mode_apl)` or using JSON/hashtable configuration.
 
+* Each buffer has a handler icon at the top-left corner:
+  + Left-click: enlarge buffer size vertically.
+  + Right-click: maximize buffer vertically, hiding all other buffers in the same column.
+  + Middle-click: tile/untile buffer.
+
 ## Interacting
 
 ### Command Execution
