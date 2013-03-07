@@ -103,6 +103,10 @@ class MainApplication
   def current_buffer
     @buffers[@current_buffer_id]
   end
+
+  def shell_buffer
+    current_buffer.shell_buffer
+  end
 end
 
 App = MainApplication.instance

@@ -8,6 +8,9 @@ puts App.current_buffer.path
 create_dir "/tmp/hello_world/hehe"
 !ls "/tmp/hello_world/hehe"
 
+p shell_buffer.show
+p shell_buffer.hide
+
 p current_buffer
 current_buffer.zoom 1
 current_buffer.zoom -1

@@ -140,3 +140,7 @@ end
 def current_buffer
   if App && App.current_buffer then App.current_buffer else nil end
 end
+
+def shell_buffer
+  if App && App.shell_buffer then App.shell_buffer else nil end
+end
