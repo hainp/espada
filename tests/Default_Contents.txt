@@ -13,6 +13,11 @@ current_buffer.zoom 1
 current_buffer.zoom -1
 current_buffer.buffer.zoom_out -1
 
+command_type, result = eval_text "a = 'Hello World'"
+puts command_type
+puts result
+puts a
+
 save_as "Default_Contents_2.txt"
 save
 

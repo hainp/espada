@@ -80,15 +80,19 @@ def eval_text(text)
   # Exec if the first character is `!`
   return `#{text.but_first_char}` if text.first_char == "!"[0]
 
-  begin
+  command_type = :ruby
+  result = begin
     text.split("\u07ed").each do |line|
       # The scope of `eval` is always global
       eval(line.chomp, TOPLEVEL_BINDING) if line
     end
   rescue Exception => e
     puts e
+    command_type = :shell
     `#{text}`
   end
+
+  [result, command_type]
 end
 
 def message(text)
