@@ -38,6 +38,8 @@
 
 * Commmands are executed using Ruby's `\`` notation.
 
+* All commands are recorded into a message buffer: `log_buffer`. [TODO]
+
 ### File Jumping
 
 File jumping with forms:
