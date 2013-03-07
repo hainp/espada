@@ -23,6 +23,12 @@ require './espada_utils'
 require './gui/status_bar'
 require 'awesome_print'
 
+class HandlerIcon < Icon
+  def initialize(path)
+    super
+  end
+end
+
 class TextBufferWidget < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
                 :path,
@@ -36,6 +42,7 @@ class TextBufferWidget < Qt::TextEdit
     @allow_double_middle_click = false
     @saved = false
     setContextMenuPolicy Qt::NoContextMenu
+    create_custom_scrollbar
 
     # Detect changes
     connect(SIGNAL :textChanged) {
@@ -206,7 +213,7 @@ end
 class TextEdit < Widget
   attr_accessor \
     :layout,
-    :path_bar, :path_label, :cmd_entry,
+    :path_bar, :handler_icon, :path_label, :cmd_entry,
     :buffer_region, :text_buffer_bar, :buffer,
     :shell_buffer,
     :status_bar
@@ -256,15 +263,24 @@ class TextEdit < Widget
 
   def create_path_bar
     @path_bar = Splitter.new
+    @handler_icon = HandlerIcon.new "../img/handler_icon.ico"
     @path_label = Label.new
     @cmd_entry = EntryLabel.new
+
+    @handler_icon.forbid_resize :horizontal
 
     @path_label.textInteractionFlags = \
       Qt::TextSelectableByKeyboard | Qt::TextSelectableByMouse
 
     @cmd_entry.set_text "Inline commands..."
 
-    @path_bar.add_widget @path_label
+    path_and_icon_container = Widget.new
+    path_and_icon_container_layout = HBoxLayout.new
+    path_and_icon_container.set_layout path_and_icon_container_layout
+    path_and_icon_container_layout.add_widget @handler_icon
+    path_and_icon_container_layout.add_widget @path_label
+
+    @path_bar.add_widget path_and_icon_container
     @path_bar.add_widget @cmd_entry
 
     @path_bar.forbid_resize :vertical
