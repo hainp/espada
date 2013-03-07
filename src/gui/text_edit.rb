@@ -206,7 +206,7 @@ end
 class TextEdit < Widget
   attr_accessor \
     :layout,
-    :path_bar, :path_entry, :cmd_entry,
+    :path_bar, :path_label, :cmd_entry,
     :buffer_region, :text_buffer_bar, :buffer,
     :shell_buffer,
     :status_bar
@@ -256,15 +256,15 @@ class TextEdit < Widget
 
   def create_path_bar
     @path_bar = Splitter.new
-    @path_entry = Label.new
+    @path_label = Label.new
     @cmd_entry = EntryLabel.new
 
-    @path_entry.textInteractionFlags = \
+    @path_label.textInteractionFlags = \
       Qt::TextSelectableByKeyboard | Qt::TextSelectableByMouse
 
     @cmd_entry.set_text "Inline commands..."
 
-    @path_bar.add_widget @path_entry
+    @path_bar.add_widget @path_label
     @path_bar.add_widget @cmd_entry
 
     @path_bar.forbid_resize :vertical
@@ -299,12 +299,8 @@ class TextEdit < Widget
   def set_path(path)
     path = expand_path path
     @buffer.set_path path
-    @path_entry.set_text path
+    @path_label.set_text path
   end
-
-  # def method_missing(method, *args)
-  #   @buffer.send(method.to_s, args)
-  # end
 
   def path
     @buffer.path
