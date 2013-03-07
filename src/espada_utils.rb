@@ -20,6 +20,7 @@
 #
 
 require './gui/gui_constants'
+require 'fileutils'
 
 class Time
   def to_ms
@@ -51,6 +52,14 @@ end
 
 def expand_path(path)
   File.expand_path path
+end
+
+def mkdir(path)
+  FileUtils.mkpath path
+end
+
+def create_dir(path)
+  mkdir path
 end
 
 # Read file without failing, no exception is thrown

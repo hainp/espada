@@ -5,6 +5,9 @@ puts App.current_buffer.saved
 puts App
 puts App.current_buffer.path
 
+create_dir "/tmp/hello_world/hehe"
+!ls "/tmp/hello_world/hehe"
+
 p current_buffer
 current_buffer.zoom 1
 current_buffer.zoom -1
