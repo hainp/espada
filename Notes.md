@@ -144,3 +144,7 @@ Event should be handled in with `press`, not `release`.
 http://stackoverflow.com/questions/11000083/cant-resize-widgets-in-qvboxlayout
 
 `layout->setStretch(index, stretch)`
+
+##### Ctrl + Wheel for zooming
+
+http://stackoverflow.com/questions/7987881/how-to-scale-zoom-a-qtextedit-area-from-a-toolbar-button-click-and-or-ctrl-mou
