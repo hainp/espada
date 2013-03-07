@@ -50,6 +50,10 @@ class TextBufferWidget < Qt::TextEdit
     }
   end
 
+  def create_custom_scrollbar
+    set_vertical_scroll_bar_policy Qt::ScrollBarAlwaysOff
+  end
+
   def reset_mouse
     @pressed_mouse_button = {
       :LeftButton   => false,
