@@ -30,7 +30,7 @@ class Widget < Qt::Widget
     end
   end
 
-  def set_no_margin
+  def set_no_margins
     layout.set_contents_margins 0, 0, 0, 0
   end
 end
