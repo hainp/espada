@@ -1,5 +1,11 @@
 ## Quick notes
 
+* From time to time I find out that for each file I'm editting I need a shell associated with it.  So I added `shell_buffer` to each TextEdit to serve that purpose:
+
+  - At first, the current working dir of the `shell_buffer` is the path of the text buffer associated with it.
+
+  - User can change its working dir anytime just by `cd` or `chdir` or `change_dir` or `!cd`.
+
 ### Purposes & design philisophy
 
 * *Espada* itself is a full-feature Ruby environment, designed specifically for *text processing* and *shell interacting*, so **[DISCUSS]** all convenient functions (`create_dir`, `save`, ...) are in global model (`Kernel`).
@@ -37,19 +43,21 @@ Each `TextEdit` widget contains:
 
     VBoxLayout @layout
     |
-    |--HBoxLayout @path_bar
+    |--Splitter @path_bar
     |  |
-    |  |--Label->Entry @path_entry
+    |  |--Label @path_entry
     |  |
     |  `--Label->Entry @cmd_entry
     |
-    |--HBoxLayout @text_buffer_bar
+    |--Splitter @buffer_region
     |  |
-    |  |--(?) (Line Number)
+    |  |--HBoxLayout @text_buffer_bar
+    |  |  |
+    |  |  |--(?) (Line Number)
+    |  |  |
+    |  |  `--TextBufferWidget @buffer
     |  |
-    |  `--TextBufferWidget [self]
-    |  
-    |--TextBufferWidget @directory_buffer
+    |  `--TextBufferWidget @shell_buffer
     |
     `--StatusBar @status_bar
 
