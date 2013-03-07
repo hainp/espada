@@ -1,5 +1,13 @@
 ## Quick notes
 
+### Purposes & design philisophy
+
+* *Espada* itself is a full-feature Ruby environment, designed specifically for *text processing* and *shell interacting*, so **[DISCUSS]** all convenient functions (`create_dir`, `save`, ...) are in global model (`Kernel`).
+
+* "When in doubt, leave it out!"
+
+* Syntactic sugar is one of user's best friends.  E.g. `create_dir` and `mkdir`, ...
+
 ## Running/testing notes:
 
 * Working directory must always be `./src/`.  **Subject to change.**
