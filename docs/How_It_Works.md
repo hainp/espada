@@ -45,6 +45,8 @@ Each `TextEdit` widget contains:
     |
     |--Splitter @path_bar
     |  |
+    |  |--Icon @handler_icon
+    |  |
     |  |--Label @path_entry
     |  |
     |  `--Label->Entry @cmd_entry
@@ -62,6 +64,8 @@ Each `TextEdit` widget contains:
     `--StatusBar @status_bar
 
 The `TextEdit` widget is aware of the global app instance via its property `app`.
+
+Each `TextEdit` has a 16x16 handler icon at the top-left corner.
 
 ## `EntryLabel` widget
 
