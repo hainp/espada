@@ -201,7 +201,7 @@ class TextEdit < Widget
   attr_accessor \
     :layout,
     :path_bar, :path_entry, :cmd_entry,
-    :text_buffer_bar, :buffer,
+    :buffer_region, :text_buffer_bar, :buffer,
     :directory_buffer,
     :status_bar
 
@@ -212,9 +212,7 @@ class TextEdit < Widget
     @layout = VBoxLayout.new
 
     create_path_bar
-    @text_buffer_bar = Splitter.new
-    @buffer = TextBufferWidget.new
-    @directory_buffer = TextBufferWidget.new
+    create_buffer_region
     create_status_bar
 
     self.set_layout @layout
@@ -225,6 +223,24 @@ class TextEdit < Widget
 
     @status_bar.show
     @status_bar.show_message "Ready", 2000
+  end
+
+  def create_buffer_region
+    @buffer_region = Splitter.new
+    @text_buffer_bar = VBoxLayout.new
+    @buffer = TextBufferWidget.new
+    @directory_buffer = TextBufferWidget.new
+    main_buffer_widget = Widget.new
+
+    @buffer_region.set_orientation Orientation[:Vertical]
+
+    @text_buffer_bar.add_widget @buffer
+    main_buffer_widget.set_layout @text_buffer_bar
+    # main_buffer_widget.set_window_flags Qt::FramelessWindowHint
+    main_buffer_widget.set_no_margins
+
+    @buffer_region.add_widget main_buffer_widget
+    @buffer_region.add_widget @directory_buffer
   end
 
   def create_status_bar
@@ -250,8 +266,7 @@ class TextEdit < Widget
 
   def arrange_layout
     @layout.add_widget @path_bar
-    @layout.add_widget @text_buffer_bar
-    @layout.add_widget @directory_buffer
+    @layout.add_widget @buffer_region
     @layout.add_widget @status_bar
 
     @text_buffer_bar.add_widget @buffer
