@@ -24,11 +24,16 @@ class MainWindow < Qt::MainWindow
 
   def initialize
     super
+    set_no_margins
     @closing_action = lambda { true }
   end
 
   def closeEvent(event)
     res = @closing_action.call
     if res then event.accept else event.ignore end
+  end
+
+  def set_no_margins
+    layout.set_contents_margins 0, 0, 0, 0
   end
 end
