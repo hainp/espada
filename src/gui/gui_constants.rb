@@ -19,7 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'Qt4'
+require 'Qt'
 
 Mouse = {
   :LeftButton    => Qt::LeftButton,

@@ -21,7 +21,7 @@
 
 require 'rubygems'
 require 'singleton'
-require 'Qt4'
+require 'Qt'
 require './espada_utils'
 
 require './gui/gui_constants'
