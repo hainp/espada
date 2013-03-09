@@ -19,3 +19,8 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require 'test/unit'
+require './string_utils'
+
+class StringUtils < Test::Unit::TestCase
+end
