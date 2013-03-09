@@ -21,9 +21,9 @@
 
 require 'rubygems'
 require 'singleton'
-require './espada_settings'
-require './default_settings'
-require './espada_utils'
+require 'espada_settings'
+require 'default_settings'
+require 'espada_utils'
 
 class MainApplication
   include Singleton
@@ -61,6 +61,8 @@ class MainApplication
     text_edit = TextEdit.new
     text_edit.set_line_wrap_column_or_width Settings.wrap_column
     text_edit.set_line_wrap_mode Settings.wrap_mode
+    Settings.default_contents_path = \
+        "#{current_executing_dir(__FILE__)}/#{Settings.default_contents_path}"
     text_edit.load Settings.default_contents_path
     text_edit.set_path Settings.default_contents_path
 
@@ -110,6 +112,4 @@ class MainApplication
 end
 
 App = MainApplication.instance
-puts current_buffer
-puts current_buffer.path
 App.exec
