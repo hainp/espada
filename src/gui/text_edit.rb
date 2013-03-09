@@ -194,6 +194,7 @@ class TextBufferWidget < Qt::TextEdit
     if n_pressed_mouse_buttons == 1
 
       if @pressed_mouse_button[:MiddleButton]
+        # Eval or execute command
         result, command_type = eval_text selected_text
 
         if command_type == :shell && result.strip! != ""
@@ -201,13 +202,16 @@ class TextBufferWidget < Qt::TextEdit
           shell_buffer.show
         end
         return
-        
+
       elsif @pressed_mouse_button[:RightButton]
-        puts "[event] right_click"
+        $stderr.puts "[event] right_click"
+
+      elsif @pressed_mouse_button[:LeftButton]
+        $stderr.puts "[event] left_click"
       end
 
     else
-      process_next = handle_double_button(event)
+      process_next = handle_double_button event
     end
 
     super event if process_next
