@@ -19,8 +19,8 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require './espada_utils'
-require './gui/status_bar'
+require 'espada_utils'
+require 'gui/status_bar'
 require 'awesome_print'
 
 class HandlerIcon < Icon
@@ -67,7 +67,6 @@ class TextBufferWidget < Qt::TextEdit
   end
 
   def set_path(path)
-    puts path
     @path = path
   end
 

@@ -19,7 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require './espada_gui'
+require 'espada_gui'
 
 EspadaSettings = {
   :normal_text_font => Font.new("Monaco", 10, Font::Normal),

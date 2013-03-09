@@ -20,6 +20,6 @@
 #
 
 require 'pry'
-require './src/espada_gui'
+require 'src/espada_gui'
 
 binding.pry

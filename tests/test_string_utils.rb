@@ -20,7 +20,7 @@
 #
 
 require 'test/unit'
-require './string_utils'
+require 'string_utils'
 
 class StringUtils < Test::Unit::TestCase
 end
