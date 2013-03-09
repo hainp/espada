@@ -278,11 +278,12 @@ class TextEdit < Widget
 
     @cmd_entry.set_text "Inline commands..."
 
-    path_and_icon_container = Widget.new
     path_and_icon_container_layout = HBoxLayout.new
-    path_and_icon_container.set_layout path_and_icon_container_layout
     path_and_icon_container_layout.add_widget @handler_icon
     path_and_icon_container_layout.add_widget @path_label
+
+    path_and_icon_container = Widget.new
+    path_and_icon_container.set_layout path_and_icon_container_layout
 
     @path_bar.add_widget path_and_icon_container
     @path_bar.add_widget @cmd_entry
