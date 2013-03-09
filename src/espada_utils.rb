@@ -67,7 +67,7 @@ def current_executing_dir(path)
 end
 
 def espada_path
-  if defined? App then App.espada_path else "" end
+  if defined? ESPADA_PATH then ESPADA_PATH else "" end
 end
 
 # Read file without failing, no exception is thrown
