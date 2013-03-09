@@ -33,11 +33,13 @@ class MainApplication
                 :container,
                 :main_win,
                 :buffers,
-                :current_buffer_id
+                :current_buffer_id,
+                :espada_path
 
   def initialize
     @app = Qt::Application.new ARGV
     @buffers = {}
+    @espada_path = current_executing_dir __FILE__
     update_settings
     create_container
     create_main_window
@@ -62,7 +64,7 @@ class MainApplication
     text_edit.set_line_wrap_column_or_width Settings.wrap_column
     text_edit.set_line_wrap_mode Settings.wrap_mode
     Settings.default_contents_path = \
-        "#{current_executing_dir(__FILE__)}/#{Settings.default_contents_path}"
+        "#{@espada_path}/#{Settings.default_contents_path}"
     text_edit.load Settings.default_contents_path
     text_edit.set_path Settings.default_contents_path
 
