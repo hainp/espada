@@ -194,7 +194,8 @@ class TextBufferWidget < Qt::TextEdit
     if n_pressed_mouse_buttons == 1
 
       if @pressed_mouse_button[:MiddleButton]
-        # Eval or execute command
+        # Jump to a file or directory if the selected text has the form of
+        # a path, otherwise eval or execute command
 
         result, command_type = eval_text selected_text
 
