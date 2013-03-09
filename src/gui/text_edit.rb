@@ -193,9 +193,8 @@ class TextBufferWidget < Qt::TextEdit
 
     if n_pressed_mouse_buttons == 1
 
-      # Eval text with middle button is clicked
       if @pressed_mouse_button[:MiddleButton]
-        result, command_type = eval_text(selected_text)
+        result, command_type = eval_text selected_text
 
         if command_type == :shell && result.strip! != ""
           shell_buffer.append result
