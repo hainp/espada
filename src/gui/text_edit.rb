@@ -200,9 +200,8 @@ class TextBufferWidget < Qt::TextEdit
           shell_buffer.append result
           shell_buffer.show
         end
-
-        # append res.to_s if res.strip != ""
         return
+        
       elsif @pressed_mouse_button[:RightButton]
         puts "[event] right_click"
       end
