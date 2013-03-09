@@ -195,12 +195,15 @@ class TextBufferWidget < Qt::TextEdit
 
       if @pressed_mouse_button[:MiddleButton]
         # Eval or execute command
+
         result, command_type = eval_text selected_text
 
         if command_type == :shell && result.strip! != ""
           shell_buffer.append result
           shell_buffer.show
         end
+
+        # Don't activate default middle-click default behaviour
         return
 
       elsif @pressed_mouse_button[:RightButton]
