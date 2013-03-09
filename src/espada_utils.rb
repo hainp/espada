@@ -19,7 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require './gui/gui_constants'
+require 'gui/gui_constants'
 require 'fileutils'
 
 class Time
@@ -60,6 +60,10 @@ end
 
 def create_dir(path)
   mkdir path
+end
+
+def current_executing_dir(path)
+  File.expand_path File.dirname(path)
 end
 
 # Read file without failing, no exception is thrown
