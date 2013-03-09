@@ -333,6 +333,7 @@ class TextEdit < Widget
 
   def set_font(font)
     @buffer.set_font font
+    @shell_buffer.set_font font
   end
 
   def to_plain_text
