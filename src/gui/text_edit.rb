@@ -274,7 +274,7 @@ class TextEdit < Widget
 
   def create_path_bar
     @path_bar = Splitter.new
-    @handler_icon = HandlerIcon.new "../img/handler_icon.ico"
+    @handler_icon = HandlerIcon.new "#{espada_path}/../img/handler_icon.ico"
     @path_label = Label.new
     @cmd_entry = EntryLabel.new
 
