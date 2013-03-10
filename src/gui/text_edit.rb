@@ -211,9 +211,6 @@ class TextBufferWidget < Qt::TextEdit
 
       elsif @pressed_mouse_button[:RightButton]
         $stderr.puts "[event] right_click"
-
-      elsif @pressed_mouse_button[:LeftButton]
-        $stderr.puts "[event] left_click"
       end
 
     else
