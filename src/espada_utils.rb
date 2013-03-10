@@ -24,12 +24,7 @@ require 'fileutils'
 require 'gui/gui_constants'
 
 require 'espada_string_utils'
-
-class Time
-  def to_ms
-    (self.to_f * 1000.0).to_i
-  end
-end
+require 'espada_datetime_utils'
 
 def expand_path(path)
   File.expand_path path
@@ -109,10 +104,6 @@ def save(*args)
     save_file_with_text args[0], current_buffer.to_plain_text
   end
   current_buffer.saved = true
-end
-
-def time_diff(start, finish)
-  (finish - start) * 1000
 end
 
 def mouse_event_to_sym(event)
