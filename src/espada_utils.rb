@@ -19,34 +19,15 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'gui/gui_constants'
 require 'fileutils'
+
+require 'gui/gui_constants'
+
+require 'espada_string_utils'
 
 class Time
   def to_ms
     (self.to_f * 1000.0).to_i
-  end
-end
-
-class String
-  def last_char
-    self[self.length - 1]
-  end
-
-  def first_char
-    self[0]
-  end
-
-  def but_first_char
-    self[1..self.length - 1]
-  end
-
-  def rest
-    but_first_char
-  end
-
-  def but_last_char
-    self[0..self.length - 2]
   end
 end
 
