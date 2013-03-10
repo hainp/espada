@@ -1,9 +1,36 @@
 ######
 Tasks
 
-* Readjust fonts for `path_entry` & `cmd_entry`
+* UX:
+  - Tab vs. tiling (perhaps tab is better? -> running apps on desktop, tab in browser)
+  - Continue-browsing (?) -> file #1 is below file #2
+  - Top-right icon: show/hide `shell_buffer`
+  - Top-right toplevel icon:
+    + New column (aka. split horizontally)
+    + New row (aka. split vertically)
+  - Ergonomics binding key for movement (Programmer Dvorak and QWERTY version) as package
+  - Design a way to write package (extension)
+  - Support TextMate & Sublime Text's XML extension
+  - Auto save for unnamed files, ask for saving for named file
+  - Command piping
+  - Macros
 
-* `method_missing` for `TextEdit` -> pass to its `@main_buffer`
+* IPC: named pipe
+  - Protocol
+  - Actions
+  - Interact with other language/script/environment
+
+* Refactor tool for Ruby
+  - Release as a package
+
+* Default config: `~/.config/espada/`
+  - `init.rb`
+  - `session.json`
+
+* Default temp: `~/.config/espada/unsaved_buffers/`
+
+* Philosophy:
+  - What can be done with mouse can be done with keyboard
 
 * File jumping with forms:
 
