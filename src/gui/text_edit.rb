@@ -199,8 +199,9 @@ class TextBufferWidget < Qt::TextEdit
         # a path, otherwise eval or execute command
 
         result, command_type = eval_text selected_text
+        result.strip!
 
-        if command_type == :shell && result.strip! != ""
+        if command_type == :shell && result != ""
           shell_buffer.append result
           shell_buffer.show
         end
