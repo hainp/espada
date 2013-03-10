@@ -74,7 +74,7 @@ class SettingsSingleton
     # Get all the instance variables of the settings singleton
     @self.instance_variables.each { |var|
       if var != "@__instance__"
-        settings_hash[var.to_s.but_first_char.to_sym] =
+        settings_hash[var.to_s.but_first.to_sym] =
           @self.instance_variable_get(var)
       end
     }

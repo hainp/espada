@@ -20,23 +20,23 @@
 #
 
 class String
-  def last_char
+  def last
     self[self.length - 1]
   end
 
-  def first_char
+  def first
     self[0]
   end
 
-  def but_first_char
+  def but_first
     self[1..self.length - 1]
   end
 
   def rest
-    but_first_char
+    but_first
   end
 
-  def but_last_char
+  def but_last
     self[0..self.length - 2]
   end
 end
