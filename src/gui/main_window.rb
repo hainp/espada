@@ -19,7 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-class MainWindow < Qt::MainWindow
+class MainWindow < Qt::Widget
   attr_accessor :closing_action
 
   def initialize

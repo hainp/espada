@@ -37,16 +37,4 @@ require 'gui/entry_label'
 require 'gui/main_window'
 require 'gui/text_cursor'
 require 'gui/text_edit'
-
-###### Tag: espada_main_container
-
-class MainContainer < Widget
-  def initialize
-    super
-    set_layout VBoxLayout.new
-  end
-
-  def add(widget)
-    layout.add_widget widget
-  end
-end
+require 'gui/main_container'
