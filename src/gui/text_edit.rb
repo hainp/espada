@@ -19,9 +19,11 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'espada_utils'
-require 'gui/status_bar'
 require 'awesome_print'
+
+require 'espada_utils'
+
+require 'gui/status_bar'
 
 class HandlerIcon < Icon
   def initialize(path)
