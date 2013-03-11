@@ -68,7 +68,7 @@ Make sure you have all the required dependencies.  The best way to install depen
   or
 
   ```sh
-  wget -O espada.zip https://github.com/CMPITG/espada/archive/experiment.zip && unzip
+  wget -O espada.zip https://github.com/CMPITG/espada/archive/experiment.zip && unzip espada.zip
   ```
 
 * Run `espada.sh` inside Espada directory.
