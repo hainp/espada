@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="main_window.svg"
+   inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/main_window.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="140.61994"
+     inkscape:cy="585.0033"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="675"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="42.300138,914.06179"
+       id="guide4034" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="692.96465,769.73624"
+       id="guide4038" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="512.14734,919.23882"
+       id="guide4040" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="505.83389,881.3581"
+       id="guide4042" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="434.36559,225.26402"
+       id="guide4044" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="456.25,185.89286"
+       id="guide4046" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="652.93735,895.50023"
+       id="guide3192" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="182.05357,802.90179"
+       id="guide4396" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="434.48397,849.26208"
+       id="guide4446" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="506.23438,533.55859"
+       id="guide4484" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.3904388;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2985"
+       width="650.61731"
+       height="733.53998"
+       x="42.468559"
+       y="132.73366"
+       rx="0"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3782"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3784"><rect
+           id="rect3786"
+           width="454.28571"
+           height="84.285713"
+           x="61.42857"
+           y="768.07648" /></flowRegion><flowPara
+         id="flowPara3788" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       x="864.18268"
+       y="943.85022"
+       id="text3790"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3792"
+         x="864.18268"
+         y="943.85022"
+         style="font-size:32px"><tspan
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:Monaco;-inkscape-font-specification:Monaco"
+           id="tspan3816">VBoxLayout</tspan><tspan
+           style="font-style:italic;-inkscape-font-specification:Droid Sans Italic"
+           id="tspan3836"> outside</tspan></tspan></text>
+    <g
+       id="g3986"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="828.13318"
+         x="42.56739"
+         height="38.302994"
+         width="650.1134"
+         id="rect3838"
+         style="fill:#c8c8c8;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:1.17121935;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3840"
+         y="852.56787"
+         x="54.36039"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px"
+           y="852.56787"
+           x="54.36039"
+           id="tspan3842"
+           sodipodi:role="line">Line | Col | Scratch | Space/Tab | Mode</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3844"
+         y="858.28461"
+         x="461.69897"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           y="858.28461"
+           x="461.69897"
+           id="tspan3846"
+           sodipodi:role="line">StatusBar @status_bar</tspan></text>
+    </g>
+    <g
+       id="g3993"
+       transform="translate(771.42857,575.71428)">
+      <rect
+         y="132.66414"
+         x="82.538147"
+         height="38.302994"
+         width="292.13971"
+         id="rect3838-0"
+         style="fill:#c8c8c8;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:0.78512526;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3840-9"
+         y="159.14542"
+         x="85.701675"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px"
+           y="159.14542"
+           x="85.701675"
+           id="tspan3842-3"
+           sodipodi:role="line">Path</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3844-4-7"
+         y="162.35379"
+         x="188.71918"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3970"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           y="162.35379"
+           x="188.71918"
+           sodipodi:role="line">Label @path_label</tspan></text>
+    </g>
+    <g
+       id="g4172"
+       transform="matrix(1,0,0,2.9864219,764.28571,-339.68625)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4146"
+         d="m 225.72147,186.66145 7.16632,-15.65737 0,0 7.16631,15.65737 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.53775656px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4146-5"
+         d="m 240.0541,304.09168 -7.16632,15.65737 0,0 -7.16631,-15.65737 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.53775656px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4170"
+         d="m 232.84016,186.66145 c 0,117.17769 0,117.17769 0,117.17769"
+         style="fill:none;stroke:#000000;stroke-width:3.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2-0-3-1"
+       y="680.77728"
+       x="864.31726"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3970-6-0-6-9-1"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="680.77728"
+         x="864.31726"
+         sodipodi:role="line">HBoxLayout @text_buffer_bar</tspan></text>
+    <rect
+       style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.69999999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3172"
+       width="40.027294"
+       height="37.880718"
+       x="1121.1431"
+       y="219.49141" />
+    <g
+       id="g3208"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="133.12337"
+         x="652.93732"
+         height="37.880718"
+         width="40.027294"
+         id="rect3172-5"
+         style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.69999999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3204"
+         d="m 673.01413,133.12336 c 0.37881,37.88072 0.37881,37.88072 0.37881,37.88072"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3212"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.69999999;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3194"
+         width="40.027294"
+         height="37.880718"
+         x="612.9101"
+         y="133.12337" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3206"
+         d="m 652.93735,151.81119 c -40.02729,0 -40.02729,-0.25254 -40.02729,-0.25254"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2-0-3-1-0"
+       y="39.847797"
+       x="444.96307"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3970-6-0-6-9-1-1"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="39.847797"
+         x="444.96307"
+         sodipodi:role="line">PushButton @col_button</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844-4-7-0-2-0-3-1-0-6"
+       y="94.416298"
+       x="399.03583"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3970-6-0-6-9-1-1-6"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+         y="94.416298"
+         x="399.03583"
+         sodipodi:role="line">PushButton @row_button</tspan></text>
+    <g
+       id="g3993-6"
+       transform="translate(-40.238009,0.45922382)"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="132.66414"
+         x="82.538147"
+         height="38.302994"
+         width="432.32156"
+         id="rect3838-0-7"
+         style="fill:#c8c8c8;fill-opacity:0.78431373;fill-rule:evenodd;stroke:#000000;stroke-width:0.95509613;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3844-4-7-5"
+         y="163.36394"
+         x="326.60498"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3970-7"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           y="163.36394"
+           x="326.60498"
+           sodipodi:role="line">MenuBar @menu_bar</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3840-8"
+       y="157.55806"
+       x="55.052006"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:20px"
+         y="157.55806"
+         x="55.052006"
+         id="tspan3842-7"
+         sodipodi:role="line">File Edit Packages</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 437.90113,17.965983 c 0,30.3046 0,30.3046 0,30.3046 l 224.95601,0 10,84.852777 8.92858,-84.852777 7.64339,0 0,-30.3046 z"
+       id="path4096"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 392.44426,73.524363 0,27.274117 233.98431,0 6.42857,32.32488 3.21429,-32.32488 7.90082,0 0,-27.274117 z"
+       id="path4098"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/cmpitg/Desktop/Experiment/Espada/concepts/inkscape/g4360-5-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g4360"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="490.89661"
+         x="42.300137"
+         height="336.20148"
+         width="139.75853"
+         id="rect4096"
+         style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.20809929;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="174.20938"
+         y="796.06152"
+         id="text3844-4-7-0-2-0-3-1-2"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="174.20938"
+           y="796.06152"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           id="tspan3970-6-0-6-9-1-9">TreeWidget</tspan><tspan
+           id="tspan4358"
+           sodipodi:role="line"
+           x="174.20938"
+           y="818.56152"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco">@dir_tree</tspan></text>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4350"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4352"><rect
+           id="rect4354"
+           width="113.13708"
+           height="44.446712"
+           x="-163.64471"
+           y="665.47375" /></flowRegion><flowPara
+         id="flowPara4356"></flowPara></flowRoot>    <g
+       transform="translate(1.4338379e-6,-319.89252)"
+       id="g4360-5"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="490.89661"
+         x="42.300137"
+         height="336.20148"
+         width="139.75853"
+         id="rect4096-0"
+         style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.20809929;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="174.20938"
+         y="794.92395"
+         id="text3844-4-7-0-2-0-3-1-2-7"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="174.20938"
+           y="794.92395"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco"
+           id="tspan3970-6-0-6-9-1-9-0">TreeWidget</tspan><tspan
+           id="tspan4358-5"
+           sodipodi:role="line"
+           x="174.20938"
+           y="817.42395"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco">@buffers_tree</tspan></text>
+    </g>
+    <g
+       transform="translate(-210.1642,-319.89252)"
+       id="g4360-5-1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="490.94037"
+         x="392.26154"
+         height="434.09872"
+         width="252.38663"
+         id="rect4096-0-0"
+         style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.3177672;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="640.10559"
+         y="916.54633"
+         id="text3844-4-7-0-2-0-3-1-2-7-3"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4358-5-5"
+           sodipodi:role="line"
+           x="640.10559"
+           y="916.54633"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco">TextEdit @buffer1</tspan></text>
+      <rect
+         y="490.89661"
+         x="644.63867"
+         height="347.78973"
+         width="258.49014"
+         id="rect4096-0-0-5"
+         style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.28784719;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         y="925.20532"
+         x="392.21777"
+         height="221.78534"
+         width="252.38663"
+         id="rect4096-0-0-3"
+         style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.22713353;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         y="838.69611"
+         x="644.64819"
+         height="308.29459"
+         width="258.48068"
+         id="rect4096-0-0-3-1"
+         style="fill:#f0f0f0;fill-opacity:0.96531791;fill-rule:evenodd;stroke:#000000;stroke-width:0.27100584;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="640.27698"
+         y="1139.6787"
+         id="text3844-4-7-0-2-0-3-1-2-7-3-4"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4358-5-5-7"
+           sodipodi:role="line"
+           x="640.27698"
+           y="1139.6787"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco">TextEdit @buffer2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="898.32495"
+         y="832.04022"
+         id="text3844-4-7-0-2-0-3-1-2-7-3-7"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4358-5-5-71"
+           sodipodi:role="line"
+           x="898.32495"
+           y="832.04022"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco">TextEdit @buffer3</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="897.9646"
+         y="1139.6787"
+         id="text3844-4-7-0-2-0-3-1-2-7-3-7-0"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4358-5-5-71-9"
+           sodipodi:role="line"
+           x="897.9646"
+           y="1139.6787"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;font-family:Monaco;-inkscape-font-specification:Monaco">TextEdit @buffer4</tspan></text>
+    </g>
+  </g>
+</svg>
