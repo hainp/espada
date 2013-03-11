@@ -28,6 +28,18 @@
 
 * The Espada application when running would have a global singleton `App` representing all resources of the app.
 
+## `MainWindow` widget
+
+The `MainWindow` is the window that contains:
+
+* The default global menu bar.
+
+* A `TreeView` displaying current working directory.
+
+* All editing `TextEdit`s.
+
+* The status bar.
+
 ## `TextEdit` widget
 
 A `TextEdit` is also known as a *text buffer* or simply *buffer*.  When a buffer is destroyed, the garbage collection is trigger to save memory.
