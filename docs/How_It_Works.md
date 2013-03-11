@@ -40,6 +40,13 @@ The `MainWindow` is the window that contains:
 
 * The status bar.
 
+`MainWindow` mockup:
+
+<div style="align: center; text-align: center">
+    <img src="../concepts/main_window.png" width="430px" /><br />
+    Main Window mockup
+</div>
+
 ## `TextEdit` widget
 
 A `TextEdit` is also known as a *text buffer* or simply *buffer*.  When a buffer is destroyed, the garbage collection is trigger to save memory.
