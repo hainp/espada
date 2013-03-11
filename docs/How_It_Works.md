@@ -51,17 +51,16 @@ Each `TextEdit` widget contains:
     |  |
     |  `--Label->Entry @cmd_entry
     |
-    |--Splitter @buffer_region
-    |  |
-    |  |--HBoxLayout @text_buffer_bar
-    |  |  |
-    |  |  |--(?) (Line Number)
-    |  |  |
-    |  |  `--TextBufferWidget @buffer
-    |  |
-    |  `--TextBufferWidget @shell_buffer
-    |
-    `--StatusBar @status_bar
+    `--Splitter @buffer_region
+       |
+       |--HBoxLayout @text_buffer_bar
+       |  |
+       |  |--(?) (Line Number)
+       |  |
+       |  `--TextBufferWidget @buffer
+       |
+       `--TextBufferWidget @shell_buffer
+    
 
 The `TextEdit` widget is aware of the global app instance via its property `app`.
 
