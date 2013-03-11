@@ -49,19 +49,19 @@ Make sure you have all the required dependencies.  The best way to install depen
 
 * Install dependencies:
 
-    gem install qtbindings awesome_print
+      gem install qtbindings awesome_print
 
 * Download/clone Espada via Git or Mercurial:
 
-    git clone git://github.com/CMPITG/espada.git
+      git clone git://github.com/CMPITG/espada.git
 
   or
 
-    hg clone https://bitbucket.org/cmpitg/espada
+      hg clone https://bitbucket.org/cmpitg/espada
 
   or
 
-    wget -O espada.zip https://github.com/CMPITG/espada/archive/experiment.zip && unzip
+      wget -O espada.zip https://github.com/CMPITG/espada/archive/experiment.zip && unzip
 
 * Run `espada.sh` inside Espada directory.
 
