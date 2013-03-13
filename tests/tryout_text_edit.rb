@@ -21,6 +21,8 @@
 
 require 'espada_gui'
 
+ESPADA_PATH = current_executing_dir __FILE__
+
 App = Qt::Application.new ARGV
 
 main_window = MainWindow.new
