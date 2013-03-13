@@ -20,12 +20,29 @@
 #
 
 class MainWindow < Qt::Widget
-  attr_accessor :closing_action
+  attr_accessor :closing_action,
+                :layout,
+                :menubar
 
   def initialize
     super
+
+    add_layout
     set_no_margins
+    add_menubar
+
     @closing_action = lambda { true }
+  end
+
+  def add_layout
+    @layout = VBoxLayout.new
+    set_layout @layout
+  end
+
+  def add_menubar
+    @menubar = MenuBar.new
+    @layout.add @menubar
+    @menubar.add_action "&File"
   end
 
   def closeEvent(event)
@@ -35,5 +52,17 @@ class MainWindow < Qt::Widget
 
   def set_no_margins
     layout.set_contents_margins 0, 0, 0, 0
+  end
+
+  def add_widget(widget)
+    @layout.add widget
+  end
+
+  def add(widget)
+    add_widget widget
+  end
+
+  def set_central_widget(widget)
+    add widget
   end
 end
