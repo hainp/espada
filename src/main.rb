@@ -21,6 +21,7 @@
 
 require 'rubygems'
 require 'singleton'
+
 require 'espada_settings'
 require 'default_settings'
 require 'espada_utils'
@@ -41,10 +42,8 @@ class MainApplication
     @app = Qt::Application.new ARGV
     @buffers = {}
     update_settings
-    create_container
     create_main_window
     create_main_text_buffer
-    set_layout
   end
 
   def to_s
@@ -53,10 +52,6 @@ class MainApplication
 
   def self.to_s
     self.instance.to_s
-  end
-
-  def set_layout
-    @main_win.set_central_widget @container
   end
 
   def create_main_text_buffer
@@ -68,7 +63,8 @@ class MainApplication
     text_edit.load Settings.default_contents_path
     text_edit.set_path Settings.default_contents_path
 
-    @container.add text_edit
+    # @container.add text_edit
+    @main_win.layout.add_widget text_edit
     @current_buffer_id = text_edit.object_id
     @buffers[@current_buffer_id] = text_edit
   end
@@ -81,11 +77,7 @@ class MainApplication
     win.show
 
     @main_win = win
-  end
-
-  def create_container
-    # The container carries a layout of the main window
-    @container = MainContainer.new
+    @container = win.layout
   end
 
   def exec
