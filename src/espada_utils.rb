@@ -128,3 +128,13 @@ end
 def main_window
   if defined? App && App.main_win then App.main_win else nil end
 end
+
+def main_menubar
+  main_window.menubar if main_window
+end
+
+# Strictly speaking, Menu is different from MenuBar, but this MenuBar is
+# global, so this should be accepted
+def main_menu
+  main_menubar
+end
