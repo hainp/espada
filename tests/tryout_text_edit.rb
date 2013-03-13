@@ -19,17 +19,15 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require '../src/espada_gui'
+require 'espada_gui'
 
 App = Qt::Application.new ARGV
 
 main_window = MainWindow.new
-main_window.resize 800, 600
+main_window.resize 1002, 600
 
-# text_edit = TextBufferWidget.new
 text_edit = TextEdit.new
-
-main_window.set_central_widget text_edit
+main_window.add text_edit
 
 main_window.show
 App.exec
