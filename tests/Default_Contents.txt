@@ -1,9 +1,10 @@
 current_path
 
+puts main_window
 puts 'hello world!'
-puts App.current_buffer.saved
+puts current_buffer.saved
 puts App
-puts App.current_buffer.path
+puts current_buffer.path
 
 create_dir "/tmp/hello_world/hehe"
 !ls "/home/cmpitg/Desktop/"

@@ -124,3 +124,7 @@ end
 def shell_buffer
   if App && App.shell_buffer then App.shell_buffer else nil end
 end
+
+def main_window
+  if defined? App && App.main_win then App.main_win else nil end
+end
