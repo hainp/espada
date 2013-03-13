@@ -65,6 +65,7 @@ def eval_text(text)
   return [`#{text.but_first}`, :shell] if text.first == "!"[0]
 
   command_type = :ruby
+  # TODO: ugly code
   result = begin
     text.split("\u07ed").each do |line|
       # The scope of `eval` is always global
@@ -73,7 +74,12 @@ def eval_text(text)
   rescue Exception => e
     puts e
     command_type = :shell
-    `#{text}`
+    begin
+      `#{text}` if text != ""
+    rescue Exception => e
+      # Fail silently
+      ""
+    end
   end
 
   [result, command_type]

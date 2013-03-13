@@ -6,6 +6,7 @@ puts current_buffer.saved
 puts App
 puts current_buffer.path
 puts main_menu
+main_menu.set_no_margins
 
 create_dir "/tmp/hello_world/hehe"
 !ls "/home/cmpitg/Desktop/"
