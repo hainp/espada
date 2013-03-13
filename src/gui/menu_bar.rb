@@ -19,25 +19,5 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'rubygems'
-require 'singleton'
-require 'Qt'
-require 'espada_utils'
-
-require 'gui/gui_constants'
-require 'gui/application'
-require 'gui/widget'
-require 'gui/menu_bar'
-require 'gui/font'
-
-require 'gui/box_layout'
-require 'gui/splitter'
-
-require 'gui/label'
-require 'gui/icon'
-require 'gui/entry'
-require 'gui/entry_label'
-require 'gui/text_cursor'
-require 'gui/text_edit'
-
-require 'gui/main_window'
+class MenuBar < Qt::MenuBar
+end
