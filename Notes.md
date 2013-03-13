@@ -182,3 +182,14 @@ http://stackoverflow.com/questions/7987881/how-to-scale-zoom-a-qtextedit-area-fr
     QLayout::setMargin()
     QLayout::setSpacing()
 
+##### Menu Bar
+
+Adding action to a specific location
+
+Use QMenuBar::insertMenu in conjunction with QMenu::menuAction.
+
+For example, if you want to dynamically insert the "Print" menu at the location before the "Help" menu, you can do something like this:
+
+QMenu *printMenu = new QMenu(tr("&Print"));
+menuBar()->insertMenu(ui->menuHelp->menuAction(), printMenu);
+
