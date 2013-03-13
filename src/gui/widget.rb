@@ -19,7 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-class Widget < Qt::Widget
+class Qt::Widget
   def forbid_resize(orientation)
     if orientation == :vertical
       set_size_policy Qt::SizePolicy.new(Qt::SizePolicy::Preferred,
@@ -33,4 +33,7 @@ class Widget < Qt::Widget
   def set_no_margins
     layout.set_contents_margins 0, 0, 0, 0
   end
+end
+
+class Widget < Qt::Widget
 end

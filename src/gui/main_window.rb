@@ -50,10 +50,6 @@ class MainWindow < Qt::Widget
     if res then event.accept else event.ignore end
   end
 
-  def set_no_margins
-    layout.set_contents_margins 0, 0, 0, 0
-  end
-
   def add_widget(widget)
     @layout.add widget
   end
