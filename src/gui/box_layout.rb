@@ -19,7 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-class Qt::VBoxLayout
+class Qt::BoxLayout
   def add(widget)
     add_widget widget
   end
