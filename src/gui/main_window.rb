@@ -41,8 +41,10 @@ class MainWindow < Qt::Widget
 
   def add_menubar
     @menubar = MenuBar.new
-    @layout.add @menubar
+    
     @menubar.add_action "&File"
+
+    @layout.add @menubar
   end
 
   def closeEvent(event)
