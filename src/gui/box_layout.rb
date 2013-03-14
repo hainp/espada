@@ -19,14 +19,14 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-class BoxLayout < Qt::VBoxLayout
+class Qt::VBoxLayout
   def add(widget)
     add_widget widget
   end
 end
 
-class VBoxLayout < BoxLayout
+class VBoxLayout < Qt::VBoxLayout
 end
 
-class HBoxLayout < BoxLayout
+class HBoxLayout < Qt::HBoxLayout
 end
