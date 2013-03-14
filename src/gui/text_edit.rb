@@ -249,6 +249,8 @@ class TextEdit < Widget
 
   def create_layout
     @layout = VBoxLayout.new
+    @layout.set_spacing 0
+    @layout.set_no_margins
     self.set_layout @layout
   end
 
