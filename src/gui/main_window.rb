@@ -36,12 +36,14 @@ class MainWindow < Qt::Widget
 
   def add_layout
     @layout = VBoxLayout.new
+    @layout.set_no_margins
+    @layout.set_spacing 0
     set_layout @layout
   end
 
   def add_menubar
     @menubar = MenuBar.new
-    
+
     @menubar.add_action "&File"
 
     @layout.add @menubar
