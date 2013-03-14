@@ -233,13 +233,11 @@ class TextEdit < Widget
 
   def initialize
     super
-    @layout = VBoxLayout.new
 
+    create_layout
     create_path_bar
     create_buffer_region
     create_status_bar
-
-    self.set_layout @layout
 
     arrange_layout
 
@@ -247,6 +245,11 @@ class TextEdit < Widget
 
     @status_bar.show
     @status_bar.show_message "Ready", 2000
+  end
+
+  def create_layout
+    @layout = VBoxLayout.new
+    self.set_layout @layout
   end
 
   def create_buffer_region
