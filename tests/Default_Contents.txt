@@ -8,6 +8,11 @@ puts current_buffer.path
 puts main_menu
 main_menu.set_no_margins
 
+shortcut = Qt::Shortcut.new main_window
+puts shortcut
+shortcut.setKey Qt::KeySequence.new("Ctrl+P")
+shortcut.connect(SIGNAL :activated) { puts "Pressed" }
+
 create_dir "/tmp/hello_world/hehe"
 !ls "/home/cmpitg/Desktop/"
 
