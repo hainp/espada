@@ -22,6 +22,7 @@
 require 'rubygems'
 require 'singleton'
 
+require 'espada_shortcuts'
 require 'espada_settings'
 require 'espada_utils'
 

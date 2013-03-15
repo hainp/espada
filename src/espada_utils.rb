@@ -19,6 +19,8 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require 'espada_shortcuts'
+
 require 'espada_gui_utils'
 require 'espada_string_utils'
 require 'espada_datetime_utils'
@@ -56,4 +58,8 @@ def message(text)
   puts ">> #{text}"
   # TODO: find out the appropriate timeout
   statusbar.show_message text, 1500
+end
+
+def shortcuts
+  ShortcutTable.instance if defined? ShortcutTable
 end
