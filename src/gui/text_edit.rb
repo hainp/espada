@@ -23,8 +23,6 @@ require 'awesome_print'
 
 require 'espada_utils'
 
-require 'gui/status_bar'
-
 class HandlerIcon < Icon
   def initialize(path)
     super
@@ -226,8 +224,7 @@ class TextEdit < Widget
     :layout,
     :path_bar, :handler_icon, :path_label, :cmd_entry,
     :buffer_region, :text_buffer_bar, :buffer,
-    :shell_buffer,
-    :status_bar
+    :shell_buffer
 
   signals :triple_clicked
 
@@ -237,14 +234,10 @@ class TextEdit < Widget
     create_layout
     create_path_bar
     create_buffer_region
-    create_status_bar
 
     arrange_layout
 
     set_font Settings.normal_text_font if defined? Settings
-
-    @status_bar.show
-    @status_bar.show_message "Ready", 2000
   end
 
   def create_layout
@@ -270,11 +263,6 @@ class TextEdit < Widget
 
     @buffer_region.add_widget main_buffer_widget
     @buffer_region.add_widget @shell_buffer
-  end
-
-  def create_status_bar
-    @status_bar = StatusBar.new
-    @status_bar.forbid_resize :vertical
   end
 
   def create_path_bar
@@ -306,7 +294,6 @@ class TextEdit < Widget
   def arrange_layout
     @layout.add_widget @path_bar
     @layout.add_widget @buffer_region
-    @layout.add_widget @status_bar
 
     @text_buffer_bar.add_widget @buffer
 
