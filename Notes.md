@@ -37,6 +37,12 @@ Tasks
   - Command piping
   - Macros
 
+* Convenient functions:
+  - `message_box`
+
+* Log all commands to a message buffer:
+  - `message_buffer.show` & `message_buffer.hide`
+
 * IPC: named pipe
   - Protocol
   - Actions
