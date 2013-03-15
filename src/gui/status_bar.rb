@@ -20,6 +20,12 @@
 #
 
 class StatusBar < Qt::StatusBar
+  def initialize
+    super
+
+    forbid_resize :vertical
+  end
+
   def forbid_resize(orientation)
     if orientation == :vertical
       set_size_policy Qt::SizePolicy.new(Qt::SizePolicy::Preferred,
