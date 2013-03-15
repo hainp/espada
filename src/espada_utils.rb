@@ -54,4 +54,6 @@ end
 
 def message(text)
   puts ">> #{text}"
+  # TODO: find out the appropriate timeout
+  statusbar.show_message text, 1500
 end
