@@ -23,8 +23,9 @@ require 'rubygems'
 require 'singleton'
 
 require 'espada_settings'
-require 'default_settings'
 require 'espada_utils'
+
+require 'default_settings'
 
 ESPADA_PATH = current_executing_dir __FILE__
 

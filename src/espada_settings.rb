@@ -34,6 +34,7 @@
 
 require 'singleton'
 require 'awesome_print'
+
 require 'espada_utils'
 
 class SettingsSingleton
