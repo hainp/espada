@@ -30,32 +30,31 @@ class MainWindow < Qt::Widget
   def initialize
     super
 
-    add_layout
-    set_no_margins
-    add_menubar
-    add_statusbar
+    create_menubar
+    create_statusbar
+    create_layout
 
     @closing_action = lambda { true }
   end
 
-  def add_layout
+  def create_layout
     @layout = VBoxLayout.new
     @layout.set_no_margins
     @layout.set_spacing 0
     set_layout @layout
-  end
 
-  def add_statusbar
-    @statusbar = StatusBar.new
+    @layout.add @menubar
     @layout.add @statusbar
   end
 
-  def add_menubar
+  def create_statusbar
+    @statusbar = StatusBar.new
+  end
+
+  def create_menubar
     @menubar = MenuBar.new
 
     @menubar.add_action "&File"
-
-    @layout.add @menubar
   end
 
   def closeEvent(event)
@@ -63,7 +62,7 @@ class MainWindow < Qt::Widget
     if res then event.accept else event.ignore end
   end
 
-  def add_widget(widget)
+  def create_widget(widget)
     @layout.add widget
   end
 
