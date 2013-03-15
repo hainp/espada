@@ -19,6 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require 'gui/label'
 require 'gui/status_bar'
 
 class MainWindow < Qt::Widget
@@ -31,25 +32,13 @@ class MainWindow < Qt::Widget
   def initialize
     super
 
+    @main_buffer_placeholder = {}
+
     create_menubar
     create_statusbar
     create_layout
-    get_placeholder
 
     @closing_action = lambda { true }
-  end
-
-  def get_placeholder
-    @layout.count.times do |index|
-      item = @layout.item_at index
-      if item.class == Qt::SpacerItem
-        @main_buffer_placeholder = {
-          :item => item,
-          :index => index
-        }
-        break
-      end
-    end
   end
 
   def create_layout
@@ -58,8 +47,13 @@ class MainWindow < Qt::Widget
     @layout.set_spacing 0
     set_layout @layout
 
+    @main_buffer_placeholder = {
+      :item => Label.new,
+      :index => 1
+    }
+
     @layout.add @menubar
-    @layout.add_stretch
+    @layout.add @main_buffer_placeholder[:item]
     @layout.add @statusbar
   end
 
@@ -87,6 +81,8 @@ class MainWindow < Qt::Widget
   end
 
   def set_central_widget(widget)
-    add widget
+    # TODO: Remove central widget if it's already there
+    @layout.insert_widget @main_buffer_placeholder[:index], widget
+    @main_buffer_placeholder[:item].hide
   end
 end
