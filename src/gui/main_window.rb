@@ -19,10 +19,13 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require 'gui/status_bar'
+
 class MainWindow < Qt::Widget
   attr_accessor :closing_action,
                 :layout,
-                :menubar
+                :menubar,
+                :statusbar
 
   def initialize
     super
@@ -30,6 +33,7 @@ class MainWindow < Qt::Widget
     add_layout
     set_no_margins
     add_menubar
+    add_statusbar
 
     @closing_action = lambda { true }
   end
@@ -39,6 +43,11 @@ class MainWindow < Qt::Widget
     @layout.set_no_margins
     @layout.set_spacing 0
     set_layout @layout
+  end
+
+  def add_statusbar
+    @statusbar = StatusBar.new
+    @layout.add @statusbar
   end
 
   def add_menubar
