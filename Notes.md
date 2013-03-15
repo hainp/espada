@@ -1,6 +1,29 @@
 ######
 Tasks
 
+* Eval-ing:
+
+    # 2+ shell commands
+    !ls ~
+    !ls ~/Desktop
+
+    # Multiline Ruby expression
+    puts '''Hello
+    World'''
+
+    # Multiline shell command
+    !ls ~ \
+        ~/tmp \
+        /tmp
+
+    # Mixed Ruby expression & shell command
+    !ls ~ \
+        ~/tmp \
+        /tmp
+    puts '''Hello
+    World'''
+
+
 * UX:
   - Tab vs. tiling (perhaps tab is better? -> running apps on desktop, tab in browser)
   - Continue-browsing (?) -> file #1 is below file #2
