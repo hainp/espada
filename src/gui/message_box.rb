@@ -36,4 +36,12 @@ class MessageBoxInstance
     @window = MessageBox.new
     @window.set_title "Message"
   end
+
+  def set_text(text)
+    @window.set_text text
+  end
+
+  def exec
+    @window.exec
+  end
 end

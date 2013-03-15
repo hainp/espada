@@ -21,6 +21,12 @@
 
 require 'gui/gui_constants'
 
+def message_box(text)
+  msg_box = MessageBoxInstance.instance
+  msg_box.set_text text
+  msg_box.exec
+end
+
 def mouse_event_to_sym(event)
   case event.button
   when Mouse[:LeftButton]
