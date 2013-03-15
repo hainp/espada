@@ -59,3 +59,7 @@ end
 def main_menu
   main_menubar
 end
+
+def statusbar
+  main_window.statusbar if main_window
+end
