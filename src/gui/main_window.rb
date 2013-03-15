@@ -25,7 +25,8 @@ class MainWindow < Qt::Widget
   attr_accessor :closing_action,
                 :layout,
                 :menubar,
-                :statusbar
+                :statusbar,
+                :main_buffer_placeholder
 
   def initialize
     super
@@ -33,8 +34,22 @@ class MainWindow < Qt::Widget
     create_menubar
     create_statusbar
     create_layout
+    get_placeholder
 
     @closing_action = lambda { true }
+  end
+
+  def get_placeholder
+    @layout.count.times do |index|
+      item = @layout.item_at index
+      if item.class == Qt::SpacerItem
+        @main_buffer_placeholder = {
+          :item => item,
+          :index => index
+        }
+        break
+      end
+    end
   end
 
   def create_layout
@@ -44,6 +59,7 @@ class MainWindow < Qt::Widget
     set_layout @layout
 
     @layout.add @menubar
+    @layout.add_stretch
     @layout.add @statusbar
   end
 
