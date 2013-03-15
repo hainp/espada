@@ -19,43 +19,11 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'fileutils'
-
 require 'gui/gui_constants'
 
 require 'espada_string_utils'
 require 'espada_datetime_utils'
-
-def expand_path(path)
-  File.expand_path path
-end
-
-def mkdir(path)
-  FileUtils.mkpath path
-end
-
-def create_dir(path)
-  mkdir path
-end
-
-def current_executing_dir(path)
-  File.expand_path File.dirname(path)
-end
-
-def espada_path
-  if defined? ESPADA_PATH then ESPADA_PATH else "" end
-end
-
-# Read file without failing, no exception is thrown
-
-def read_file(path)
-  begin
-    contents = File.read path
-  rescue Exception => e
-    contents = ""
-  end
-  contents
-end
+require 'espada_fs_utils'
 
 def eval_text(text)
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
@@ -87,29 +55,6 @@ end
 
 def message(text)
   puts ">> #{text}"
-end
-
-def save_file_with_text(path, text)
-  File.open(path, 'w') { |file| file.write text }
-  message "Saved to #{path}"
-end
-
-def save_as(path)
-  buffer = current_buffer
-  return nil if not buffer
-  path = path || current_buffer.path
-  save_file_with_text path, buffer.to_plain_text
-  current_buffer.path = path
-  current_buffer.saved = true
-end
-
-def save(*args)
-  if args.length == 0
-    save_file_with_text current_buffer.path, current_buffer.to_plain_text
-  else
-    save_file_with_text args[0], current_buffer.to_plain_text
-  end
-  current_buffer.saved = true
 end
 
 def mouse_event_to_sym(event)
