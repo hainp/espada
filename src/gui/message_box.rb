@@ -19,26 +19,21 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'rubygems'
 require 'singleton'
-require 'Qt'
-require 'espada_utils'
 
-require 'gui/gui_constants'
-require 'gui/application'
-require 'gui/widget'
-require 'gui/menu_bar'
-require 'gui/font'
+class MessageBox < Qt::MessageBox
+  def set_title(title)
+    set_window_title title
+  end
+end
 
-require 'gui/box_layout'
-require 'gui/splitter'
+class MessageBoxInstance
+  include Singleton
 
-require 'gui/label'
-require 'gui/icon'
-require 'gui/entry'
-require 'gui/entry_label'
-require 'gui/text_cursor'
-require 'gui/text_edit'
+  attr_accessor :window
 
-require 'gui/message_box'
-require 'gui/main_window'
+  def initialize
+    @window = MessageBox.new
+    @window.set_title "Message"
+  end
+end
