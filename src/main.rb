@@ -33,7 +33,6 @@ class MainApplication
 
   attr_accessor :app,
                 :settings,
-                :container,
                 :main_win,
                 :buffers,
                 :current_buffer_id
@@ -63,8 +62,7 @@ class MainApplication
     text_edit.load Settings.default_contents_path
     text_edit.set_path Settings.default_contents_path
 
-    # @container.add text_edit
-    @main_win.layout.add_widget text_edit
+    @main_win.set_central_widget text_edit
     @current_buffer_id = text_edit.object_id
     @buffers[@current_buffer_id] = text_edit
   end
@@ -77,7 +75,6 @@ class MainApplication
     win.show
 
     @main_win = win
-    @container = win.layout
   end
 
   def exec
