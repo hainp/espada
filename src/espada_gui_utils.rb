@@ -39,19 +39,19 @@ def mouse_event_to_sym(event)
 end
 
 def current_buffer
-  if App && App.current_buffer then App.current_buffer else nil end
+  App.current_buffer if App && App.current_buffer
 end
 
 def shell_buffer
-  if App && App.shell_buffer then App.shell_buffer else nil end
+  App.shell_buffer if App && App.shell_buffer
 end
 
 def main_window
-  if defined? App && App.main_win then App.main_win else nil end
+  App.main_win if defined? App && App.main_win
 end
 
 def main_menubar
-  main_window.menubar if main_window
+  main_window.menubar if defined? main_window
 end
 
 # Strictly speaking, Menu is different from MenuBar, but this MenuBar is
@@ -61,5 +61,5 @@ def main_menu
 end
 
 def statusbar
-  main_window.statusbar if main_window
+  main_window.statusbar if defined? main_window
 end
