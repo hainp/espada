@@ -11,6 +11,15 @@
   - `:last_time` (default)
   - `[file_path1, file_path2, ...]`
 
+* Keybinding:
+
+    bindkey(["<ctrl> x", "<ctrl> s"],    { save })
+    bindkey(["<ctrl> s"],                { save })
+    bindkey(["<ctrl> f4"],               { close_file })
+    bindkey(["<super> p"],               { puts "Hello World" })
+    bindkey(["<ctrl> left"],             { backward_word })
+    bindkey(["<ctrl> right"],            { forward_word })
+
 ## Properties
 
 ### Buffer
