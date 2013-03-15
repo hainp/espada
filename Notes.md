@@ -23,7 +23,6 @@ Tasks
     puts '''Hello
     World'''
 
-
 * UX:
   - Tab vs. tiling (perhaps tab is better? -> running apps on desktop, tab in browser)
   - Continue-browsing (?) -> file #1 is below file #2
