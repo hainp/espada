@@ -27,7 +27,7 @@ class EspadaPTY < PseudoTerminal
   end
 
   def get_output
-    output = @b.lines[-1]
+    output = @b.lines.join("\n")
     @b.lines.clear
     output
   end
