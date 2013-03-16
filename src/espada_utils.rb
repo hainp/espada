@@ -61,5 +61,9 @@ def message(text)
 end
 
 def binding_list
-  BindindTable.instance if defined? BindindTable
+  BindingTable.instance if defined? BindingTable
+end
+
+def current_pty
+  current_buffer.pty if defined? current_buffer
 end
