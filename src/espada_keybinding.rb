@@ -22,7 +22,7 @@
 require 'singleton'
 require 'awesome_print'
 
-class BindindTable
+class BindingTable
   include Singleton
 
   attr_accessor :table

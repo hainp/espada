@@ -21,6 +21,7 @@
 
 require 'awesome_print'
 
+require 'espada_pty'
 require 'espada_utils'
 
 class HandlerIcon < Icon
@@ -224,7 +225,7 @@ class TextEdit < Widget
     :layout,
     :path_bar, :handler_icon, :path_label, :cmd_entry,
     :buffer_region, :text_buffer_bar, :buffer,
-    :shell_buffer
+    :shell_buffer, :pty
 
   signals :triple_clicked
 
@@ -234,10 +235,15 @@ class TextEdit < Widget
     create_layout
     create_path_bar
     create_buffer_region
+    create_pty
 
     arrange_layout
 
     set_font Settings.normal_text_font if defined? Settings
+  end
+
+  def create_pty
+    @pty = EspadaPTY.new
   end
 
   def create_layout
