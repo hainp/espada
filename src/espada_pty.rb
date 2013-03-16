@@ -21,7 +21,7 @@
 
 require 'pseudo-terminal'
 
-class EpsadaPTY < PseudoTerminal
+class EspadaPTY < PseudoTerminal
   def clear_output
     @b.lines.clear = []
   end
