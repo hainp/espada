@@ -85,4 +85,9 @@ class MainWindow < Qt::Widget
     @layout.insert_widget @main_buffer_placeholder[:index], widget
     @main_buffer_placeholder[:item].hide
   end
+
+  def closeEvent(event)
+    puts "[main_window] [event] [close] placeholder"
+    event.accept()
+  end
 end
