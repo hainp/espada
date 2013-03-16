@@ -4,7 +4,7 @@ Espada the *fully* hackable text editor.
 
 ## Resources & Channels
 
-**For pre-0.5 release, please contact author directly via his email (<cmpitgATgmaildotcom).**
+**For pre-0.5 release, please contact author directly via his email (cmpitgATgmaildotcom).**
 
 * Homepage: TODO
 
@@ -18,6 +18,8 @@ Espada the *fully* hackable text editor.
 * Screencasts: TODO
 
 * Bug reporting: TODO
+
+* Question form: TODO
 
 * Code hosting:
   - On Github: <https://github.com/CMPITG/espada>
