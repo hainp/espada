@@ -25,6 +25,8 @@ Espada the *fully* hackable text editor.
   - On Github: <https://github.com/CMPITG/espada>
   - On Bitbucket: <https://bitbucket.org/cmpitg/espada>
 
+The easiest way to ask question and contact project author is to form the *question form* above.
+
 ## Platforms
 
 Espada supports all platforms that *Ruby* and *QtRuby* support.  This means any GNU/Linux distro (Debian, Slackware, Fedora, Gentoo, ...) or \*nix derivative (*BSD, MacOS X, ...) should be sufficient enough to run Espada.  Otherwise, please file a bug report.
@@ -34,7 +36,7 @@ Please note that Microsoft Windows® is *not* supported (and probably never will
 Tested platforms:
 
 * Debian (all versions which supports Ruby 1.9)
-* Ubuntu 12.04
+* Ubuntu 12.04 LTS
 * Fedora 17 and 18
 
 ## Requirement
@@ -42,6 +44,7 @@ Tested platforms:
 * Ruby 1.9 (1.8 is no longer supported)
 * QtRuby
 * awesome_print
+* pseudo-terminal
 
 ## Installation
 
@@ -52,7 +55,7 @@ Make sure you have all the required dependencies.  The best way to install depen
 * Install dependencies:
 
   ```sh
-  gem install qtbindings awesome_print
+  gem install qtbindings awesome_print pseudo-terminal
   ```
 
 * Download/clone Espada via Git or Mercurial:
