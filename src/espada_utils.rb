@@ -26,6 +26,12 @@ require 'espada_string_utils'
 require 'espada_datetime_utils'
 require 'espada_fs_utils'
 
+def exec_shell_command(text)
+  return nil if !current_pty
+  current_pty << text
+  current_pty.get_output
+end
+
 def eval_text(text)
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
   text.strip!
