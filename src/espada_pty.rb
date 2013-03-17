@@ -22,6 +22,11 @@
 require 'pseudo-terminal'
 
 class EspadaPTY < PseudoTerminal
+  def initialize
+    # IO wait time - TODO: Explain in doc
+    super :timeout => 0.01
+  end
+
   def clear_output
     @b.lines.clear = []
   end
