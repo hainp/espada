@@ -37,6 +37,7 @@ class MainWindow < Qt::Widget
     create_menubar
     create_statusbar
     create_layout
+    install_event_filter self
 
     @closing_action = lambda { true }
   end
@@ -86,9 +87,20 @@ class MainWindow < Qt::Widget
     @main_buffer_placeholder[:item].hide
   end
 
+  ###
+  ### Event-related stuff
+  ###
+
   def closeEvent(event)
     puts "[main_window] [event] [close] placeholder"
     puts "[current_buffer] [saved] #{current_buffer.saved}" if current_buffer
     event.accept()
+  end
+
+  def eventFilter(sender, event)
+    if event.type == Qt::Event::KeyPress
+      puts "#{event.text} -> #{event.key} -> #{event.modifiers}"
+    end
+    false
   end
 end
