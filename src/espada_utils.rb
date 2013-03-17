@@ -37,7 +37,7 @@ def eval_text(text)
   text.strip!
 
   # Exec if the first character is `!`
-  return [`#{text.but_first}`, :shell] if text.first == "!"[0]
+  return [exec_shell_command(text.but_first), :shell] if text.first == "!"[0]
 
   command_type = :ruby
   # TODO: ugly code
@@ -50,7 +50,7 @@ def eval_text(text)
     puts e
     command_type = :shell
     begin
-      `#{text}` if text != ""
+      exec_shell_command text if text != ""
     rescue Exception => e
       # Fail silently
       ""
