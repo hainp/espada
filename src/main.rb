@@ -103,4 +103,5 @@ class MainApplication
 end
 
 App = MainApplication.instance
+message "Ready"
 App.exec
