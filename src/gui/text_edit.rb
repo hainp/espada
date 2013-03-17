@@ -32,7 +32,6 @@ end
 
 class TextBufferWidget < Qt::TextEdit
   attr_accessor :pressed_mouse_button,
-                :path,
                 :saved
 
   def initialize
@@ -67,17 +66,12 @@ class TextBufferWidget < Qt::TextEdit
     App || nil
   end
 
-  def set_path(path)
-    @path = path
-  end
-
   def save(*args)
     save(*args)
   end
 
   def load(path)
     set_plain_text read_file(path)
-    set_path path
     @saved = true
   end
 
@@ -320,16 +314,16 @@ class TextEdit < Widget
 
   def load(path)
     @buffer.load path
+    set_path path
   end
 
   def set_path(path)
     path = expand_path path
-    @buffer.set_path path
     @path_label.set_text path
   end
 
   def path
-    @buffer.path
+    @path_label.text
   end
 
   def path=(value)
