@@ -229,7 +229,7 @@ class TextEdit < Widget
     create_layout
     create_path_bar
     create_buffer_region
-    create_pty
+    create_pty                 # Slow the program down dramatically
 
     arrange_layout
 
