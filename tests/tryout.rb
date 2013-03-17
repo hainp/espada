@@ -22,23 +22,4 @@
 require 'pry'
 require 'espada_gui'
 
-require 'pty'
-
-# master, slave = PTY.open
-# read, write = IO.pipe
-# pid = PTY.spawn "factor", :in => read, :out => slave
-# read.close
-# slave.close
-
-# write.puts "42"
-# p master.gets
-
-# write.puts "oaeu"
-# # p master.gets
-
-
-read, write, pid = PTY.spawn "sh -i"
-
-## Using master to read & write to write
-
 binding.pry
