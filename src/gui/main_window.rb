@@ -88,6 +88,7 @@ class MainWindow < Qt::Widget
 
   def closeEvent(event)
     puts "[main_window] [event] [close] placeholder"
+    puts "[current_buffer] [saved] #{current_buffer.saved}" if current_buffer
     event.accept()
   end
 end
