@@ -98,6 +98,10 @@ class MainWindow < Qt::Widget
   end
 
   def eventFilter(sender, event)
+    # Weird behaviour:
+    # * Modifiers are activated during KeyPress
+    # * Other characters are activated during KeyRelease
+
     if event.type == Qt::Event::KeyPress
       puts "#{event.text} -> #{event.key} -> #{event.modifiers}"
     end
