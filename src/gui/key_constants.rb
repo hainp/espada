@@ -437,4 +437,18 @@ KeyToQtKey = {
   :Key_Cancel => Qt::Key_Cancel,
 }
 
-QtKeyToKey = KeyToQtKey.invert
+NumberToKey = KeyToQtKey.invert
+
+KeymodToQtKeymod = {
+  :No => Qt::NoModifier,
+  :Shift => Qt::ShiftModifier,
+  :Control => Qt::ControlModifier,
+  :Alt => Qt::AltModifier,
+  :Super => Qt::MetaModifier,
+  :Keypad => Qt::KeypadModifier,
+  :GroupSwitch => Qt::GroupSwitchModifier,
+}
+
+NumberToKeymod = KeymodToQtKeymod.invert
+
+KeymodValues = KeymodToQtKeymod.values
