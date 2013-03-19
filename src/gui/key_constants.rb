@@ -42,7 +42,7 @@ KeyToQtKey = {
   :Key_PageDown => Qt::Key_PageDown,
   :Key_Shift => Qt::Key_Shift,
   :Key_Control => Qt::Key_Control,
-  :Key_Meta => Qt::Key_Meta,
+  :Key_Super => Qt::Key_Meta,
   :Key_Alt => Qt::Key_Alt,
   :Key_AltGr => Qt::Key_AltGr,
   :Key_CapsLock => Qt::Key_CapsLock,
@@ -437,7 +437,8 @@ KeyToQtKey = {
   :Key_Cancel => Qt::Key_Cancel,
 }
 
-NumberToKey = KeyToQtKey.invert
+NumberToKey = {}
+KeyToQtKey.each { |key, val| NumberToKey[val.to_i] = key }
 
 KeymodToQtKeymod = {
   :No => Qt::NoModifier,
@@ -449,6 +450,24 @@ KeymodToQtKeymod = {
   :GroupSwitch => Qt::GroupSwitchModifier,
 }
 
-NumberToKeymod = KeymodToQtKeymod.invert
+NumberToKeymod = {}
+KeymodToQtKeymod.each { |key, val| NumberToKeymod[val.to_i] = key }
 
-KeymodValues = KeymodToQtKeymod.values
+KeymodValues = NumberToKeymod.keys
+
+#
+# This is a dirty hack, since these keys can only be caught in a KeyRelease
+# event, and `event.text == ""` at that time
+#
+MovementKeys = [
+  :Key_Left,
+  :Key_Right,
+  :Key_Up,
+  :Key_Down,
+  :Key_Insert,
+  :Key_Home,
+  :Key_End,
+  :Key_Delete,
+  :Key_PageDown,
+  :Key_PageUp,
+]
