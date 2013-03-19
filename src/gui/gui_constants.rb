@@ -21,6 +21,8 @@
 
 require 'Qt'
 
+require 'gui/key_constants'
+
 Mouse = {
   :LeftButton    => Qt::LeftButton,
   :MiddleButton  => Qt::MiddleButton,
