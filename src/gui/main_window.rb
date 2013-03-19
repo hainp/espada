@@ -99,17 +99,31 @@ class MainWindow < Qt::Widget
 
   def eventFilter(sender, event)
     #
-    # Weird behaviour:
+    # Weird behaviours:
     # * Modifiers are activated during KeyPress
     # * Other characters are activated during KeyRelease
-    #
-    # So to catch a key combination, only process event with
-    #   - `type` == `KeyRelease`
-    #   - `text` != `""`
+    # * If movement keys are pressed only, they're activated during KeyRelease
+    #   But if there are modifiers, they're during both
     #
 
-    if event.type == Qt::Event::KeyRelease && event.text != ""
-      puts "|#{event.text}| -> #{event.key} -> #{event.modifiers}"
+    if (event.type == Qt::Event::KeyRelease \
+        || event.type == Qt::Event::KeyPress)
+      key = NumberToKey[event.key]
+      keymod = NumberToKeymod[event.modifiers]
+
+      if event.type == Qt::Event::KeyPress
+        okay = true
+      else
+        okay = event.text != "" \
+               || (MovementKeys.include?(key) && keymod == :No)
+      end
+
+      if okay
+        puts ">> Text: |#{event.text}| >> Modifier: #{event.modifiers}"
+        puts ">> Pressed? -> #{event.type == Qt::Event::KeyPress}"
+        puts ">> key: #{key} >> modifier: #{keymod}"
+        puts
+      end
     end
     false
   end
