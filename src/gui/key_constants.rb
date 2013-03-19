@@ -21,7 +21,7 @@
 
 require 'Qt'
 
-{
+KeyToQtKey = {
   :Key_Escape => Qt::Key_Escape,
   :Key_Tab => Qt::Key_Tab,
   :Key_Backtab => Qt::Key_Backtab,
@@ -436,3 +436,5 @@ require 'Qt'
   :Key_Zoom => Qt::Key_Zoom,
   :Key_Cancel => Qt::Key_Cancel,
 }
+
+QtKeyToKey = KeyToQtKey.invert
