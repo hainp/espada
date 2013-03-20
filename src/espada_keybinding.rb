@@ -51,3 +51,7 @@ class Fixnum
     NumberToKey[self]
   end
 end
+
+def process_key(keybinding)
+  false
+end

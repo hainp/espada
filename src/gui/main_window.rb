@@ -118,12 +118,7 @@ class MainWindow < Qt::Widget
                 || (MovementKeys.include?(key) && keymod.length == 0)
       end
 
-      if valid
-        ap({
-          :modifiers => keymod,
-          :key => key,
-        })
-      end
+      return process_key({ :modifiers => keymod, :key => key }) if valid
     end
 
     #
