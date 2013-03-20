@@ -129,6 +129,18 @@ class TextBufferWidget < Qt::TextEdit
     n_pressed_mouse_buttons == 1 && @pressed_mouse_button[:MiddleButton]
   end
 
+  def goto_file_or_eval
+    # TODO: Explain
+    # TODO: Goto file
+    result, command_type = eval_text selected_text
+    result.strip! if result.class == String
+
+    if command_type == :shell && result != ""
+      shell_buffer.append result
+      shell_buffer.show
+    end
+  end
+
   ###### Events
 
   def focusInEvent(event)
@@ -191,13 +203,7 @@ class TextBufferWidget < Qt::TextEdit
         # Jump to a file or directory if the selected text has the form of
         # a path, otherwise eval or execute command
 
-        result, command_type = eval_text selected_text
-        result.strip! if result.class == String
-
-        if command_type == :shell && result != ""
-          shell_buffer.append result
-          shell_buffer.show
-        end
+        goto_file_or_eval
 
         # Don't activate default middle-click default behaviour
         return
