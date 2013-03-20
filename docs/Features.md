@@ -62,9 +62,11 @@
 
 File jumping with forms:
 
+    ```
     /home/cmpitg/tmp/hello.c
     /home/cmpitg/tmp/hello.c:30
     /home/cmpitg/tmp/hello.c:/void helloWorld(/
+    ```
 
 If the file is opened in a buffer, switch to that buffer, if it's not, open the file in a buffer.
 
@@ -80,7 +82,15 @@ If the file is opened in a buffer, switch to that buffer, if it's not, open the 
     puts "A String".first_char    # "A" is printed
     message_box "Okay! Thanks."   # Display a message box
 
-    !ls ~                          # ls $HOME and display the output
+    !ls ~                         # ls $HOME and display the output
+
+    # Executing a series of shell commands
+    !
+    ls \
+        ~/Desktop/ \
+        /tmp/
+
+    echo "Hello World"
     ```
 
 * Double middle click: like middle click in normal X environment: pasting selected text
