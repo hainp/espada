@@ -33,7 +33,14 @@ def exec_shell_command(text)
   current_pty.get_output
 end
 
-def eval_text2(text)
+def eval_text(text)
+  #
+  # Difference from the original eval_text: Proper Ruby exp will be eval-ed,
+  # not executed!
+  #
+  # TODO: Think carefully which one is more appropriate and better?
+  #
+
   # Quick and dirty hacks to standardize text
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
   text.strip!
@@ -57,7 +64,8 @@ def eval_text2(text)
   [result, command_type]
 end
 
-def eval_text(text)
+def eval_text2(text)
+  # Quick and dirty hacks to standardize text
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
   text.strip!
 
@@ -88,7 +96,7 @@ end
 def message(text)
   puts ">> #{text}"
   # TODO: find out the appropriate timeout
-  statusbar.show_message text, 1500
+  statusbar.show_message text.to_s, 1500
 end
 
 def current_pty
