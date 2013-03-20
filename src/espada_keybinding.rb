@@ -53,5 +53,11 @@ class Fixnum
 end
 
 def process_key(keybinding)
+  #
+  # If the keybinding is found in binding list, call the appropriate function
+  # and prevent further key processing by returning true.  Otherwise, return
+  # false to forward the keybinding to the next processer.
+  #
+
   false
 end
