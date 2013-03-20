@@ -19,6 +19,7 @@
 # along with Espada.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+require 'espada_ruby_parser'
 require 'espada_keybinding'
 
 require 'espada_gui_utils'
@@ -102,4 +103,13 @@ def goto_file_or_eval(*text)
   #
 
   current_buffer.goto_file_or_eval(*text) if defined? current_buffer
+end
+
+def valid_ruby_exp?(text)
+  begin
+    EspadaRubyParser.parse text
+    true
+  rescue Racc::ParseError
+    false
+  end
 end
