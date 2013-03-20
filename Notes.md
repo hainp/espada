@@ -18,10 +18,34 @@ Tasks
         ~/tmp \
         /tmp
 
-    # Mixed Ruby expression & shell command
-    !ls ~ \
-        ~/tmp \
+    #
+    # Mixed Ruby expression & shell command -> not allowed -> you can always
+    # call shell commands or external program using Ruby code
+    #
+
+    # Don't use this
+
+    !ls ~      \
+        ~/tmp  \
         /tmp
+    puts '''Hello
+    World'''
+
+    # Use this instead
+
+    `ls ~         \
+        ~/tmp/    \
+        /tmp/`
+    puts '''Hello
+    World'''
+
+    # Or this
+
+    current_pty << """
+      ls ~      \
+         ~/tmp  \
+         /tmp/
+    """
     puts '''Hello
     World'''
 
