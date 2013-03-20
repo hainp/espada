@@ -11,6 +11,8 @@
   - `:last_time` (default)
   - `[file_path1, file_path2, ...]`
 
+* Built-in support for [TextMate](http://macromates.com/) [bundle](http://manual.macromates.com/en/bundles).
+
 * Keybinding:
 
     bindkey(["<ctrl> x", "<ctrl> s"],    { save })
