@@ -20,6 +20,28 @@
 #
 
 require 'pry'
+require 'ruby_parser'
+
 require 'espada_gui'
+
+parser = RubyParser.new
+
+exps = [
+  "func avar",
+  "func avar1, avar2",
+  'func "A String"',
+  "func(avar)",
+  "func(avar1, avar2)",
+  'func("A String")',
+  "not_valid { |hello| "
+]
+
+exps.each do |exp|
+  begin
+    puts ">> #{exp} >> #{parser.parse exp}"
+  rescue Racc::ParseError
+    puts "[err] invalid"
+  end
+end
 
 binding.pry
