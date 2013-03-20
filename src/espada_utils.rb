@@ -32,6 +32,30 @@ def exec_shell_command(text)
   current_pty.get_output
 end
 
+def eval_text2(text)
+  # Quick and dirty hacks to standardize text
+  text = text[0..-2] while text[-1] == 10 || text[-1] == 13
+  text.strip!
+
+  # Exec if the first character is `!`
+  return [exec_shell_command(text.but_first), :shell] if text.first == "!"[0]
+
+  command_type = if valid_ruby_exp?(text) then :ruby else :shell end
+
+  result = case command_type
+  when :ruby
+    begin
+      eval text, TOPLEVEL_BINDING
+    rescue Exception => e
+      message e
+    end
+  when :shell
+    exec_shell_command text if text != ""
+  end
+
+  [result, command_type]
+end
+
 def eval_text(text)
   text = text[0..-2] while text[-1] == 10 || text[-1] == 13
   text.strip!
