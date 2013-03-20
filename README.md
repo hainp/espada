@@ -56,7 +56,7 @@ Make sure you have all the required dependencies.  The best way to install depen
 * Install dependencies:
 
   ```sh
-  gem install qtbindings awesome_print pseudo-terminal
+  gem install qtbindings awesome_print pseudo-terminal ruby_parser
   ```
 
 * Download/clone Espada via Git or Mercurial:
