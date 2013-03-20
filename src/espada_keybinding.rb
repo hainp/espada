@@ -35,3 +35,13 @@ class BindingTable
     @table.to_s
   end
 end
+
+class Fixnum
+  def parse_keymod
+    keymods = []
+    KeymodValues.each do |value|
+      (keymods << NumberToKeymod[value]) if (self & value) == value
+    end
+    keymods
+  end
+end
