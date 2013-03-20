@@ -1,6 +1,8 @@
 ######
 Tasks
 
+* **NOTES**: Current `eval` is totally unsafe -> TODO: Should it be safe?
+
 * Eval-ing:
 
     # 2+ shell commands
