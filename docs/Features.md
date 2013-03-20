@@ -70,18 +70,17 @@ If the file is opened in a buffer, switch to that buffer, if it's not, open the 
 
 ### Clicking
 
-* Middle click to evaluate Ruby function or execute shell command or open a file:
+* Middle click to evaluate Ruby expressions or execute shell command or open a file:
   - If the selected text take the any of the [file jumping](#file_jumping) form, jump to the file, otherwise,
-  - Default: try evaluating Ruby function
-  - If the evaluation fails, try executing external command.  The rules for command execution is mentioned in [command execution section](#command_execution)
-  - Executing external command might be force with the `!` prefix:
+  - Default: try evaluating Ruby expressions if the expression is a proper Ruby expression.  Otherwise, consider it as shell commands and try executing external command.  The rules for command execution is mentioned in [command execution section](#command_execution)
+  - Shell commands are executed when the expression has the one `!` prefix at the beginning.
 
     ```
     puts "Hello World"            # "Hello World" is printed
     puts "A String".first_char    # "A" is printed
     message_box "Okay! Thanks."   # Display a message box
 
-    ls ~                          # ls $HOME and display the output
+    !ls ~                          # ls $HOME and display the output
     ```
 
 * Double middle click: like middle click in normal X environment: pasting selected text
