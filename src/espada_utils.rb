@@ -69,3 +69,13 @@ end
 def current_pty
   current_buffer.pty if defined? current_buffer
 end
+
+def goto_file_or_eval(*text)
+  #
+  # Take zero of one argument:
+  # * If taking 0 argument: text == selected_text
+  # * Otherwise: text = text[0]
+  #
+
+  current_buffer.goto_file_or_eval(*text) if defined? current_buffer
+end

@@ -129,10 +129,11 @@ class TextBufferWidget < Qt::TextEdit
     n_pressed_mouse_buttons == 1 && @pressed_mouse_button[:MiddleButton]
   end
 
-  def goto_file_or_eval
+  def goto_file_or_eval(*text)
     # TODO: Explain
     # TODO: Goto file
-    result, command_type = eval_text selected_text
+    text = text[0]
+    result, command_type = eval_text text
     result.strip! if result.class == String
 
     if command_type == :shell && result != ""
@@ -203,7 +204,7 @@ class TextBufferWidget < Qt::TextEdit
         # Jump to a file or directory if the selected text has the form of
         # a path, otherwise eval or execute command
 
-        goto_file_or_eval
+        self.goto_file_or_eval selected_text
 
         # Don't activate default middle-click default behaviour
         return
@@ -309,6 +310,10 @@ class TextEdit < Widget
   ##
   ## Events forward to TextBufferWidget
   ##
+
+  def goto_file_or_eval(*text)
+    @buffer.goto_file_or_eval(*text)
+  end
 
   def set_line_wrap_column_or_width(wrap_mode)
     @buffer.set_line_wrap_column_or_width wrap_mode
