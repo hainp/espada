@@ -19,7 +19,7 @@ Espada the *fully* hackable text editor.
 
 * Bug reporting: TODO
 
-* Question form: TODO
+* **Question form**: <http://goo.gl/cUgp7> (If you're lazy ;-), or simply don't want to leave any trace)
 
 * Code hosting:
   - On Github: <https://github.com/CMPITG/espada>
