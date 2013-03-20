@@ -64,35 +64,6 @@ def eval_text(text)
   [result, command_type]
 end
 
-def eval_text2(text)
-  # Quick and dirty hacks to standardize text
-  text = text[0..-2] while text[-1] == 10 || text[-1] == 13
-  text.strip!
-
-  # Exec if the first character is `!`
-  return [exec_shell_command(text.but_first), :shell] if text.first == "!"[0]
-
-  command_type = :ruby
-  # TODO: ugly code
-  result = begin
-    text.split("\u07ed").each do |line|
-      # The scope of `eval` is always global
-      eval(line.chomp, TOPLEVEL_BINDING) if line
-    end
-  rescue Exception => e
-    puts e
-    command_type = :shell
-    begin
-      exec_shell_command text if text != ""
-    rescue Exception => e
-      # Fail silently
-      ""
-    end
-  end
-
-  [result, command_type]
-end
-
 def message(text)
   puts ">> #{text}"
   # TODO: find out the appropriate timeout
