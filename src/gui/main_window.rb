@@ -109,20 +109,19 @@ class MainWindow < Qt::Widget
     if (event.type == Qt::Event::KeyRelease \
         || event.type == Qt::Event::KeyPress)
       key = NumberToKey[event.key]
-      keymod = NumberToKeymod[event.modifiers]
+      keymod = event.modifiers.parse_keymod
 
       if event.type == Qt::Event::KeyPress
         okay = true
       else
         okay = event.text != "" \
-               || (MovementKeys.include?(key) && keymod == :No)
+               || (MovementKeys.include?(key) && keymod.length == 0)
       end
 
       if okay
         puts ">> Text: |#{event.text}| >> Modifier: #{event.modifiers}"
         puts ">> Pressed? -> #{event.type == Qt::Event::KeyPress}"
-        puts ">> key: #{key} >> modifier: #{keymod}"
-        ap event.modifiers.parse_keymod
+        puts ">> key: #{event.key.parse_key} >> modifier: #{keymod}"
         puts
       end
     end
