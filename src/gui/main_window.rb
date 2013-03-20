@@ -119,10 +119,10 @@ class MainWindow < Qt::Widget
       end
 
       if okay
-        puts ">> Text: |#{event.text}| >> Modifier: #{event.modifiers}"
-        puts ">> Pressed? -> #{event.type == Qt::Event::KeyPress}"
-        puts ">> key: #{event.key.parse_key} >> modifier: #{keymod}"
-        puts
+        ap({
+          :modifiers => keymod,
+          :key => key,
+        })
       end
     end
     false
