@@ -45,6 +45,7 @@ Tested platforms:
 * QtRuby
 * awesome_print
 * pseudo-terminal
+* ruby_parser
 
 ## Installation
 
