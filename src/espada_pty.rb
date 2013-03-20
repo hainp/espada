@@ -28,12 +28,13 @@ class EspadaPTY < PseudoTerminal
   end
 
   def clear_output
-    @b.lines.clear = []
+    @b.lines.clear
+    @b.raw.clear
   end
 
   def get_output
     output = @b.lines.join("\n")
-    @b.lines.clear
+    clear_output
     output
   end
 end
