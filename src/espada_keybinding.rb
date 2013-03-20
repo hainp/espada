@@ -44,4 +44,8 @@ class Fixnum
     end
     keymods
   end
+
+  def parse_key
+    NumberToKey[self]
+  end
 end
