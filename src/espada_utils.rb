@@ -66,10 +66,6 @@ def message(text)
   statusbar.show_message text, 1500
 end
 
-def binding_list
-  BindingTable.instance if defined? BindingTable
-end
-
 def current_pty
   current_buffer.pty if defined? current_buffer
 end
