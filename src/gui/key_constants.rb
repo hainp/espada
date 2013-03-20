@@ -453,7 +453,7 @@ KeymodToQtKeymod = {
 NumberToKeymod = {}
 KeymodToQtKeymod.each { |key, val| NumberToKeymod[val.to_i] = key }
 
-KeymodValues = NumberToKeymod.keys
+KeymodValues = NumberToKeymod.keys - [0]
 
 #
 # This is a dirty hack, since these keys can only be caught in a KeyRelease
