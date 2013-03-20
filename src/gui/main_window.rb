@@ -122,6 +122,7 @@ class MainWindow < Qt::Widget
         puts ">> Text: |#{event.text}| >> Modifier: #{event.modifiers}"
         puts ">> Pressed? -> #{event.type == Qt::Event::KeyPress}"
         puts ">> key: #{key} >> modifier: #{keymod}"
+        ap event.modifiers.parse_keymod
         puts
       end
     end
