@@ -44,7 +44,9 @@ class Fixnum
     KeymodValues.each do |value|
       (keymods << NumberToKeymod[value]) if (self & value) == value
     end
-    keymods
+
+    # Use for unordered comparison
+    keymods.sort!
   end
 
   def parse_key
