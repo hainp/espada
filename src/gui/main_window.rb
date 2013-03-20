@@ -108,7 +108,7 @@ class MainWindow < Qt::Widget
 
     if (event.type == Qt::Event::KeyRelease \
         || event.type == Qt::Event::KeyPress)
-      key = NumberToKey[event.key]
+      key = event.key.parse_key
       keymod = event.modifiers.parse_keymod
 
       if event.type == Qt::Event::KeyPress
@@ -125,6 +125,11 @@ class MainWindow < Qt::Widget
         })
       end
     end
+
+    #
+    # Let the default event handler processes the key
+    #
+
     false
   end
 end
