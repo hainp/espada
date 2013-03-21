@@ -1,6 +1,46 @@
 ######
 Tasks
 
+* Keybinding rules:
+
+  - Format:
+
+    + For users: `JSON`
+
+    + In code: Ruby's `hash`
+
+    + Example:
+
+        ```JSON
+        // JSON
+        [ { "keys": "<ctrl> s",                "command": "save" },
+          { "keys": ["<ctrl> x", "<ctrl> s"],  "command": "save" } ]
+        ```
+
+        ```Ruby
+        # Ruby hash
+        { :keys => "<ctrl> s",
+          :command => { save } },
+        { :keys => "<ctrl> <shift> s",
+          :command => { save_as } }
+        ```
+
+    + Reasons: `JSON` format is portable and easy generated => GUI config
+
+  - The recommended way to configure keybinding is either editing the `JSON` config file directly (located in `$HOME/.config/espada/keybindings.json`) or using Espada GUI config tool.  Espada will discard the `JSON` file if there's any syntax error.
+
+  - Notes:
+
+    + Modal keybinding is possible, though not encouraged (TODO: explain what modal binding is)
+
+    + Keybinding will almost instantly be activated
+
+    + The `command`'s value in each keybinding will be `eval`-ed.  Though possible, it's *NOT* recommended to put multiple function calls or complex expression into `command`.  If you wish to do that, define a new function in `$HOME/.config/espada/init.rb` or somewhere that your `init.rb` reads, then put in into `command`.
+
+    + `keybindings.json` would be read **after** all other `.rb` files or extensions are read.  So your keybinding will *override* your extensions' keybinding config.
+
+    + TODO: Keybinding *per mode* or *per extension*.
+
 * **NOTES**: Current `eval` is totally unsafe -> TODO: Should it be safe?
 
 * Eval-ing:
