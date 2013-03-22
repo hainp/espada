@@ -74,6 +74,10 @@ class BindingTable
       res[:modifiers].sort!
       res
     end
+
+    def include?(*args)
+      @table.include?(*args)
+    end
   end
 
   def str_to_keysymbol(key)
@@ -113,5 +117,6 @@ def process_key(keybinding)
   #
 
   # ap keybinding
+  ap binding_table
   false
 end
