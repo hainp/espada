@@ -34,10 +34,56 @@ class BindingTable
   def to_s
     @table.to_s
   end
-end
 
-binding_list = BindingTable.instance
-binding_table = BindingTable.instance
+  def bindkey(keycombination)
+    keys = parse_key_combination keycombination[:keys]
+    action = keycombination[:command]
+    if action.class == String
+      command = Proc.new { eval action }
+    else
+      command = action
+    end
+    @table[keys] = command
+  end
+
+  def parse_key_combination(keys)
+    if keys.class == Array
+      # Modal binding
+      # TODO: To be implemented
+      nil
+    else
+      res = {
+        :modifiers => [],
+        :key => nil
+      }
+
+      # Standardize the string, remove noise
+      keys.strip!
+      keys.downcase!
+      keys.gsub!("  ", " ") while keys.match("  ")
+
+      keys.split(" ").each do |key|
+        keysymbol = str_to_keysymbol key
+        if is_modifier? keysymbol
+          res[:modifiers] << keysymbol
+        else
+          res[:key] = keysymbol
+        end
+      end
+
+      res[:modifiers].sort!
+      res
+    end
+  end
+
+  def str_to_keysymbol(key)
+    if StrToKeymod[key] then StrToKeymod[key] else StrToKey[key] end
+  end
+
+  def is_modifier?(key)
+    KeymodToQtKeymod.include? key
+  end
+end
 
 class Fixnum
   def parse_keymod
@@ -55,6 +101,10 @@ class Fixnum
   end
 end
 
+def bindkey(*args)
+  BindingTable.instance.bindkey(*args)
+end
+
 def process_key(keybinding)
   #
   # If the keybinding is found in binding list, call the appropriate function
@@ -62,5 +112,6 @@ def process_key(keybinding)
   # false to forward the keybinding to the next processer.
   #
 
+  # ap keybinding
   false
 end
