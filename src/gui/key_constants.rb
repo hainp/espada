@@ -455,6 +455,16 @@ KeymodToQtKeymod.each { |key, val| NumberToKeymod[val.to_i] = key }
 
 KeymodValues = NumberToKeymod.keys - [0]
 
+StrToKeymod = {
+  "<shift>"        => :Shift,
+  "<ctrl>"         => :Control,
+  "<control>"      => :Control,
+  "<alt>"          => :Alt,
+  "<super>"        => :Super,
+  "<keypad>"       => :Keypad,
+  "<groupswitch>"  => :GroupSwitch,
+}
+
 #
 # This is a dirty hack, since these keys can only be caught in a KeyRelease
 # event, and `event.text == ""` at that time
