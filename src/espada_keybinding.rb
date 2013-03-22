@@ -74,14 +74,6 @@ class BindingTable
       res[:modifiers].sort!
       res
     end
-
-    def include?(*args)
-      @table.include?(*args)
-    end
-
-    def exists?(key)
-      include?(key)
-    end
   end
 
   def str_to_keysymbol(key)
@@ -90,6 +82,18 @@ class BindingTable
 
   def is_modifier?(key)
     KeymodToQtKeymod.include? key
+  end
+
+  def include?(*args)
+    @table.include?(*args)
+  end
+
+  def exists?(key)
+    include?(key)
+  end
+
+  def [](key)
+    @table[key]
   end
 end
 
@@ -121,6 +125,12 @@ def process_key(keybinding)
   #
 
   # ap keybinding
-  ap binding_table
-  false
+  if binding_table.exists? keybinding
+    binding_table[keybinding].call
+    true
+  else
+    message "#{keybinding.inspect} is not defined" \
+      if keybinding[:modifiers].length != 0
+    false
+  end
 end
