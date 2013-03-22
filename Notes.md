@@ -19,10 +19,14 @@ Tasks
 
         ```Ruby
         # Ruby hash
-        { :keys => "<ctrl> s",
-          :command => { save } },
-        { :keys => "<ctrl> <shift> s",
-          :command => { save_as } }
+        [{
+          :keys => "<ctrl> s",
+          :command => { save }
+        },
+        {
+          :keys => "<ctrl> <shift> s",
+          :command => { save_as }
+        }]
         ```
 
     + Reasons: `JSON` format is portable and easy generated => GUI config

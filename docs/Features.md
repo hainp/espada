@@ -27,10 +27,14 @@
     # Using dictionary - also NOT recommended
 
     bindkeys([
-      { :keys => ["<ctrl> x", "<ctrl> s" ],
-        :command => { save } },
-      { :keys => "<ctrl> s",
-        :command => { save } },
+      {
+        :keys => ["<ctrl> x", "<ctrl> s"],
+        :command => { save }
+      },
+      {
+        :keys => "<ctrl> s",
+        :command => { save }
+      },
     ])
 
 ## Properties
