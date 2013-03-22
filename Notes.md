@@ -21,11 +21,11 @@ Tasks
         # Ruby hash
         [{
           :keys => "<ctrl> s",
-          :command => { save }
+          :command => Proc.new { save }
         },
         {
           :keys => "<ctrl> <shift> s",
-          :command => { save_as }
+          :command => Proc.new { save_as }
         }]
         ```
 
@@ -39,7 +39,7 @@ Tasks
 
     + Keybinding will almost instantly be activated
 
-    + The `command`'s value in each keybinding will be `eval`-ed.  Though possible, it's *NOT* recommended to put multiple function calls or complex expression into `command`.  If you wish to do that, define a new function in `$HOME/.config/espada/init.rb` or somewhere that your `init.rb` reads, then put in into `command`.
+    + The `command`'s value in each keybinding will be `eval`-ed or `call`-ed (depending on whether it's a string or `Proc`).  Though possible, it's *NOT* recommended to put multiple function calls or complex expression into `command`.  If you wish to do that, define a new function in `$HOME/.config/espada/init.rb` or somewhere that your `init.rb` reads, then put in into `command`.
 
     + `keybindings.json` would be read **after** all other `.rb` files or extensions are read.  So your keybinding will *override* your extensions' keybinding config.
 

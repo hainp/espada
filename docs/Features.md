@@ -29,11 +29,15 @@
     bindkeys([
       {
         :keys => ["<ctrl> x", "<ctrl> s"],
-        :command => { save }
+        :command => Proc.new { save }
       },
       {
         :keys => "<ctrl> s",
-        :command => { save }
+        :command => Proc.new { save }
+      },
+      {
+        :keys => "<ctrl> p",
+        :command => "goto_file_or_eval"
       },
     ])
 
