@@ -95,4 +95,5 @@ The Espada Text Editor is license under the terms of the GNU General Public Lice
 
 Special thanks to:
 
-* Nguyen Nang Thang <thangnnATiwayvietnamDOTcom>
+* Nguyễn Năng Thắng <thangnnATiwayvietnamDOTcom>
+* Nguyễn Phan Hải <hainp2604ATgmailDOTcom>
