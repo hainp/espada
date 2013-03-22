@@ -39,3 +39,22 @@ EspadaSettings = {
   :wrap_mode => WrapMode[:WidgetWidth],
   :wrap_column => 78,
 }
+
+EspadaDefaultKeybindings = [
+  {
+    :keys => "<ctrl> p",
+    :command => Proc.new { goto_file_or_eval }
+  },
+  {
+    :keys => "<ctrl> s",
+    :command => Proc.new { save }
+  },
+  {
+    :keys => "<ctrl> <shift> s",
+    :command => Proc.new { save_as }
+  },
+  {
+    :keys => "<super> c",
+    :command => Proc.new { prev_line }
+  },
+]
