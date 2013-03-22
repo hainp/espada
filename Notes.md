@@ -47,6 +47,8 @@ Tasks
 
 * **NOTES**: Current `eval` is totally unsafe -> TODO: Should it be safe?
 
+* To-be-implemented: determine if `current_buffer` is main text buffer or `shell_buffer`.
+
 * Eval-ing:
 
     ```
