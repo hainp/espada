@@ -37,6 +37,7 @@ class BindingTable
 end
 
 binding_list = BindingTable.instance
+binding_table = BindingTable.instance
 
 class Fixnum
   def parse_keymod
