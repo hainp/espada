@@ -92,3 +92,11 @@ def valid_ruby_exp?(text)
     false
   end
 end
+
+def binding_table
+  BindingTable.instance
+end
+
+def binding_list
+  binding_table
+end
