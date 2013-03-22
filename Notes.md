@@ -49,49 +49,51 @@ Tasks
 
 * Eval-ing:
 
-    # 2+ shell commands
-    !ls ~
-    !ls ~/Desktop
+      ```
+      # 2+ shell commands
+      !ls ~
+      !ls ~/Desktop
 
-    # Multiline Ruby expression
-    puts '''Hello
-    World'''
+      # Multiline Ruby expression
+      puts '''Hello
+      World'''
 
-    # Multiline shell command
-    !ls ~ \
-        ~/tmp \
-        /tmp
+      # Multiline shell command
+      !ls ~ \
+          ~/tmp \
+          /tmp
 
-    #
-    # Mixed Ruby expression & shell command -> not allowed -> you can always
-    # call shell commands or external program using Ruby code
-    #
+      #
+      # Mixed Ruby expression & shell command -> not allowed -> you can always
+      # call shell commands or external program using Ruby code
+      #
 
-    # Don't use this
+      # Don't use this
 
-    !ls ~      \
-        ~/tmp  \
-        /tmp
-    puts '''Hello
-    World'''
+      !ls ~      \
+          ~/tmp  \
+          /tmp
+      puts '''Hello
+      World'''
 
-    # Use this instead
+      # Use this instead
 
-    `ls ~         \
-        ~/tmp/    \
-        /tmp/`
-    puts '''Hello
-    World'''
+      `ls ~         \
+          ~/tmp/    \
+          /tmp/`
+      puts '''Hello
+      World'''
 
-    # Or this
+      # Or this
 
-    current_pty << """
-      ls ~      \
-         ~/tmp  \
-         /tmp/
-    """
-    puts '''Hello
-    World'''
+      current_pty << """
+        ls ~      \
+           ~/tmp  \
+           /tmp/
+      """
+      puts '''Hello
+      World'''
+      ```
 
 * UX:
   - Tab vs. tiling (perhaps tab is better? -> running apps on desktop, tab in browser)
