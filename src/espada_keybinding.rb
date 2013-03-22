@@ -78,6 +78,10 @@ class BindingTable
     def include?(*args)
       @table.include?(*args)
     end
+
+    def exists?(key)
+      include?(key)
+    end
   end
 
   def str_to_keysymbol(key)
