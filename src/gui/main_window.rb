@@ -114,8 +114,8 @@ class MainWindow < Qt::Widget
       if event.type == Qt::Event::KeyPress
         valid = true
       else
-        valid = event.text != "" \
-                || (MovementKeys.include?(key) && keymod.length == 0)
+        valid = event.text != ""
+        valid ||= (MovementKeys.include?(key) && keymod.length == 0)
       end
 
       if binding_list.is_modifier?(key)
