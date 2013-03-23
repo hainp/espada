@@ -42,6 +42,7 @@ class MainApplication
     @app = Qt::Application.new ARGV
     @buffers = {}
     update_settings
+    create_default_keybindings
     create_main_window
     create_main_text_buffer
   end
@@ -52,6 +53,10 @@ class MainApplication
 
   def self.to_s
     self.instance.to_s
+  end
+
+  def create_default_keybindings
+    
   end
 
   def create_main_text_buffer
