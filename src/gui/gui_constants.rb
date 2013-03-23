@@ -40,3 +40,8 @@ Orientation = {
   :Vertical       => Qt::Vertical,
   :Horizontal     => Qt::Horizontal,
 }
+
+EventType = {
+  :KeyPress       => Qt::Event::KeyPress,
+  :KeyRelease     => Qt::Event::KeyRelease,
+}
