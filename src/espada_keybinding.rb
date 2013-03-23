@@ -81,7 +81,8 @@ class BindingTable
   end
 
   def is_modifier?(key)
-    KeymodToQtKeymod.include? key
+    KeymodToQtKeymod.include?(key) \
+    || KeymodToQtKeymod.include?(key.to_s.sub("Key_", "").to_sym)
   end
 
   def include?(*args)
@@ -94,6 +95,10 @@ class BindingTable
 
   def [](key)
     @table[key]
+  end
+
+  def only_modifiers?(keybinding)
+    keybinding[:key] == nil
   end
 end
 
@@ -124,13 +129,19 @@ def process_key(keybinding)
   # false to forward the keybinding to the next processer.
   #
 
+  # DEBUG
   # ap keybinding
+
   if binding_table.exists? keybinding
     binding_table[keybinding].call
     true
+
   else
-    message "#{keybinding.inspect} is not defined" \
-      if keybinding[:modifiers].length != 0
+    if keybinding[:modifiers].length != 0 \
+       && !binding_table.only_modifiers?(keybinding)
+      message "#{keybinding.inspect} is not defined" \
+    end
+
     false
   end
 end
