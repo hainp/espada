@@ -362,4 +362,8 @@ class TextEdit < Widget
   def zoom(value)
     @buffer.zoom_in value
   end
+
+  def selected_text
+    @buffer.selected_text
+  end
 end
