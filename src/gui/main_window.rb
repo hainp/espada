@@ -110,6 +110,11 @@ class MainWindow < Qt::Widget
         || event.type == Qt::Event::KeyPress)
       key = event.key.parse_key
       keymod = event.modifiers.parse_keymod
+      if binding_list.is_modifier?(key)
+        keymod << key.to_s.sub("Key_", "").to_sym
+        keymod.uniq!
+        key = nil
+      end
 
       if event.type == Qt::Event::KeyPress
         valid = true
