@@ -106,6 +106,13 @@ class MainWindow < Qt::Widget
     #   But if there are modifiers, they're during both
     #
 
+    #
+    # This `if` clause is ugly for performance purpose, a better-looking way
+    # is to use
+    # `[Qt::Event::KeyRelease, Qt::Event::KeyPress].include? event.type`
+    # but that would allocate an array everytime an event is created. Ruby's
+    # objects are mutable, remember?
+    #
     if (event.type == Qt::Event::KeyRelease \
         || event.type == Qt::Event::KeyPress)
       key = event.key.parse_key
