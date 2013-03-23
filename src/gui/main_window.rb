@@ -123,6 +123,7 @@ class MainWindow < Qt::Widget
       else
         valid = event.text != ""
         valid ||= (MovementKeys.include?(key) && keymod.length == 0)
+        valid &&= keymod.length < 2
       end
 
       if binding_list.is_modifier?(key)
