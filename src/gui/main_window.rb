@@ -124,6 +124,7 @@ class MainWindow < Qt::Widget
         valid = event.text != ""
         valid ||= (MovementKeys.include?(key) && keymod.length == 0)
         valid &&= keymod.length < 2
+        valid &&= !(keymod == [:Shift])
       end
 
       if binding_list.is_modifier?(key)
