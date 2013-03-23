@@ -118,11 +118,15 @@ class MainWindow < Qt::Widget
       key = event.key.parse_key
       keymod = event.modifiers.parse_keymod
 
+      ap event.text
+      ap "#{keymod.length > 0 && event.text != ""}"
+
       if event.type == EventType[:KeyPress]
         valid = true
       else
         valid = event.text != ""
-        valid ||= (MovementKeys.include?(key) && keymod.length == 0)
+        valid ||= MovementKeys.include?(key) && keymod.length == 0
+        valid = false if keymod.length > 0 && event.text != ""
         valid &&= keymod.length < 2
       end
 
