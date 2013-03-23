@@ -109,16 +109,16 @@ class MainWindow < Qt::Widget
     #
     # This `if` clause is ugly for performance purpose, a better-looking way
     # is to use
-    # `[Qt::Event::KeyRelease, Qt::Event::KeyPress].include? event.type`
+    # `[EventType[:KeyRelease], EventType[:KeyPress]].include? event.type`
     # but that would allocate an array everytime an event is created. Ruby's
     # objects are mutable, remember?
     #
-    if (event.type == Qt::Event::KeyRelease \
-        || event.type == Qt::Event::KeyPress)
+    if (event.type == EventType[:KeyRelease] \
+        || event.type == EventType[:KeyPress])
       key = event.key.parse_key
       keymod = event.modifiers.parse_keymod
 
-      if event.type == Qt::Event::KeyPress
+      if event.type == EventType[:KeyPress]
         valid = true
       else
         valid = event.text != ""
