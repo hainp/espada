@@ -119,7 +119,7 @@ class Fixnum
 end
 
 def bindkey(*args)
-  BindingTable.instance.bindkey(*args)
+  binding_table.bindkey(*args)
 end
 
 def process_key(keybinding)
