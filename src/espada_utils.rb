@@ -81,7 +81,9 @@ def goto_file_or_eval(*text)
   # * Otherwise: text = text[0]
   #
 
-  current_buffer.goto_file_or_eval(*text) if defined? current_buffer
+  return nil unless defined? current_buffer
+  text = current_buffer.selected_text if text.length == 0
+  current_buffer.goto_file_or_eval(*text)
 end
 
 def valid_ruby_exp?(text)
