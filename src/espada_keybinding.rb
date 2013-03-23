@@ -138,7 +138,8 @@ def process_key(keybinding)
 
   else
     if keybinding[:modifiers].length != 0 \
-       && !binding_table.only_modifiers?(keybinding)
+       && !binding_table.only_modifiers?(keybinding) \
+       && keybinding[:modifiers] != [:Shift]
       message "#{keybinding.inspect} is not defined" \
     end
 
