@@ -100,3 +100,8 @@ end
 def binding_list
   binding_table
 end
+
+def display_keybindings
+  # TODO: beautify the display
+  ap binding_table.table
+end
