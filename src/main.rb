@@ -56,7 +56,7 @@ class MainApplication
   end
 
   def create_default_keybindings
-    
+    EspadaDefaultKeybindings.each { |keybinding| bindkey keybinding }
   end
 
   def create_main_text_buffer
