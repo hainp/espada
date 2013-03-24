@@ -130,7 +130,7 @@ def process_key(keybinding)
   #
 
   # DEBUG
-  ap keybinding
+  # ap keybinding
 
   if binding_table.exists? keybinding
     begin
