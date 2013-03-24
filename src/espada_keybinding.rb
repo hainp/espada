@@ -130,10 +130,15 @@ def process_key(keybinding)
   #
 
   # DEBUG
-  # ap keybinding
+  ap keybinding
 
   if binding_table.exists? keybinding
-    binding_table[keybinding].call
+    begin
+      binding_table[keybinding].call
+    rescue Exception => e
+      message e
+    end
+
     true
 
   else
