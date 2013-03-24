@@ -128,7 +128,15 @@ class MainWindow < Qt::Widget
       if event.type == EventType[:KeyPress]
         valid = true
       else
-
+        #
+        # Weird KeyRelease and KeyPress emited:
+        # * Super + Char -> KeyRelease emited; in fact, the event should be
+        #   KeyPress
+        # * (Other modifier(s)) + Char -> Both emited
+        #
+        # So to filter out the redundant KeyRelease events emited by the
+        # later case, this check exists
+        #
         return false if keymod.length > 0       \
                         && keymod != [:Super]   \
                         && event.text != ""
