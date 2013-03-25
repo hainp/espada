@@ -3,7 +3,9 @@ Tasks
 
 * Make keybinding a subclass of `Hash` and define `to_s`
 
-* Refacter `text_edit.buffer.install_event_filter`
+* Refactor `text_edit.buffer.install_event_filter`
+
+* Move event filter to `TextEdit`
 
 * Keybinding rules:
 
