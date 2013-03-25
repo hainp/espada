@@ -137,9 +137,9 @@ def process_key(keybinding)
       binding_table[keybinding].call
     rescue Exception => e
       message e
+    ensure
+      return true
     end
-
-    true
 
   else
     if keybinding[:modifiers].length != 0 \
@@ -147,7 +147,6 @@ def process_key(keybinding)
        && keybinding[:modifiers] != [:Shift]
       message "#{keybinding.inspect} is not defined" \
     end
-
-    false
+    return false
   end
 end
