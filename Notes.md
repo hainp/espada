@@ -1,6 +1,10 @@
 ######
 Tasks
 
+* Make keybinding a subclass of `Hash` and define `to_s`
+
+* Refacter `text_edit.buffer.install_event_filter`
+
 * Keybinding rules:
 
   - Format:
