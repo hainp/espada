@@ -37,7 +37,6 @@ class MainWindow < Qt::Widget
     create_menubar
     create_statusbar
     create_layout
-    install_event_filter self
 
     @closing_action = lambda { true }
   end
@@ -136,8 +135,8 @@ class MainWindow < Qt::Widget
         # So to filter out the redundant KeyRelease events emited by the
         # later case, this check exists
         #
+        return true if keymod == [:Super] && event.text != ""
         return false if keymod.length > 0       \
-                        && keymod != [:Super]   \
                         && event.text != ""
 
         valid = event.text != ""
@@ -152,7 +151,11 @@ class MainWindow < Qt::Widget
         key = nil
       end
 
-      return process_key({ :modifiers => keymod, :key => key }) if valid
+      if valid
+        return process_key({ :modifiers => keymod, :key => key })
+      else
+        return false
+      end
     end
 
     #
