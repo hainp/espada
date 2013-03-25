@@ -123,7 +123,6 @@ class MainWindow < Qt::Widget
       # ap ">> KeyPress? >> #{event.type == EventType[:KeyPress]}"
       # ap event.text
       # ap keymod
-      # ap "#{keymod.length > 0 && event.text != ""}"
 
       if event.type == EventType[:KeyPress]
         valid = true
@@ -159,7 +158,6 @@ class MainWindow < Qt::Widget
     #
     # Let the default event handler processes the key
     #
-
     false
   end
 end
