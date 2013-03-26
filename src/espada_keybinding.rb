@@ -35,9 +35,9 @@ class BindingTable
     @table.to_s
   end
 
-  def bindkey(keycombination)
-    keys = parse_key_combination keycombination[:keys]
-    action = keycombination[:command]
+  def bindkey(bind)
+    keys = parse_key_combination bind[:keys]
+    action = bind[:command]
     if action.class == String
       command = Proc.new { eval action }
     else
