@@ -36,7 +36,7 @@ class BindingTable
   end
 
   def bindkey(bind)
-    keys = parse_key_combination bind[:keys]
+    keys = parse_keybinding bind[:keys]
     action = bind[:command]
     if action.class == String
       command = Proc.new { eval action }
@@ -46,7 +46,7 @@ class BindingTable
     @table[keys] = command
   end
 
-  def parse_key_combination(keys)
+  def parse_keybinding(keys)
     if keys.class == Array
       # Modal binding
       # TODO: To be implemented
