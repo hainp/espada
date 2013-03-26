@@ -64,7 +64,6 @@ class MainApplication
     text_edit.set_line_wrap_column_or_width Settings.wrap_column
     text_edit.set_line_wrap_mode Settings.wrap_mode
     text_edit.load Settings.default_contents_path
-    text_edit.buffer.install_event_filter @main_win
 
     @main_win.set_central_widget text_edit
     @current_buffer_id = text_edit.object_id
