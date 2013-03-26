@@ -1,16 +1,59 @@
 current_path
 
+goto_file_or_eval 'puts "Hello World"'
+
+puts (binding_table.str_to_keysymbol "a")
+
+ap binding_table
+ap binding_table.parse_keybinding("<ctrl> s")
+ap binding_table.parse_keybinding("<ctrl> <alt> p")
+ap binding_table.parse_keybinding("<alt> <ctrl> p")
+ap binding_table.parse_keybinding("<alt> <ctrl> s")
+
+display_keybindings
+
+bindkey({
+  :keys => "<ctrl> s",
+  :command => Proc.new { save }
+})
+
+ap binding_table.table.include?({ :modifiers => [:Control], :key => :Key_S })
+
+save
+
 puts main_window
 puts 'hello world!'
 puts current_buffer.saved
 puts App
 puts current_buffer.path
 puts main_menu
+
+p """Hello World
+World Hello"""
+
+!
+ls ~/Desktop/ \
+   /tmp/
+echo "Hello World"
+
 main_menu.set_no_margins
+
+def string_to_keyseq(str)
+  str.gsub! /<ctrl>/, "ctrl"
+  str.gsub! /<alt>/, "alt"
+  str.gsub! /<shift>/, "shift"
+end
+puts string_to_keyseq("<ctrl> s")
+
+def bind_key(keyseq, action)
+end
+
+def bindkey(keyseq, action)
+end
 
 shortcut = Qt::Shortcut.new main_window
 puts shortcut
-shortcut.setKey Qt::KeySequence.new("Ctrl+P")
+shortcut.setKey Qt::KeySequence.new(Qt::Key_Hyper_R)
 shortcut.connect(SIGNAL :activated) { puts "Pressed" }
 
 create_dir "/tmp/hello_world/hehe"
