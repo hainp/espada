@@ -43,6 +43,7 @@ class TextBufferWidget < Qt::TextEdit
     @saved = false
     setContextMenuPolicy Qt::NoContextMenu
     create_custom_scrollbar
+    install_event_filter self
 
     # Detect changes
     connect(SIGNAL :textChanged) {
