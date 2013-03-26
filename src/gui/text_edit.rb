@@ -144,6 +144,74 @@ class TextBufferWidget < Qt::TextEdit
 
   ###### Events
 
+  def eventFilter(sender, event)
+    #
+    # Weird behaviours:
+    # * Modifiers are activated during KeyPress
+    # * Other characters are activated during KeyRelease
+    # * If movement keys are pressed only, they're activated during KeyRelease
+    #   But if there are modifiers, they're during both
+    #
+
+    #
+    # This `if` clause is ugly for performance purpose, a better-looking way
+    # is to use
+    # `[EventType[:KeyRelease], EventType[:KeyPress]].include? event.type`
+    # but that would allocate an array everytime an event is created. Ruby's
+    # objects are mutable, remember?
+    #
+    if (event.type == EventType[:KeyRelease] \
+        || event.type == EventType[:KeyPress])
+      key = event.key.parse_key
+      keymod = event.modifiers.parse_keymod
+
+      # DEBUG
+      # puts
+      # ap ">> KeyPress? >> #{event.type == EventType[:KeyPress]}"
+      # ap event.text
+      # ap keymod
+
+      if event.type == EventType[:KeyPress]
+        valid = true
+      else
+        #
+        # Weird KeyRelease and KeyPress emited:
+        # * Super + Char -> KeyRelease emited; in fact, the event should be
+        #   KeyPress
+        # * (Other modifier(s)) + Char -> Both emited
+        #
+        # So to filter out the redundant KeyRelease events emited by the
+        # later case, this check exists
+        #
+        return true if keymod == [:Super] && event.text != ""
+        return false if keymod.length > 0       \
+                        && event.text != ""
+
+        valid = event.text != ""
+        valid ||= MovementKeys.include?(key) && keymod.length == 0
+        valid = 
+        valid &&= keymod.length < 2
+      end
+
+      if binding_list.is_modifier?(key)
+        keymod << key.to_s.sub("Key_", "").to_sym
+        keymod.uniq!
+        key = nil
+      end
+
+      if valid
+        return process_key({ :modifiers => keymod, :key => key })
+      else
+        return false
+      end
+    end
+
+    #
+    # Let the default event handler processes the key
+    #
+    false
+  end
+
   def focusInEvent(event)
     app.current_buffer_hash = hash if app.respond_to?(:current_buffer_hash)
     super
