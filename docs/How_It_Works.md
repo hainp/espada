@@ -47,6 +47,20 @@ The `MainWindow` is the window that contains:
     Main Window mockup
 </div>
 
+## `KeyBinding` and `BindingTable` class
+
+There are 2 kinds of keybinding:
+
+* Mode-specific binding: the keybinding only affects in certain mode.
+* Global binding: is a special case where mode-specific keybinding takes the `global` parameter.
+
+Mode-specific binding has *higher priority* than global binding.
+
+Classes and their uses:
+
+* The `KeyBinding` class is a subclass of `Hash` and takes care of *one* keybinding.
+* The `BindingTable` is a singleton, used to take care of *all* current keybindings, including mode-specific keybindings (TODO: more on that later).
+
 ## `TextEdit` widget
 
 A `TextEdit` is also known as a *text buffer* or simply *buffer*.  When a buffer is destroyed, the garbage collection is trigger to save memory.
