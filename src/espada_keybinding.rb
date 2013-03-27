@@ -22,6 +22,12 @@
 require 'singleton'
 require 'awesome_print'
 
+class KeyBinding < Hash
+  def initialize
+    super
+  end
+end
+
 class BindingTable
   include Singleton
 
