@@ -49,6 +49,10 @@ The `MainWindow` is the window that contains:
 
 ## `KeyBinding` and `BindingTable` class
 
+A keybinding is a way to map a key combination with a function, thus a keybinding consists of 2 parts:
+
+* 
+
 There are 2 kinds of keybinding:
 
 * Mode-specific binding: the keybinding only affects in certain mode.
@@ -60,6 +64,12 @@ Classes and their uses:
 
 * The `KeyBinding` class is a subclass of `Hash` and takes care of *one* keybinding.
 * The `BindingTable` is a singleton, used to take care of *all* current keybindings, including mode-specific keybindings (TODO: more on that later).
+
+Each keybinding is created using a string or a hash:
+
+    ```ruby
+    save_file_binding = KeyBinding.new ""
+    ```
 
 ## `TextEdit` widget
 
