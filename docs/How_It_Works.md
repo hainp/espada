@@ -51,7 +51,8 @@ The `MainWindow` is the window that contains:
 
 A keybinding is a way to map a key combination with a function, thus a keybinding consists of 2 parts:
 
-* 
+* A key combination
+* And an action which will be performed when the key combination is proceeded
 
 There are 2 kinds of keybinding:
 
@@ -65,11 +66,43 @@ Classes and their uses:
 * The `KeyBinding` class is a subclass of `Hash` and takes care of *one* keybinding.
 * The `BindingTable` is a singleton, used to take care of *all* current keybindings, including mode-specific keybindings (TODO: more on that later).
 
-Each keybinding is created using a string or a hash:
+Each keybinding is created using a string or a hash and an action: (TODO: determine what is the canonical way).
 
     ```ruby
-    save_file_binding = KeyBinding.new ""
+    # The following lines do the same thing
+
+    KeyBinding.new("<ctrl> s", "save")
+
+    KeyBinding.new(:global, "<ctrl> s", "save")
+
+    KeyBinding.new("<ctrl> s", Proc.new { save })
+
+    KeyBinding.new({ :modifiers => [ :Control ],
+      :key => :Key_S
+    }, "save")
+
+    KeyBinding.new({ :modifiers => [ :Control ],
+      :key => :Key_S,
+      :mode => :global
+    }, "save")
+
+    KeyBinding.new({ :modifiers => [ :Control ],
+      :key => :Key_S,
+      :mode => :global
+    }, Proc.new { save })
     ```
+
+To add a new keybinding into the `BindingTable`, i.e. activating the keybinding:
+
+    ```ruby
+    ```
+
+To remove a keybinding from the `BindingTable`:
+
+    ```ruby
+    ```
+
+To rebind, simply add the keybinding again.
 
 ## `TextEdit` widget
 
