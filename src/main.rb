@@ -57,7 +57,7 @@ class MainApplication
 
   def create_default_keybindings
     EspadaDefaultKeybindings.each { |binding|
-      bindkey KeyBinding.new(binding)
+      bindkey binding[:keys], binding[:action], binding[:mode]
     }
   end
 
