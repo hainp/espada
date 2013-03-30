@@ -17,12 +17,14 @@
 
     # Directly using Ruby code - NOT recommended
 
-    bindkey :keys => ["<ctrl> x", "<ctrl> s"], :command => { save }
-    bindkey :keys => "<ctrl> s",               :command => { save }
-    bindkey :keys => "<ctrl> f4",              :command => { close_file }
-    bindkey :keys => "<super> p",              :command => { puts "Hello World" }
-    bindkey :keys => "<ctrl> left",            :command => { backward_word }
-    bindkey :keys => "<ctrl> right",           :command => { forward_word }
+    # bindkey(keys, action, mode=:global)
+    bindkey ["<ctrl> x", "<ctrl> s"], { save }
+    bindkey "<ctrl> s",               { save }
+    bindkey "<ctrl> s",               { save }
+    bindkey "<ctrl> f4",              { close_file }
+    bindkey "<super> p",              { puts "Hello World" }
+    bindkey "<ctrl> left",            { backward_word }
+    bindkey "<ctrl> right",           { forward_word }
 
     # Using dictionary - also NOT recommended
 
@@ -40,6 +42,12 @@
         :command => "goto_file_or_eval"
       },
     ])
+
+    #
+    # Recommended way: edit `$HOME/.config/espada/keybindings.json` for global
+    # binding or `$HOME/.config/espada/keybindings.<mode>.json` for
+    # mode-specific binding
+    #
 
 ## Properties
 
