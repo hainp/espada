@@ -81,6 +81,11 @@ class KeyCombination < Hash
   def only_modifiers?
     self[:key] == nil
   end
+
+  def default_movement_keys?
+    # TODO
+    false
+  end
 end
 
 class KeyBinding < Hash
@@ -196,7 +201,8 @@ def process_key(keycombination)
   else
     if keycombination[:modifiers].length != 0 \
        && !keycombination.only_modifiers? \
-       && keycombination[:modifiers] != [:Shift]
+       && keycombination[:modifiers] != [:Shift] \
+       && !keycombination.default_movement_keys?
       message "#{keycombination.inspect} is not defined" \
     end
     return false
