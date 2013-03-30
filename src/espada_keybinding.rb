@@ -199,11 +199,11 @@ def process_key(keycombination)
     end
 
   else
-    if keycombination[:modifiers].length != 0 \
-       && !keycombination.only_modifiers? \
-       && keycombination[:modifiers] != [:Shift] \
+    if keycombination[:modifiers].length != 0      \
+       && !keycombination.only_modifiers?          \
+       && keycombination[:modifiers] != [:Shift]   \
        && !keycombination.default_movement_keys?
-      message "#{keycombination.inspect} is not defined" \
+      message "#{keycombination.inspect} is not defined"
     end
     return false
   end
