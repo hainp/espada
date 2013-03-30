@@ -89,7 +89,7 @@ class BindingTable
   end
 
   def bindkey(bind)
-    keys = parse_keybinding bind[:keys]
+    keys = KeyCombination.parse_keycombination bind[:keys]
     action = bind[:command]
     if action.class == String
       command = Proc.new { eval action }
