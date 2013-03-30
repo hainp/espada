@@ -30,16 +30,16 @@
 
     bindkeys([
       {
-        :keys => ["<ctrl> x", "<ctrl> s"],
-        :command => Proc.new { save }
+        :keys    => ["<ctrl> x", "<ctrl> s"],
+        :action  => Proc.new { save }
       },
       {
-        :keys => "<ctrl> s",
-        :command => Proc.new { save }
+        :keys    => "<ctrl> s",
+        :action  => Proc.new { save }
       },
       {
-        :keys => "<ctrl> p",
-        :command => "goto_file_or_eval"
+        :keys    => "<ctrl> p",
+        :action  => "goto_file_or_eval"
       },
     ])
 
