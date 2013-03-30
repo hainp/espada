@@ -194,7 +194,7 @@ def process_key(keycombination)
 
   else
     if keycombination[:modifiers].length != 0 \
-       && !KeyCombination.only_modifiers?(keycombination) \
+       && !keycombination.only_modifiers? \
        && keycombination[:modifiers] != [:Shift]
       message "#{keycombination.inspect} is not defined" \
     end
