@@ -92,7 +92,7 @@ class KeyBinding < Hash
   def initialize(keys=nil, action=nil, mode=:global)
     super()
 
-    self[:keys] = if keys.class == String
+    self[:keys] = if keys.class != KeyCombination
       KeyCombination.new(keys)
     else
       keys
@@ -105,6 +105,10 @@ class KeyBinding < Hash
     end
 
     self[:mode] = mode
+  end
+
+  def get_keycombination
+    self[:keys]
   end
 
   def ==(another)
@@ -137,12 +141,12 @@ class BindingTable
   end
 
   def bindkey2(keys=nil, action=nil, mode=:global)
-    return if !keys || !action
-    binding = KeyBinding.new keys, action, mode
-    @table[{
-      :keys => binding[:keys],
-      :mode => binding[:mode]
-    }] = binding[:action]
+    if keys.class != KeyBinding
+      return if !keys || !action
+      keys = KeyBinding.new keys, action, mode
+    end
+
+    @table[keys.get_keycombination] = keys[:action]
   end
 
   def include?(*args)
