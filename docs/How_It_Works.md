@@ -91,7 +91,7 @@ How keybinding works internally:
     ```ruby
     # The following lines do the same thing
 
-    KeyBinding.new("<ctrl> s", "save")
+    ctrl_s_save = KeyBinding.new("<ctrl> s", "save")
 
     KeyBinding.new("<ctrl> s", "save", :global)
 
@@ -106,6 +106,9 @@ How keybinding works internally:
     KeyBinding.new(ctrl_s, Proc.new { save })                    # Helper, use internally
 
     KeyBinding.new(ctrl_s, Proc.new { save }, :global)           # Helper, use internally
+
+    ctrl_s_save.to_s
+    # { :keys => ..., :action => ..., :mode => ... }
     ```
 
 To add a new keybinding into the `BindingTable`, i.e. activating the keybinding: `a_binding.register(mode)`.  Internally, the `register` method will call `BindingTable.update(a_binding, mode)` to update the binding table.
