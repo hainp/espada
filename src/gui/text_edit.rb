@@ -201,7 +201,10 @@ class TextBufferWidget < Qt::TextEdit
       end
 
       if valid
-        return process_key({ :modifiers => keymod, :key => key })
+        return process_key(KeyCombination.new({
+          :modifiers => keymod,
+          :key => key
+        }))
       else
         return false
       end
