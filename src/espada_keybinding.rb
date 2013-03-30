@@ -23,11 +23,42 @@ require 'singleton'
 require 'awesome_print'
 
 class KeyCombination < Hash
+  def self.parse_keybinding(keys)
+    table = BindingTable.instance
+    if keys.class == Array
+      # Modal binding
+      # TODO: To be implemented
+      nil
+    else
+      res = {
+        :modifiers => [],
+        :key => nil
+      }
+
+      # Standardize the string, remove noise
+      keys.strip!
+      keys.downcase!
+      keys.gsub!("  ", " ") while keys.match("  ")
+
+      keys.split(" ").each do |key|
+        keysymbol = table.str_to_keysymbol key
+        if table.is_modifier? keysymbol
+          res[:modifiers] << keysymbol
+        else
+          res[:key] = keysymbol
+        end
+      end
+
+      res[:modifiers].sort!
+      res
+    end
+  end
+
   def initialize(data=nil)
     super()
 
     if data.class == String
-      BindingTable.instance.parse_keybinding(data).each { |key, val|
+      KeyCombination.parse_keybinding(data).each { |key, val|
         self[key] = val
       }
     elsif data.class == Hash
