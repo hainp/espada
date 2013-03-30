@@ -92,6 +92,10 @@ class KeyBinding < Hash
   def initialize(keys=nil, action=nil, mode=:global)
     super()
 
+    return keys if keys.class == KeyBinding
+
+    mode = mode || :global
+
     self[:keys] = if keys.class != KeyCombination
       KeyCombination.new(keys)
     else
