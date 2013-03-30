@@ -123,6 +123,15 @@ class BindingTable
     @table[keys] = command
   end
 
+  def bindkey2(keys=nil, action=nil, mode=:global)
+    return if !keys || !action
+    binding = KeyBinding.new keys, action, mode
+    @table[{
+      :keys => binding[:keys],
+      :mode => binding[:mode]
+    }] = binding[:action]
+  end
+
   def include?(*args)
     @table.include?(*args)
   end
