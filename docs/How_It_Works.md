@@ -117,6 +117,8 @@ To remove a keybinding from the `BindingTable`, i.e. deactivating the keybinding
 
 The `mode` parameter is always optional and will take the default value of `:global`.
 
+Two keybindings are considered equal if their `:keys` and `:mode` are equal.
+
 To rebind, simply add the keybinding again.
 
 **Notes:** Quick way to create a keybinding and register: `bindkey("<ctrl> s", Proc.new { save }, :global)`.
