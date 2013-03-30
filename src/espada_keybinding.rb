@@ -22,7 +22,18 @@
 require 'singleton'
 require 'awesome_print'
 
-class KeyBinding < Hash
+class KeyCombination < Hash
+  def initialize(data=nil)
+    super()
+
+    if data.class == String
+      BindingTable.instance.parse_keybinding(data).each { |key, val|
+        self[key] = val
+      }
+    elsif data.class == Hash
+      data.each { |key, val| self[key] = val }
+    end
+  end
 end
 
 class BindingTable
