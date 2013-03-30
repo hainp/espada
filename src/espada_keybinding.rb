@@ -99,45 +99,6 @@ class BindingTable
     @table[keys] = command
   end
 
-  def parse_keybinding(keys)
-    if keys.class == Array
-      # Modal binding
-      # TODO: To be implemented
-      nil
-    else
-      res = {
-        :modifiers => [],
-        :key => nil
-      }
-
-      # Standardize the string, remove noise
-      keys.strip!
-      keys.downcase!
-      keys.gsub!("  ", " ") while keys.match("  ")
-
-      keys.split(" ").each do |key|
-        keysymbol = str_to_keysymbol key
-        if is_modifier? keysymbol
-          res[:modifiers] << keysymbol
-        else
-          res[:key] = keysymbol
-        end
-      end
-
-      res[:modifiers].sort!
-      res
-    end
-  end
-
-  def str_to_keysymbol(key)
-    if StrToKeymod[key] then StrToKeymod[key] else StrToKey[key] end
-  end
-
-  def is_modifier?(key)
-    KeymodToQtKeymod.include?(key) \
-    || KeymodToQtKeymod.include?(key.to_s.sub("Key_", "").to_sym)
-  end
-
   def include?(*args)
     @table.include?(*args)
   end
