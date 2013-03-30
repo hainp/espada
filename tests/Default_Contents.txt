@@ -4,11 +4,20 @@ goto_file_or_eval 'puts "Hello World"'
 
 puts (binding_table.str_to_keysymbol "a")
 
+a = KeyBinding.new "<ctrl> s"
+ap a
+
+#TEST
+
+ap KeyCombination.new("<ctrl> s")
+ap KeyCombination.new({ :modifiers => [ :Control ], :key => :Key_S })
+ap KeyCombination.new("<ctrl> s") == KeyCombination.new({ :modifiers => [ :Control ], :key => :Key_S })
+
 ap binding_table
-ap binding_table.parse_keybinding("<ctrl> s")
-ap binding_table.parse_keybinding("<ctrl> <alt> p")
-ap binding_table.parse_keybinding("<alt> <ctrl> p")
-ap binding_table.parse_keybinding("<alt> <ctrl> s")
+ap KeyCombination.new("<ctrl> s")
+ap KeyCombination.new("<ctrl> <alt> p")
+ap KeyCombination.new("<alt> <ctrl> p")
+ap KeyCombination.new("<alt> <ctrl> s")
 
 display_keybindings
 
