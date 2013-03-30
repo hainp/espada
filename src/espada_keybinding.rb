@@ -23,7 +23,7 @@ require 'singleton'
 require 'awesome_print'
 
 class KeyCombination < Hash
-  def self.parse_keybinding(keys)
+  def self.parse_keycombination(keys)
     table = BindingTable.instance
     if keys.class == Array
       # Modal binding
@@ -58,7 +58,7 @@ class KeyCombination < Hash
     super()
 
     if data.class == String
-      KeyCombination.parse_keybinding(data).each { |key, val|
+      KeyCombination.parse_keycombination(data).each { |key, val|
         self[key] = val
       }
     elsif data.class == Hash
