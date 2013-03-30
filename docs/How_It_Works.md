@@ -49,10 +49,11 @@ The `MainWindow` is the window that contains:
 
 ## `KeyBinding` and `BindingTable` class
 
-A keybinding is a way to map a key combination with a function, thus a keybinding consists of 2 parts:
+A keybinding is a way to map a key combination with a function, thus a keybinding consists of 3 parts:
 
-* A key combination
-* And an action which will be performed when the key combination is proceeded
+* A key combination, managed by `KeyCombination` class
+* A mode in which the key combination is activated
+* And an action which will be performed when the key combination is pressed
 
 There are 2 kinds of keybinding:
 
@@ -61,48 +62,61 @@ There are 2 kinds of keybinding:
 
 Mode-specific binding has *higher priority* than global binding.
 
-Classes and their uses:
+If users want to manually bind keys, use the `.json` files from the configuration directory (TODO), do *not* use Ruby code unless you have clear reason to do so.
 
-* The `KeyBinding` class is a subclass of `Hash` and takes care of *one* keybinding.
+### Classes and their uses
+
+* The `KeyCombination` class is a subclass of `Hash`, taking care of one key combination, e.g. "<ctrl> s".
+
+* The `KeyBinding` class is a subclass of `Hash` and takes care of *one* keybinding, i.e. one key combination + the mode in which it's activated + its action.
+
 * The `BindingTable` is a singleton, used to take care of *all* current keybindings, including mode-specific keybindings (TODO: more on that later).
 
-Each keybinding is created using a string or a hash and an action: (TODO: determine what is the canonical way).
+### "Talk is cheap, show me the code"
+
+How keybinding works internally:
+
+* KeyCombination constructor:
+
+    ```ruby
+    save_s = KeyCombination.new("<ctrl s>")                      # Recommended way
+
+    save_s_2 = KeyCombination.new({ :modifiers => [ :Control ],
+      :key => :Key_S
+    })                                                           # Direct way, not recommended
+    ```
+
+* KeyBinding constructor:
 
     ```ruby
     # The following lines do the same thing
 
     KeyBinding.new("<ctrl> s", "save")
 
-    KeyBinding.new(:global, "<ctrl> s", "save")
+    KeyBinding.new("<ctrl> s", "save", :global)
 
-    KeyBinding.new("<ctrl> s", Proc.new { save })
+    KeyBinding.new("<ctrl> s", Proc.new { save })                # Recommended
 
-    KeyBinding.new({ :modifiers => [ :Control ],
-      :key => :Key_S
-    }, "save")
+    KeyBinding.new("<ctrl> s", Proc.new { save }, :global)       # Also recommended
 
-    KeyBinding.new({ :modifiers => [ :Control ],
-      :key => :Key_S,
-      :mode => :global
-    }, "save")
+    KeyBinding.new(ctrl_s, "save")                               # Helper, use internally
 
-    KeyBinding.new({ :modifiers => [ :Control ],
-      :key => :Key_S,
-      :mode => :global
-    }, Proc.new { save })
+    KeyBinding.new(ctrl_s, "save", :global)                      # Helper, use internally
+
+    KeyBinding.new(ctrl_s, Proc.new { save })                    # Helper, use internally
+
+    KeyBinding.new(ctrl_s, Proc.new { save }, :global)           # Helper, use internally
     ```
 
-To add a new keybinding into the `BindingTable`, i.e. activating the keybinding:
+To add a new keybinding into the `BindingTable`, i.e. activating the keybinding: `a_binding.register(mode)`.  Internally, the `register` method will call `BindingTable.update(a_binding, mode)` to update the binding table.
 
-    ```ruby
-    ```
+To remove a keybinding from the `BindingTable`, i.e. deactivating the keybinding: `a_binding.unregister(mode)`.  Internally, the `unregister` method will call `BindingTable.remove(a_binding, mode)` to update the binding table.
 
-To remove a keybinding from the `BindingTable`:
-
-    ```ruby
-    ```
+The `mode` parameter is always optional and will take the default value of `:global`.
 
 To rebind, simply add the keybinding again.
+
+**Notes:** Quick way to create a keybinding and register: `bindkey("<ctrl> s", Proc.new { save }, :global)`.
 
 ## `TextEdit` widget
 
