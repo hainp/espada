@@ -129,18 +129,7 @@ class BindingTable
     @table.to_s
   end
 
-  def bindkey(bind, mode=:global)
-    keys = KeyCombination.new bind[:keys]
-    action = bind[:command]
-    if action.class == String
-      command = Proc.new { eval action }
-    else
-      command = action
-    end
-    @table[keys] = command
-  end
-
-  def bindkey2(keys=nil, action=nil, mode=:global)
+  def bindkey(keys=nil, action=nil, mode=:global)
     if keys.class != KeyBinding
       return if !keys || !action
       keys = KeyBinding.new keys, action, mode
