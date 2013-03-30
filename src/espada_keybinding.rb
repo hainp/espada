@@ -77,6 +77,10 @@ class KeyCombination < Hash
       data.each { |key, val| self[key] = val }
     end
   end
+
+  def only_modifiers?
+    self[:key] == nil
+  end
 end
 
 class KeyBinding < Hash
