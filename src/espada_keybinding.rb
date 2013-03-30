@@ -62,6 +62,10 @@ class KeyCombination < Hash
     || KeymodToQtKeymod.include?(key.to_s.sub("Key_", "").to_sym)
   end
 
+  def self.only_modifiers?(keycombination)
+    keycombination[:key] == nil
+  end
+
   def initialize(data=nil)
     super()
 
@@ -143,10 +147,6 @@ class BindingTable
   def [](key)
     @table[key]
   end
-
-  def only_modifiers?(keybinding)
-    keybinding[:key] == nil
-  end
 end
 
 class Fixnum
@@ -190,7 +190,7 @@ def process_key(keybinding)
 
   else
     if keybinding[:modifiers].length != 0 \
-       && !binding_table.only_modifiers?(keybinding) \
+       && !KeyCombination.only_modifiers?(keybinding) \
        && keybinding[:modifiers] != [:Shift]
       message "#{keybinding.inspect} is not defined" \
     end
