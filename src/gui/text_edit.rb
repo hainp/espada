@@ -194,7 +194,7 @@ class TextBufferWidget < Qt::TextEdit
         valid &&= keymod.length < 2
       end
 
-      if binding_list.is_modifier?(key)
+      if KeyCombination.is_modifier?(key)
         keymod << key.to_s.sub("Key_", "").to_sym
         keymod.uniq!
         key = nil
