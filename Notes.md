@@ -20,7 +20,12 @@ Tasks
         ```JSON
         // JSON
         [ { "keys": "<ctrl> s",                "command": "save" },
-          { "keys": ["<ctrl> x", "<ctrl> s"],  "command": "save" } ]
+          { "keys": ["<ctrl> x", "<ctrl> s"],  "command": "save" },
+          {
+            "keys": "<f1>",
+            "command": "man_current_word",
+            "mode": "sh"
+          } ]
         ```
 
         ```Ruby
@@ -32,6 +37,11 @@ Tasks
         {
           :keys => "<ctrl> <shift> s",
           :command => Proc.new { save_as }
+        },
+        {
+          :keys => "<f1>",
+          :command => Proc.new { man_current_word },
+          :mode => :sh
         }]
         ```
 
