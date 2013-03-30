@@ -93,6 +93,10 @@ class KeyBinding < Hash
 
     self[:mode] = mode
   end
+
+  def ==(another)
+    self[:keys] == another[:keys] && self[:mode] == another[:mode]
+  end
 end
 
 class BindingTable
@@ -108,7 +112,7 @@ class BindingTable
     @table.to_s
   end
 
-  def bindkey(bind)
+  def bindkey(bind, mode=:global)
     keys = KeyCombination.new bind[:keys]
     action = bind[:command]
     if action.class == String
