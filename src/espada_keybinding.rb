@@ -75,6 +75,26 @@ class KeyCombination < Hash
   end
 end
 
+class KeyBinding < Hash
+  def initialize(keys=nil, action=nil, mode=:global)
+    super()
+
+    self[:keys] = if keys.class == String
+      KeyCombination.new(keys)
+    else
+      keys
+    end
+
+    self[:action] = if action.class == String
+      Proc.new { eval action }
+    else
+      action
+    end
+
+    self[:mode] = mode
+  end
+end
+
 class BindingTable
   include Singleton
 
