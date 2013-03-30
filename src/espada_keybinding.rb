@@ -175,9 +175,10 @@ end
 
 def process_key(keycombination)
   #
-  # If the keycombination is found in binding list, call the appropriate function
-  # and prevent further key processing by returning true.  Otherwise, return
-  # false to forward the keycombination to the next processer.
+  # If the keycombination is found in binding list, call the appropriate
+  # function and prevent further key processing by returning true.
+  # Otherwise, return false to forward the keycombination to the next
+  # processor.
   #
 
   # DEBUG
