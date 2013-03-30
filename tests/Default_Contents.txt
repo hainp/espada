@@ -7,17 +7,33 @@ puts (binding_table.str_to_keysymbol "a")
 a = KeyBinding.new "<ctrl> s"
 ap a
 
+BindingTable.instance.bindkey2("<ctrl> p", "save")
+BindingTable.instance.bindkey2("<ctrl> p", "goto_file_or_eval")
+
+ap BindingTable.instance[KeyBinding.new("<ctrl> p", "save")]
+
 #TEST
 
 ap KeyCombination.new("<ctrl> s")
 ap KeyCombination.new({ :modifiers => [ :Control ], :key => :Key_S })
-ap KeyCombination.new("<ctrl> s") == KeyCombination.new({ :modifiers => [ :Control ], :key => :Key_S })
+ap KeyCombination.new("<ctrl> s") == KeyCombination.new({ : modifiers => [ :Control ], :key => :Key_S })
 
+#TEST
 ap binding_table
 ap KeyCombination.new("<ctrl> s")
 ap KeyCombination.new("<ctrl> <alt> p")
 ap KeyCombination.new("<alt> <ctrl> p")
 ap KeyCombination.new("<alt> <ctrl> s")
+
+#TEST
+bind = KeyBinding.new("<ctrl> s", "save")
+ap bind
+ap bind.get_keycombination
+ap bind.class == KeyBinding
+ap(({ :a => 10 }.class) == KeyBinding)
+ap KeyBinding.new("<ctrl> s", "save")
+ap KeyBinding.new("<ctrl> s", "save") == KeyBinding.new("<ctrl> s", "save")
+
 
 display_keybindings
 
