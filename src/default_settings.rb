@@ -42,19 +42,19 @@ EspadaSettings = {
 
 EspadaDefaultKeybindings = [
   {
-    :keys => "<ctrl> p",
-    :command => Proc.new { goto_file_or_eval }
+    :keys    => "<ctrl> p",
+    :action  => Proc.new { goto_file_or_eval }
   },
   {
-    :keys => "<ctrl> s",
-    :command => Proc.new { save }
+    :keys    => "<ctrl> s",
+    :action  => Proc.new { save }
   },
   {
-    :keys => "<ctrl> <shift> s",
-    :command => Proc.new { save_as }
+    :keys    => "<ctrl> <shift> s",
+    :action  => Proc.new { save_as }
   },
   {
-    :keys => "<super> c",
-    :command => Proc.new { prev_line }
+    :keys    => "<super> c",
+    :action  => Proc.new { prev_line }
   },
 ]
