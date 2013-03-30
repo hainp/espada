@@ -24,7 +24,6 @@ require 'awesome_print'
 
 class KeyCombination < Hash
   def self.parse_keycombination(keys)
-    table = BindingTable.instance
     if keys.class == Array
       # Modal binding
       # TODO: To be implemented
@@ -41,8 +40,8 @@ class KeyCombination < Hash
       keys.gsub!("  ", " ") while keys.match("  ")
 
       keys.split(" ").each do |key|
-        keysymbol = table.str_to_keysymbol key
-        if table.is_modifier? keysymbol
+        keysymbol = KeyCombination.str_to_keysymbol key
+        if KeyCombination.is_modifier? keysymbol
           res[:modifiers] << keysymbol
         else
           res[:key] = keysymbol
@@ -52,6 +51,15 @@ class KeyCombination < Hash
       res[:modifiers].sort!
       res
     end
+  end
+
+  def self.str_to_keysymbol(key)
+    if StrToKeymod[key] then StrToKeymod[key] else StrToKey[key] end
+  end
+
+  def self.is_modifier?(key)
+    KeymodToQtKeymod.include?(key) \
+    || KeymodToQtKeymod.include?(key.to_s.sub("Key_", "").to_sym)
   end
 
   def initialize(data=nil)
