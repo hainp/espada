@@ -173,19 +173,19 @@ def bindkey(*args)
   binding_table.bindkey(*args)
 end
 
-def process_key(keybinding)
+def process_key(keycombination)
   #
-  # If the keybinding is found in binding list, call the appropriate function
+  # If the keycombination is found in binding list, call the appropriate function
   # and prevent further key processing by returning true.  Otherwise, return
-  # false to forward the keybinding to the next processer.
+  # false to forward the keycombination to the next processer.
   #
 
   # DEBUG
-  # ap keybinding
+  # ap keycombination
 
-  if binding_table.exists? keybinding
+  if binding_table.exists? keycombination
     begin
-      binding_table[keybinding].call
+      binding_table[keycombination].call
     rescue Exception => e
       message e
     ensure
@@ -193,10 +193,10 @@ def process_key(keybinding)
     end
 
   else
-    if keybinding[:modifiers].length != 0 \
-       && !KeyCombination.only_modifiers?(keybinding) \
-       && keybinding[:modifiers] != [:Shift]
-      message "#{keybinding.inspect} is not defined" \
+    if keycombination[:modifiers].length != 0 \
+       && !KeyCombination.only_modifiers?(keycombination) \
+       && keycombination[:modifiers] != [:Shift]
+      message "#{keycombination.inspect} is not defined" \
     end
     return false
   end
