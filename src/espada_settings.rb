@@ -42,6 +42,7 @@ class SettingsSingleton
 
   def initialize
     @self = SettingsSingleton
+    @path = expand_path "~/.config/espada/" # Adjustable via command line
   end
 
   def update(ahash)
