@@ -74,3 +74,7 @@ def save(*args)
   end
   current_buffer.saved = true
 end
+
+def path_exists(path)
+  File.exists? path
+end
