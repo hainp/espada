@@ -48,10 +48,6 @@ class MainApplication
     create_main_text_buffer
   end
 
-  def self.to_s
-    self.instance.to_s
-  end
-
   def read_settings
   end
 
