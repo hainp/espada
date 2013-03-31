@@ -49,6 +49,8 @@ class MainApplication
   end
 
   def read_settings
+    # Create the setting dir if not exists
+    create_dir Settings.path if !path_exists? Settings.path
   end
 
   def to_s
