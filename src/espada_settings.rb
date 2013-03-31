@@ -40,6 +40,8 @@ require 'espada_utils'
 class SettingsSingleton
   include Singleton
 
+  attr_accessor :path
+
   def initialize
     @self = SettingsSingleton
     @path = expand_path "~/.config/espada/" # Adjustable via command line
