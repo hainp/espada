@@ -41,18 +41,22 @@ class MainApplication
   def initialize
     @app = Qt::Application.new ARGV
     @buffers = {}
+    read_settings
     update_settings
     create_default_keybindings
     create_main_window
     create_main_text_buffer
   end
 
-  def to_s
-    "<MainApplication #{hash}>"
-  end
-
   def self.to_s
     self.instance.to_s
+  end
+
+  def read_settings
+  end
+
+  def to_s
+    "<MainApplication #{hash}>"
   end
 
   def create_default_keybindings
