@@ -312,7 +312,7 @@ class TextEdit < Widget
 
     arrange_layout
 
-    set_font Settings.normal_text_font if defined? Settings
+    set_font Settings[:normal_text_font] if defined? Settings
   end
 
   def create_pty
