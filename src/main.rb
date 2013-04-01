@@ -34,7 +34,6 @@ class MainApplication
   include Singleton
 
   attr_accessor :app,
-                :settings,
                 :main_win,
                 :buffers,
                 :current_buffer_id
@@ -109,7 +108,6 @@ class MainApplication
     Settings.update EspadaSettings
     Settings.default_contents_path = \
         "#{espada_path}/#{Settings.default_contents_path}"
-    @settings = Settings
 
     puts "=> Settings: "
     Settings.print
