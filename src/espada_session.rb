@@ -26,6 +26,24 @@ require 'espada_utils'
 
 class SessionSingleton < Hash
   include Singleton
+
+  def update
+    if defined? main_window
+      self[:size] = {
+        :width   => main_window.width,
+        :height  => main_window.height
+      }
+
+      self[:position] = {
+        :x  => main_window.pos.x,
+        :y  => main_window.pos.y
+      }
+    end
+
+    if (defined? current_buffer) && current_buffer.path != ""
+      self[:default_contents_path] = current_buffer.path
+    end
+  end
 end
 
 Session = SessionSingleton.instance
