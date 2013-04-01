@@ -174,7 +174,7 @@ Settings are handled by the `Settings` singleton.  To update settings, use:
 
     Settings.update(ahashtable)
 
-See `./src/default_settings.rb` for more details.
+See `./src/default_params.rb` for more details.
 
 ######
 
