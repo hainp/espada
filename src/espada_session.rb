@@ -24,38 +24,8 @@ require 'awesome_print'
 
 require 'espada_utils'
 
-class SessionSingleton
+class SessionSingleton < Hash
   include Singleton
-
-  attr_accessor :info
-
-  def initialize
-    @info = {}
-  end
-
-  def print
-    ap @info
-  end
-
-  def [](key)
-    @info[key]
-  end
-
-  def []=(key, val)
-    @info[key] = val
-  end
-
-  def merge!(*args)
-    @info.merge!(*args)
-  end
-
-  def merge(*args)
-    @info.merge(*args)
-  end
-
-  def to_s
-    @info.to_s
-  end
 end
 
 Session = SessionSingleton.instance
