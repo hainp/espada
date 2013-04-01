@@ -40,11 +40,17 @@ require 'espada_utils'
 class SettingsSingleton
   include Singleton
 
-  attr_accessor :path
+  attr_accessor :path, :user_config_file
 
   def initialize
     @self = SettingsSingleton
-    @path = expand_path "~/.config/espada/" # Adjustable via command line
+    @path = expand_path "~/.config/espada/"
+    @user_config_file = {
+      :settings      => "settings.json",
+      :session       => "session.json",
+      :keybindings   => "keybindings.json",
+      :theme         => "theme.json"
+    }
   end
 
   def update(ahash)
