@@ -37,13 +37,13 @@ require 'awesome_print'
 
 require 'espada_utils'
 
-class SettingsSingleton
+class SettingsSingleton < Hash
   include Singleton
 
   attr_accessor :path, :user_config_file
 
   def initialize
-    @self = SettingsSingleton
+    super
     @path = expand_path "~/.config/espada/"
     @user_config_file = {
       :settings      => "settings.json",
@@ -55,45 +55,6 @@ class SettingsSingleton
 
   def get_config_file(kind)
     "#{@path}/#{@user_config_file[kind]}"
-  end
-
-  def update(ahash)
-    add_properties_from_hash ahash
-
-    # Update global settings if necessary
-    $qApp.setDoubleClickInterval(double_click_timeout) if
-      respond_to?(:double_click_timeout) && $qApp
-  end
-
-  def add_properties_from_hash(ahash)
-    ahash.each { |key, val|
-      # Add getter
-      @self.send(:define_method, key) { 
-        @self.instance_variable_get("@#{key}")
-      }
-
-      # Add setter
-      @self.send(:define_method, "#{key}=") { |val|
-        @self.instance_variable_set("@#{key}", val)
-      }
-
-      # Set default value
-      @self.instance_variable_set("@#{key}", val)
-    }
-  end
-
-  def print
-    settings_hash = {}
-
-    # Get all the instance variables of the settings singleton
-    @self.instance_variables.each { |var|
-      if var != "@__instance__"
-        settings_hash[var.to_s.but_first.to_sym] =
-          @self.instance_variable_get(var)
-      end
-    }
-
-    ap settings_hash
   end
 end
 
