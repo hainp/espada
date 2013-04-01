@@ -88,9 +88,13 @@ def read_file_json(path, key_as_symbol=true)
   result
 end
 
-def save_file_with_text(path, text)
+def save_file_with_text(path, text, msg=nil)
   File.open(path, 'w') { |file| file.write text }
-  message "Saved to #{path}"
+  if !msg
+    message "Saved to #{path}"
+  else
+    message msg
+  end
 end
 
 def save_as(path)
