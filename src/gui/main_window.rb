@@ -91,6 +91,11 @@ class MainWindow < Qt::Widget
   ###
 
   def closeEvent(event)
+    save_file_with_text(
+      Settings.get_config_file(:session),
+      Session.to_pretty_json,
+      "Session saved to #{Settings.get_config_file(:session)}")
+
     puts "[main_window] [event] [close] placeholder"
     puts "[current_buffer] [saved] #{current_buffer.saved}" if current_buffer
     event.accept()
