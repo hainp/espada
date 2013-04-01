@@ -52,6 +52,10 @@ class SessionSingleton
   def merge(*args)
     @info.merge(*args)
   end
+
+  def to_s
+    @info.to_s
+  end
 end
 
 Session = SessionSingleton.instance
