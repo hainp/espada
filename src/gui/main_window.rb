@@ -91,6 +91,7 @@ class MainWindow < Qt::Widget
   ###
 
   def closeEvent(event)
+    Session.update
     save_file_with_text(
       Settings.get_config_file(:session),
       Session.to_pretty_json,
