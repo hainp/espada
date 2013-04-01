@@ -23,7 +23,11 @@ require 'espada_gui'
 
 EspadaSettings = {
   :normal_text_font => Font.new("Monaco", 10, Font::Normal),
+  :wrap_mode => WrapMode[:WidgetWidth],
+  :wrap_column => 78,
+}
 
+EspadaSession = {
   :size => {
     :width => 800,
     :height => 600
@@ -35,9 +39,6 @@ EspadaSettings = {
   },
 
   :default_contents_path => "../tests/Default_Contents.txt",
-
-  :wrap_mode => WrapMode[:WidgetWidth],
-  :wrap_column => 78,
 }
 
 EspadaDefaultKeybindings = [
