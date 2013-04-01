@@ -51,8 +51,7 @@ class MainApplication
 
   def read_session
     saved_session = read_file_json Settings.get_config_file(:session)
-    puts saved_session
-    EspadaSession.merge! saved_session
+    Session.merge! saved_session
   end
 
   def read_settings
@@ -60,7 +59,6 @@ class MainApplication
       create_dir Settings.path
     else
       saved_settings = read_file_json Settings.get_config_file(:settings)
-      puts saved_settings
       EspadaSettings.merge! saved_settings
     end
   end
@@ -107,8 +105,10 @@ class MainApplication
       EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
 
     Settings.update EspadaSettings
-    Settings.default_contents_path = \
-        "#{espada_path}/#{Settings.default_contents_path}"
+
+    # TODO: Remove this
+    Session[:default_contents_path] = \
+        "#{espada_path}/#{Session[:default_contents_path]}"
 
     puts "=> Settings: "
     Settings.print
