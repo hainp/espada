@@ -205,3 +205,12 @@ def process_key(keycombination)
     return false
   end
 end
+
+def binding_table
+  BindingTable.instance
+end
+
+def display_keybindings
+  # TODO: beautify the display
+  ap binding_table.table
+end
