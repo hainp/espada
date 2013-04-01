@@ -53,6 +53,10 @@ class SettingsSingleton
     }
   end
 
+  def get_config_file(kind)
+    "#{@path}/#{@user_config_file[kind]}"
+  end
+
   def update(ahash)
     add_properties_from_hash ahash
 
