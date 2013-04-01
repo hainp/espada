@@ -42,7 +42,7 @@ Tested platforms:
 ## Requirement
 
 * Ruby 1.9 (1.8 is no longer supported)
-* QtRuby
+* QtRuby or Ruby [qtbindings](https://github.com/ryanmelt/qtbindings)
 * awesome_print
 * pseudo-terminal
 * ruby_parser
@@ -55,9 +55,13 @@ Make sure you have all the required dependencies.  The best way to install depen
 
 * Install dependencies:
 
-  ```sh
-  gem install qtbindings awesome_print pseudo-terminal ruby_parser
-  ```
+  - It's best to install QtRuby (and other gems) from your package manager, besure to install *for Ruby 1.9*
+
+  - Otherwise, the recommended way is to install locally via gem, make sure you have installed dependencies to compile [qtbindings](https://github.com/ryanmelt/qtbindings) correctly, check its [README](https://github.com/ryanmelt/qtbindings/blob/master/README.txt) for more details:
+
+      ```sh
+      gem install qtbindings awesome_print pseudo-terminal ruby_parser
+      ```
 
 * Download/clone Espada via Git or Mercurial:
 
