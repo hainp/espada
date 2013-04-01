@@ -49,8 +49,13 @@ class MainApplication
   end
 
   def read_settings
-    # Create the setting dir if not exists
-    create_dir Settings.path if !path_exists? Settings.path
+    if !path_exists? Settings.path
+      create_dir Settings.path
+    else
+      saved_settings = read_file_json Settings.get_config_file(:settings)
+      puts saved_settings
+      EspadaSettings.merge! saved_settings
+    end
   end
 
   def to_s
