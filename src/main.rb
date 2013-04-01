@@ -41,25 +41,35 @@ class MainApplication
   def initialize
     @app = Qt::Application.new ARGV
     @buffers = {}
+
     read_settings
-    update_settings
     read_session
+
+    ap Settings
+    ap Session
+
     create_default_keybindings
     create_main_window
     create_main_text_buffer
   end
 
   def read_session
+    Session.merge! EspadaSession
+
     saved_session = read_file_json Settings.get_config_file(:session)
     Session.merge! saved_session
+    Session[:default_contents_path] = \
+        "#{espada_path}/#{Session[:default_contents_path]}"
   end
 
   def read_settings
+    Settings.merge! EspadaSettings
+
     if !path_exists? Settings.path
       create_dir Settings.path
     else
       saved_settings = read_file_json Settings.get_config_file(:settings)
-      EspadaSettings.merge! saved_settings
+      Settings.merge! saved_settings
     end
   end
 
@@ -75,8 +85,8 @@ class MainApplication
 
   def create_main_text_buffer
     text_edit = TextEdit.new
-    text_edit.set_line_wrap_column_or_width Settings.wrap_column
-    text_edit.set_line_wrap_mode Settings.wrap_mode
+    text_edit.set_line_wrap_column_or_width Settings[:wrap_column]
+    text_edit.set_line_wrap_mode Settings[:wrap_mode]
     text_edit.load Session[:default_contents_path] \
       if Session[:default_contents_path]
 
@@ -97,21 +107,6 @@ class MainApplication
 
   def exec
     @app.exec
-  end
-
-  def update_settings
-    # Get runtime settings
-    EspadaSettings[:double_click_timeout] =
-      EspadaSettings[:double_click_timeout] || $qApp.doubleClickInterval
-
-    Settings.update EspadaSettings
-
-    # TODO: Remove this
-    Session[:default_contents_path] = \
-        "#{espada_path}/#{Session[:default_contents_path]}"
-
-    puts "=> Settings: "
-    Settings.print
   end
 
   def current_buffer
