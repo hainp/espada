@@ -36,6 +36,14 @@ class SessionSingleton
   def print
     ap @info
   end
+
+  def [](key)
+    @info[key]
+  end
+
+  def []=(key, val)
+    @info[key] = val
+  end
 end
 
 Session = SessionSingleton.instance
