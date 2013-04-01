@@ -45,9 +45,6 @@ class MainApplication
     read_settings
     read_session
 
-    ap Settings
-    ap Session
-
     create_default_keybindings
     create_main_window
     create_main_text_buffer
@@ -58,8 +55,6 @@ class MainApplication
 
     saved_session = read_file_json Settings.get_config_file(:session)
     Session.merge! saved_session
-    Session[:default_contents_path] = \
-        "#{espada_path}/#{Session[:default_contents_path]}"
   end
 
   def read_settings
