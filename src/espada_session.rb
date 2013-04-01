@@ -44,6 +44,14 @@ class SessionSingleton
   def []=(key, val)
     @info[key] = val
   end
+
+  def merge!(*args)
+    @info.merge!(*args)
+  end
+
+  def merge(*args)
+    @info.merge(*args)
+  end
 end
 
 Session = SessionSingleton.instance
