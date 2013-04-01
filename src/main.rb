@@ -43,9 +43,14 @@ class MainApplication
     @buffers = {}
     read_settings
     update_settings
+    read_session
     create_default_keybindings
     create_main_window
     create_main_text_buffer
+  end
+
+  def read_session
+    
   end
 
   def read_settings
