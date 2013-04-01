@@ -42,6 +42,10 @@ class Hash
 
     self.merge! tmp_hash
   end
+
+  def to_pretty_json
+    JSON.pretty_generate self
+  end
 end
 
 def expand_path(path)
