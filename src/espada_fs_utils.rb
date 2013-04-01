@@ -20,6 +20,29 @@
 #
 
 require 'fileutils'
+require 'json'
+
+#
+# TODO: move this class extension to another file
+#
+class Hash
+  def keys_to_syms
+    tmp_hash = {}
+    self.each { |key, val|
+      new_key = key.to_sym
+      new_val = if val.class == Hash
+        val.keys_to_syms
+      else
+        val
+      end
+
+      self.delete key
+      tmp_hash[new_key] = new_val
+    }
+
+    self.merge! tmp_hash
+  end
+end
 
 def expand_path(path)
   File.expand_path path
@@ -50,6 +73,19 @@ def read_file(path)
     contents = ""
   end
   contents
+end
+
+def read_file_json(path, key_as_symbol=true)
+  contents = read_file(path)
+  contents = if contents != "" then JSON.parse contents else {} end
+
+  if key_as_symbol
+    result = contents.keys_to_syms
+  else
+    result = contents
+  end
+
+  result
 end
 
 def save_file_with_text(path, text)
