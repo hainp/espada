@@ -6,6 +6,15 @@
 
   - User can change its working dir anytime just by `cd` or `chdir` or `change_dir` or `!cd`.
 
+### Session management
+
+The following information will be saved and loaded after each time Espada is closed and opened again.
+
+* Opened files/buffers
+* Current windows and their geometry
+
+The `closeEvent` in `MainWindow` takes care of closing work, and `load_session` in `MainApplication` takes care of the opening work.  User may directly call `load_session` and `save_session` to achieve the same result.
+
 ### Purposes & design philisophy
 
 * *Espada* itself is a full-feature Ruby environment, designed specifically for *text processing* and *shell interacting*, so **\[DISCUSS\]** all convenient functions (`create_dir`, `save`, ...) are in global model (`Kernel`).
