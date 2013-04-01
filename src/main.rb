@@ -23,9 +23,10 @@ require 'rubygems'
 require 'singleton'
 
 require 'espada_settings'
+require 'espada_session'
 require 'espada_utils'
 
-require 'default_settings'
+require 'default_params'
 
 ESPADA_PATH = current_executing_dir __FILE__
 
@@ -50,7 +51,9 @@ class MainApplication
   end
 
   def read_session
-    
+    saved_session = read_file_json Settings.get_config_file(:session)
+    puts saved_session
+    EspadaSession.merge! saved_session
   end
 
   def read_settings
