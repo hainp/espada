@@ -26,7 +26,7 @@ require 'espada_settings'
 require 'espada_session'
 require 'espada_utils'
 
-require 'default_params'
+require 'default_config'
 
 ESPADA_PATH = current_executing_dir __FILE__
 
