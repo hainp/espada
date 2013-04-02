@@ -38,6 +38,7 @@ require 'gui/icon'
 require 'gui/entry'
 require 'gui/entry_label'
 require 'gui/text_cursor'
+require 'gui/dir_view'
 require 'gui/text_edit'
 
 require 'gui/message_box'
