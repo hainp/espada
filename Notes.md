@@ -3,7 +3,7 @@ Tasks
 
 * Provide ways to test multiple settings (multiple user config paths)
 
-* Make keybinding a subclass of `Hash` and define `to_s`
+* Make keybinding a subclass of `Hash` and define `to_s` (done)
 
 * Refactor `text_edit.buffer.install_event_filter` (done)
 
