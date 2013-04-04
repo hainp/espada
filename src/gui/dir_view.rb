@@ -30,6 +30,18 @@ class DirView < Widget
     create_tree_view
     connect_signals
     create_layout
+
+    set_no_margins
+    show
+  end
+
+  def path
+    @model.root_path
+  end
+
+  def set_path(path)
+    @model.set_root_path path
+    @tree.set_root_index @model.index(path)
   end
 
   def create_path_entry
@@ -38,7 +50,13 @@ class DirView < Widget
 
   def create_tree_view
     @model = Qt::FileSystemModel.new
+    @tree = Qt::TreeView.new
+
+    @tree.set_model @model
+    @tree.set_animated true
+
     set_path(if current_dir != "" then current_dir else "~".expand_path end)
+    1.upto(3) { |num| @tree.hide_column num }
   end
 
   def connect_signals
@@ -46,6 +64,11 @@ class DirView < Widget
   end
 
   def create_layout
-    
+    @box = VBoxLayout.new
+    @box.set_no_margins
+    @box.add_widget @path_entry
+    @box.add_widget @tree
+
+    set_layout @box
   end
 end
