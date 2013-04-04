@@ -401,7 +401,7 @@ class TextEdit < Widget
   end
 
   def set_path(path)
-    path = expand_path path
+    path = path.expand_path
     @path_label.set_text path
   end
 
@@ -410,7 +410,7 @@ class TextEdit < Widget
   end
 
   def path=(value)
-    value = expand_path value
+    value = value.expand_path
     @buffer.path= value
   end
 
