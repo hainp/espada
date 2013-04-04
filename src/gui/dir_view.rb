@@ -33,11 +33,12 @@ class DirView < Widget
   end
 
   def create_path_entry
-    
+    @path_entry = Entry.new
   end
 
   def create_tree_view
-    
+    @model = Qt::FileSystemModel.new
+    set_path(if current_dir != "" then current_dir else "~".expand_path end)
   end
 
   def connect_signals

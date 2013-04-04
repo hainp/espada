@@ -44,7 +44,7 @@ class SettingsSingleton < Hash
 
   def initialize
     super
-    @path = expand_path "~/.config/espada/"
+    @path = "~/.config/espada/".expand_path
     @user_config_file = {
       :settings      => "settings.json",
       :session       => "session.json",
