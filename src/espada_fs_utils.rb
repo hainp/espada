@@ -64,6 +64,11 @@ def current_executing_dir(path)
   File.expand_path File.dirname(path)
 end
 
+def current_file_path
+  return "" if !current_buffer
+  current_buffer.path
+end
+
 def espada_path
   if defined? ESPADA_PATH then ESPADA_PATH else "" end
 end
