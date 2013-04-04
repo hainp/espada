@@ -52,6 +52,10 @@ class String
   def get_dir
     File.dirname self
   end
+
+  def get_filename
+    File.basename self
+  end
 end
 
 def expand_path(path)
