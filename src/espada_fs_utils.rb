@@ -56,6 +56,22 @@ class String
   def get_filename
     File.basename self
   end
+
+  def extract_dir
+    get_dir
+  end
+
+  def extract_filename
+    get_filename self
+  end
+
+  def dir
+    get_dir
+  end
+
+  def filename
+    get_filename
+  end
 end
 
 def expand_path(path)
