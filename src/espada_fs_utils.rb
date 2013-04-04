@@ -69,6 +69,10 @@ def current_file_path
   current_buffer.path
 end
 
+def get_dir(path)
+  File.dirname path
+end
+
 def espada_path
   if defined? ESPADA_PATH then ESPADA_PATH else "" end
 end
