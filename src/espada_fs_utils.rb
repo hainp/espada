@@ -95,14 +95,6 @@ def current_file_path
   current_buffer.path
 end
 
-def get_dir(path)
-  if path.respond_to? :get_dir
-    path.get_dir
-  else
-    ""
-  end
-end
-
 def current_dir
   current_file_path.get_dir
 end
