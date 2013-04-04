@@ -48,6 +48,12 @@ class Hash
   end
 end
 
+class String
+  def get_dir
+    File.dirname self
+  end
+end
+
 def expand_path(path)
   File.expand_path path
 end
@@ -70,7 +76,7 @@ def current_file_path
 end
 
 def get_dir(path)
-  File.dirname path
+  path.get_dir
 end
 
 def espada_path
