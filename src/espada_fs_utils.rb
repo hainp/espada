@@ -83,6 +83,10 @@ def get_dir(path)
   end
 end
 
+def current_dir
+  current_file_path.get_dir
+end
+
 def espada_path
   if defined? ESPADA_PATH then ESPADA_PATH else "" end
 end
