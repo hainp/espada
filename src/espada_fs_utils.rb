@@ -74,7 +74,7 @@ class String
   end
 
   def expand_path
-    File.expand_path path
+    File.expand_path self
   end
 end
 
@@ -91,7 +91,7 @@ def create_dir(path)
 end
 
 def current_executing_dir(path)
-  File.expand_path File.dirname(path)
+  path.dir.expand_path
 end
 
 def current_file_path
