@@ -72,10 +72,14 @@ class String
   def filename
     get_filename
   end
+
+  def expand_path
+    File.expand_path path
+  end
 end
 
 def expand_path(path)
-  File.expand_path path
+  path.expand_path
 end
 
 def mkdir(path)
