@@ -76,7 +76,11 @@ def current_file_path
 end
 
 def get_dir(path)
-  path.get_dir
+  if path.respond_to? :get_dir
+    path.get_dir
+  else
+    ""
+  end
 end
 
 def espada_path
