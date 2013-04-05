@@ -43,6 +43,7 @@ class DirView < Widget
   end
 
   def set_path(path)
+
     @model.set_root_path path
     @tree.set_root_index @model.index(path)
   end
@@ -64,7 +65,7 @@ class DirView < Widget
 
   def connect_signals
     @path_entry.connect(path_entry, SIGNAL("textChanged(QString)"),
-                        @tree,      SLOT("set_path(QString)")
+                        @tree,      SLOT("set_path(QString)"))
   end
 
   def create_layout
