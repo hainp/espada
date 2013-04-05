@@ -32,6 +32,7 @@ class DirView < Widget
     create_layout
 
     set_no_margins
+    set_window_title "File Browser"
     show
   end
 
