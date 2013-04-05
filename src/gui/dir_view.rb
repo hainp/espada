@@ -65,7 +65,7 @@ class DirView < Widget
 
   def connect_signals
     @path_entry.connect(path_entry, SIGNAL("textChanged(QString)"),
-                        @tree,      SLOT("set_path(QString)"))
+                        self,       SLOT("set_path(QString)"))
   end
 
   def create_layout
