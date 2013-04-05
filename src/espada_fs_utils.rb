@@ -76,6 +76,10 @@ class String
   def expand_path
     File.expand_path self
   end
+
+  def path_exists?
+    File.exists? self
+  end
 end
 
 def expand_path(path)
