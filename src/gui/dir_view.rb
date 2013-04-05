@@ -23,6 +23,8 @@ class DirView < Widget
   attr_accessor :tree, :model, :path_entry, \
                 :box
 
+  slots "set_path(QString)"
+
   def initialize
     super
 
@@ -61,7 +63,8 @@ class DirView < Widget
   end
 
   def connect_signals
-    
+    @path_entry.connect(path_entry, SIGNAL("textChanged(QString)"),
+                        @tree,      SLOT("set_path(QString)")
   end
 
   def create_layout
