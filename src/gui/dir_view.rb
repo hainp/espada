@@ -43,9 +43,10 @@ class DirView < Widget
   end
 
   def set_path(path)
-
-    @model.set_root_path path
-    @tree.set_root_index @model.index(path)
+    if path.path_exists?
+      @model.set_root_path path
+      @tree.set_root_index @model.index(path)
+    end
   end
 
   def create_path_entry
