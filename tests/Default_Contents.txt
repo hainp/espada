@@ -1,5 +1,10 @@
 current_path
 
+dirview = DirView.new
+
+ap current_file_path
+ap File.dirname(current_file_path)
+
 goto_file_or_eval 'puts "Hello World"'
 
 puts (binding_table.str_to_keysymbol "a")
